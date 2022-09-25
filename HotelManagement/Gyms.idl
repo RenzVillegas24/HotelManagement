@@ -1,0 +1,9 @@
+namespace HotelManagement
+{
+    [default_interface]
+    runtimeclass Gyms : Windows.UI.Xaml.Controls.Page
+    {
+        Gyms();
+        Int32 MyProperty;
+    }
+}

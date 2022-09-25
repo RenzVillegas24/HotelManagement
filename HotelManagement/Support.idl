@@ -1,0 +1,9 @@
+namespace HotelManagement
+{
+    [default_interface]
+    runtimeclass Support : Windows.UI.Xaml.Controls.Page
+    {
+        Support();
+        Int32 MyProperty;
+    }
+}

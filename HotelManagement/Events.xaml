@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="HotelManagement.Events"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HotelManagement"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource Regular}"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        </StackPanel>
+
+        <Grid VerticalAlignment="Top" Height="120" Background="{ThemeResource BackdropAcrylicBrush}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,35,0,0">
+                <Button x:Name="HomeTitle" FontFamily="{StaticResource Regular}" Padding="13,6,13,10" FontSize="30" Style="{StaticResource RoundedButtonStyleTrans}" Margin="0,0,15,0" Click="HomeTitle_Click">
+                    Home
+                </Button>
+                <Path VerticalAlignment="Center" Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="10" Height="15" Stretch="Uniform"  Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"/>
+                <TextBlock x:Name="Title" Text="Event" VerticalAlignment="Center" Margin="25,-4,0,0" FontSize="30"  />
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

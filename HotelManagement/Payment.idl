@@ -1,0 +1,9 @@
+namespace HotelManagement
+{
+    [default_interface]
+    runtimeclass Payment : Windows.UI.Xaml.Controls.Page
+    {
+        Payment();
+        Int32 MyProperty;
+    }
+}

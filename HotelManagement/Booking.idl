@@ -1,0 +1,9 @@
+namespace HotelManagement
+{
+    [default_interface]
+    runtimeclass Booking : Windows.UI.Xaml.Controls.Page
+    {
+        Booking();
+        Int32 MyProperty;
+    }
+}

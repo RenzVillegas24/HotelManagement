@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+    <Page Include="Account.xaml" />
+    <Page Include="Home.xaml">
+      <Filter>Menus</Filter>
+    </Page>
+    <Page Include="Booking.xaml">
+      <Filter>Menus</Filter>
+    </Page>
+    <Page Include="Payment.xaml">
+      <Filter>Menus</Filter>
+    </Page>
+    <Page Include="Settings.xaml">
+      <Filter>Menus</Filter>
+    </Page>
+    <Page Include="Support.xaml">
+      <Filter>Menus</Filter>
+    </Page>
+    <Page Include="Units.xaml">
+      <Filter>Offerings</Filter>
+    </Page>
+    <Page Include="Gyms.xaml">
+      <Filter>Offerings</Filter>
+    </Page>
+    <Page Include="Restaurant.xaml">
+      <Filter>Offerings</Filter>
+    </Page>
+    <Page Include="Pools.xaml">
+      <Filter>Offerings</Filter>
+    </Page>
+    <Page Include="Lobby.xaml">
+      <Filter>Offerings</Filter>
+    </Page>
+    <Page Include="Events.xaml">
+      <Filter>Offerings</Filter>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="App.idl" />
+    <Midl Include="MainPage.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="MainPage.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Home\Discover1.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Discover2.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Discover3.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Discover4.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Discover5.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Discover6.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Discover7.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Discover8.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Event1.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Event2.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Event3.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Event4.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Event5.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Gym1.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Gym2.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Gym3.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Gym4.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Gym5.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Lobby1.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Lobby2.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Lobby3.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Lobby4.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Lobby5.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Pool1.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Pool2.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Pool3.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Pool4.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Pool5.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Restaurant1.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Restaurant2.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Restaurant3.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Restaurant4.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Restaurant5.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Unit1.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Unit2.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Unit3.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Unit4.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Home\Unit5.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
+    <Image Include="Assets\Square310x310Logo.scale-400.png" />
+    <Image Include="Assets\Square310x310Logo.scale-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{e48dc53e-40b1-40cb-970a-f89935452892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Offerings">
+      <UniqueIdentifier>{550e5aea-6ff4-4ccc-a825-3a6cdeaa6808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menus">
+      <UniqueIdentifier>{d57addbc-2036-4c7d-863e-c0393e4b1b32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Home">
+      <UniqueIdentifier>{374fc67c-fa9e-4aa8-9f51-c52f4616f167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Fonts">
+      <UniqueIdentifier>{01280fbe-50f8-4e4a-bfac-04a547128f58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Include">
+      <UniqueIdentifier>{cb820747-e979-40a8-b66b-d88891dcb02d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PropertySheet.props" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\Fonts\ProductSans-Black.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-BlackItalic.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-Bold.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-BoldItalic.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-Italic.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-Light.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-LightItalic.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-Medium.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-MediumItalic.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-Regular.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-Thin.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+    <Font Include="Assets\Fonts\ProductSans-ThinItalic.ttf">
+      <Filter>Assets\Fonts</Filter>
+    </Font>
+  </ItemGroup>
+</Project>

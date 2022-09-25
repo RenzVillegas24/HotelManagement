@@ -1,0 +1,9 @@
+namespace HotelManagement
+{
+    [default_interface]
+    runtimeclass Lobby : Windows.UI.Xaml.Controls.Page
+    {
+        Lobby();
+        Int32 MyProperty;
+    }
+}
