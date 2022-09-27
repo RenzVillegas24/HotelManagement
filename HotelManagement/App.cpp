@@ -3,6 +3,9 @@
 #include "App.h"
 #include "MainPage.h"
 
+//storage
+#include "winrt/Windows.Storage.h"
+
 using namespace winrt;
 using namespace Windows::ApplicationModel;
 using namespace Windows::ApplicationModel::Activation;
@@ -30,8 +33,11 @@ App::App()
             __debugbreak();
         }
     });
+
 #endif
 }
+
+
 
 /// <summary>
 /// Invoked when the application is launched normally by the end user.  Other entry points

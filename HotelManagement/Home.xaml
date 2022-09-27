@@ -226,7 +226,8 @@
                             <Image Source="Assets/Home/Lobby2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
                             
                         </FlipView>
-                        <Grid Background="{StaticResource BackdropAcrylicBrush}" Opacity=".8"/>
+                        <Grid Background="{StaticResource BackdropAcrylicBrush}" Opacity="0.8"/>
+                        <Grid Background="{StaticResource AppBarBackgroundThemeBrush}" Opacity="0.2"/>
                         <Grid Margin="0,120,0,0">
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,0,40,200">
                                 <TextBlock FontSize="25" FontFamily="{StaticResource Light}" TextAlignment="Center" TextWrapping="Wrap" >
@@ -240,14 +241,14 @@
                                  To have a reservation or booking please proceed to our booking section.<LineBreak/>For bookings, reservation and inqueries, please contact us on landline at (632) 4252 0422 or email bookings@mbclodge.com.
                             </TextBlock>
                             <StackPanel  Margin="60,0,60,40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
-                                <Button x:Name="btnReserve" Background="#59FF9700" Style="{StaticResource RoundedButtonStyle}" FontSize="20" FontFamily="{StaticResource Thin}" Padding="30,15,30,15" Margin="8" Click="btnReserve_Click" >
+                                <Button x:Name="btnReserve" Background="#59FF9700" FontSize="20" FontFamily="{StaticResource Thin}" Padding="30,15,30,15" Margin="8" Click="btnReserve_Click" >
                                     <Button.Resources>
-                                        <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumBrush" Color="#FF9700"/>
+                                        <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumBrush" Color="{StaticResource SystemAccentColor}"/>
                                         <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumLowBrush" Color="#A6FF9700"/>
                                     </Button.Resources>
                                     RESERVE NOW
                                 </Button>
-                                <Button x:Name="btnHelp" Style="{StaticResource RoundedButtonStyle}" FontSize="20" FontFamily="{StaticResource Thin}" Padding="30,15,30,15" Margin="8" Click="btnHelp_Click">
+                                <Button x:Name="btnHelp" FontSize="20" FontFamily="{StaticResource Thin}" Padding="30,15,30,15" Margin="8" Click="btnHelp_Click">
                                     NEED HELP?
                                 </Button>
                             </StackPanel>

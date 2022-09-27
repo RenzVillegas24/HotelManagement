@@ -1,12 +1,12 @@
 ﻿#pragma once
 
-#include "Account.g.h"
+#include "SignUpForm.g.h"
 
 namespace winrt::HotelManagement::implementation
 {
-    struct Account : AccountT<Account>
+    struct SignUpForm : SignUpFormT<SignUpForm>
     {
-        Account() 
+        SignUpForm() 
         {
             // Xaml objects should not call InitializeComponent during construction.
             // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
@@ -15,13 +15,12 @@ namespace winrt::HotelManagement::implementation
         int32_t MyProperty();
         void MyProperty(int32_t value);
 
-        void Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
     };
 }
 
 namespace winrt::HotelManagement::factory_implementation
 {
-    struct Account : AccountT<Account, implementation::Account>
+    struct SignUpForm : SignUpFormT<SignUpForm, implementation::SignUpForm>
     {
     };
 }

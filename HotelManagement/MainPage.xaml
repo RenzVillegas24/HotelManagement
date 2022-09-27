@@ -9,15 +9,15 @@
     xmlns:IsAcrylicBrushPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypePresent(Windows.UI.Xaml.Media.AcrylicBrush)"
     xmlns:IsAcrylicBrushNotPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypeNotPresent(Windows.UI.Xaml.Media.AcrylicBrush)"
     mc:Ignorable="d"
-    Name="MainPivot" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" 
+    Name="MainPivot" 
     IsAcrylicBrushPresent:Background="{ThemeResource SystemControlAltHighAcrylicWindowBrush}"  
-    IsAcrylicBrushNotPresent:Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="MainPivot_Loaded">
-    
+    IsAcrylicBrushNotPresent:Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="MainPivot_Loaded"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+
     <Grid x:Name="AppTitleBar" Margin="0,-1,0,0">
         <NavigationView 
             x:Name="navView" 
             IsBackEnabled="True" 
-            OpenPaneLength="220" 
             UseLayoutRounding="True" 
             ScrollViewer.VerticalScrollBarVisibility="Auto" 
             FontSize="12"  FontFamily="{StaticResource Regular}" 
@@ -35,6 +35,7 @@
             <Frame x:Name="ContentFrame"/>
 
         </NavigationView>
+        
         <Grid Margin="42, 0, 0, 0" x:Name="AppTitle" Background="Transparent" Height="40" VerticalAlignment="Top">
             <TextBlock Style="{StaticResource CaptionTextBlockStyle}" x:Name="TitleText"
                        Text="{x:Bind appmodel:Package.Current.DisplayName}" Opacity="0"

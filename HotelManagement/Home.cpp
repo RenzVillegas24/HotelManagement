@@ -1,5 +1,7 @@
 ﻿#include "pch.h"
 #include "Home.h"
+#include "GlobalVars.h"
+
 #include "winrt/Windows.UI.Xaml.h"
 #include "winrt/Windows.UI.Xaml.Media.h"
 #include "winrt/Windows.UI.Xaml.Input.h"
@@ -11,6 +13,7 @@
 #if __has_include("Home.g.cpp")
 #include "Home.g.cpp"
 #endif
+#include "winrt/Windows.UI.Popups.h"
 #include <winrt/Windows.UI.Xaml.Media.Animation.h>
 
 using namespace winrt;
@@ -24,6 +27,7 @@ using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml::Interop;
 using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media::Animation;
+using namespace Windows::UI::Popups;
 
 namespace winrt::HotelManagement::implementation
 {
@@ -308,9 +312,29 @@ namespace winrt::HotelManagement::implementation
     }
 
 
-    void Home::btnReserve_Click(IInspectable const& sender, RoutedEventArgs const& e)
+    IAsyncAction Home::btnReserve_Click(IInspectable const& sender, RoutedEventArgs const& e)
     {
-        Frame().Navigate(winrt::xaml_typename<Booking>(), nullptr, DrillInNavigationTransitionInfo());
+        if(GlobalVars().isLoggedIn())
+            Frame().Navigate(winrt::xaml_typename<Account>(), nullptr, DrillInNavigationTransitionInfo());
+        else {
+            MessageDialog dialog(L"No account has logged in this computer, would you like to login or create an account?", L"Not logged in");
+            dialog.Commands().Append(UICommand(L"Login", nullptr));
+            dialog.Commands().Append(UICommand(L"Create an account", nullptr));
+            dialog.Commands().Append(UICommand(L"Cancel", nullptr));
+            auto& result = co_await dialog.ShowAsync();
+
+
+            auto t = SlideNavigationTransitionInfo();
+            t.Effect(SlideNavigationTransitionEffect::FromRight);
+
+            if (result.Label() == L"Login")
+                Frame().Navigate(winrt::xaml_typename<LoginScreen>(), nullptr, t);
+            else if (result.Label() == L"Create an account")
+                Frame().Navigate(winrt::xaml_typename<SignUpForm>(), nullptr, t);
+            
+
+        }
+        
 
     }
 

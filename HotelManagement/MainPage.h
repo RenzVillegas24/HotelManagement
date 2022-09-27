@@ -5,12 +5,13 @@
 
 namespace winrt::HotelManagement::implementation
 {
+
     struct MainPage : MainPageT<MainPage>
     {
         MainPage()
         {
             // Xaml objects should not call InitializeComponent during construction.
-            // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
+            // See https://github.com/Windows/cppwinrt/tree/master/nuget#initializecomponent
 
         }
 

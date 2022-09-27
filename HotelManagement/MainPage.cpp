@@ -7,6 +7,9 @@
 #include "winrt/Windows.UI.Xaml.Input.h"
 #include <iostream>
 
+#include "winrt/Windows.Storage.h"
+
+#include "GlobalVars.h"
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -19,6 +22,9 @@ using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::ViewManagement;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::ApplicationModel::Core;
+
+using namespace sqlite;
+using namespace std;
 
 namespace winrt::HotelManagement::implementation
 {
@@ -36,7 +42,7 @@ namespace winrt::HotelManagement::implementation
 
 
     // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
-    std::vector<std::pair<std::wstring, Windows::UI::Xaml::Interop::TypeName>> m_pages;
+    vector<pair<wstring, Windows::UI::Xaml::Interop::TypeName>> m_pages;
 
 
     void MainPage::MainPivot_Loaded(IInspectable const& sender, RoutedEventArgs const& e)
@@ -79,6 +85,55 @@ namespace winrt::HotelManagement::implementation
 
 
 
+        // sqlite
+        
+        GlobalVars().dbPath(to_string(Windows::Storage::ApplicationData::Current().LocalFolder().Path()) + "\\data.db");
+
+        
+
+        // open a connection to the database or create the file if it doesn't exist
+        // default is READWRITE | CREATE
+        database db(GlobalVars().dbPath());
+
+
+        // create a new table, if needed
+        db << "CREATE TABLE IF NOT EXISTS accounts ("
+            "   id            INTEGER PRIMARY KEY AUTOINCREMENT,"
+            "   username      TEXT     NOT NULL,"
+            "   password      TEXT     NOT NULL,"
+            "   icon          TEXT     NOT NULL,"
+            "   civil         TEXT     NOT NULL,"
+            "   nationality   TEXT     NOT NULL,"
+            //name            
+            "   firstname     TEXT     NOT NULL,"
+            "   lastname      TEXT     NOT NULL,"
+            "   middlename    TEXT     NOT NULL,"
+            "   suffix        TEXT     NOT NULL,"
+            //--              
+            "   gender        INTEGER  NOT NULL,"
+            "   birthday      TEXT     NOT NULL,"
+            //home address    
+            "   unit          TEXT     NOT NULL,"
+            "   block_nm      TEXT     NOT NULL,"
+            "   street        TEXT     NOT NULL,"
+            "   subdivision   TEXT     NOT NULL,"
+            "   barangay      TEXT     NOT NULL,"
+            "   city          TEXT     NOT NULL,"
+            "   province      TEXT     NOT NULL,"
+            "   region        TEXT     NOT NULL,"
+            "   country       TEXT     NOT NULL,"
+            //--              
+            "   zip           TEXT     NOT NULL,"
+            "   email         TEXT     NOT NULL,"
+            "   tele_nm       INTEGER  NOT NULL"
+            ");";
+
+        db << "CREATE TABLE IF NOT EXISTS loggedin ("
+            "   username      TEXT     NOT NULL,"
+            "   password      TEXT     NOT NULL"
+            ");";
+
+            
 
     }
 
@@ -92,7 +147,7 @@ namespace winrt::HotelManagement::implementation
         }
         else if (args.InvokedItemContainer())
         {
-            navView_Navigate(winrt::unbox_value_or<winrt::hstring>( args.InvokedItemContainer().Tag(), L"").c_str(), args.RecommendedNavigationTransitionInfo());
+            navView_Navigate(unbox_value_or<hstring>( args.InvokedItemContainer().Tag(), L"").c_str(), args.RecommendedNavigationTransitionInfo());
         }
     }
 
@@ -100,6 +155,22 @@ namespace winrt::HotelManagement::implementation
     void MainPage::navView_Navigate(std::wstring navItemTag, Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo)
     {
         Windows::UI::Xaml::Interop::TypeName pageTypeName;
+
+
+
+        if (navItemTag == L"accounts") {
+            if (GlobalVars().isLoggedIn())
+                m_pages.at(4) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<Account>());
+            else 
+                m_pages.at(4) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<LoginScreen>());
+     
+        }
+            
+
+
+
+
+
         if (navItemTag == L"settings")
             pageTypeName = winrt::xaml_typename<Settings>();
         
@@ -130,6 +201,7 @@ namespace winrt::HotelManagement::implementation
         return true;
         
     }
+
 
     void MainPage::navView_BackRequested(NavigationView const& sender, NavigationViewBackRequestedEventArgs const& args)
     {
@@ -188,7 +260,7 @@ namespace winrt::HotelManagement::implementation
         m->Bottom = 0;
         m->Top = 0;
 
-        if (args.DisplayMode() == NavigationViewDisplayMode::Minimal) 
+        if (args.DisplayMode() == NavigationViewDisplayMode::Minimal)
             m->Left = 95;
         else
             m->Left = 42;
@@ -197,7 +269,7 @@ namespace winrt::HotelManagement::implementation
 
     }
 
-    void MainPage::navView_PaneOpening(NavigationView const& sender, IInspectable const& args)
+    void MainPage::navView_PaneOpening(NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args)
     {
         Thickness* m = new Thickness();
         m->Right = 0;
@@ -209,12 +281,13 @@ namespace winrt::HotelManagement::implementation
     }
 
 
-    void MainPage::navView_PaneClosing(NavigationView const& sender, IInspectable const& args)
+    void MainPage::navView_PaneClosing(NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args)
     {
         Thickness* m = new Thickness();
         m->Right = 0;
         m->Bottom = 0;
         m->Top = 0;
+
 
         if (navView().DisplayMode() == NavigationViewDisplayMode::Minimal)
             m->Left = 95;

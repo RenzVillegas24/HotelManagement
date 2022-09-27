@@ -5,7 +5,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
-    <Page Include="Account.xaml" />
     <Page Include="Home.xaml">
       <Filter>Menus</Filter>
     </Page>
@@ -39,6 +38,15 @@
     <Page Include="Events.xaml">
       <Filter>Offerings</Filter>
     </Page>
+    <Page Include="Account.xaml">
+      <Filter>Menus</Filter>
+    </Page>
+    <Page Include="LoginScreen.xaml">
+      <Filter>AccountManagement</Filter>
+    </Page>
+    <Page Include="SignUpForm.xaml">
+      <Filter>AccountManagement</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />
@@ -52,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="GlobalVars.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -191,6 +200,10 @@
     </Image>
     <Image Include="Assets\Square310x310Logo.scale-400.png" />
     <Image Include="Assets\Square310x310Logo.scale-100.png" />
+    <Image Include="Assets\Account\id_empty.png">
+      <Filter>Assets\Account</Filter>
+    </Image>
+    <Image Include="Assets\Square310x310Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -214,10 +227,20 @@
     <Filter Include="Assets\Include">
       <UniqueIdentifier>{cb820747-e979-40a8-b66b-d88891dcb02d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AccountManagement">
+      <UniqueIdentifier>{c2770b08-bafd-4ab8-847f-99764fd2e9f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Account">
+      <UniqueIdentifier>{3e28b4be-dfd1-4973-ac71-ef1b2933d2b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Database">
+      <UniqueIdentifier>{e2a03eda-89a0-4e68-9b99-91fd55a48e63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
     <None Include="packages.config" />
+    <None Include="HotelManagement_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />

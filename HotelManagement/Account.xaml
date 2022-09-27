@@ -6,51 +6,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="{StaticResource Regular}" 
-    mc:Ignorable="d">
-
+    mc:Ignorable="d" Loaded="Page_Loaded">
     <Grid>
-        <Grid Margin="0,120,0,0">
-            <Grid.Resources>
-                <ThemeShadow x:Name="ContainerShadow" />
-            </Grid.Resources>
-            
-            <FlipView x:Name="flipView_Main" 
-                          Style="{StaticResource FlipViewStyle1}" 
-                          ScrollViewer.IsScrollInertiaEnabled="True"
-                          ScrollViewer.CanContentRenderOutsideBounds="False" Loaded="flipView_Main_Loaded"
-                          >
-            </FlipView>
-            <Border  Width="400" Padding="40" VerticalAlignment="Center" CornerRadius="25" Background="{StaticResource AppBarBackgroundThemeBrush}" Shadow="{StaticResource ContainerShadow}" Translation="0, 0, 32">
-                <StackPanel>
-                    <!-- Good to see you again! -->
-                    <TextBlock Text="Login" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" Margin="0,0,0,30"  FontFamily="{StaticResource Bold}"/>
-                    <StackPanel Margin="5,8">
-                        <TextBlock Text="Username" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Margin="0" FontFamily="{StaticResource Light}"/>
-                        <TextBox Margin="0,8"/>
-                    </StackPanel>
-                    <StackPanel Margin="5,8">
-                        <TextBlock Text="Password" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Margin="0" FontFamily="{StaticResource Light}"/>
-                        <TextBox Margin="0,8"/>
-
-                    </StackPanel>
-                    <Button x:Name="btnForgot" HorizontalAlignment="Right" FontSize="15" Style="{StaticResource RoundedButtonStyleTrans}" FontFamily="{StaticResource Light}" Margin="0,5,0,5">
-                        Forgot password?
-                    </Button>
-                    <Button x:Name="btnLogin" Background="#59FF9700" Click="btnLogin_Click" HorizontalAlignment="Stretch" Style="{StaticResource RoundedButtonStyle}" Margin="5,25,5,5">
-                        <Button.Resources>
-                            <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumBrush" Color="#FF9700"/>
-                            <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumLowBrush" Color="#A6FF9700"/>
-                        </Button.Resources>
-                        Login
-                    </Button>
-                    <Button x:Name="btnSignUp" HorizontalAlignment="Stretch" Style="{StaticResource RoundedButtonStyle}" Click="btnSignUp_Click" Margin="5">
-                        Sign up
-                    </Button>
-                </StackPanel>
-            </Border>
-
-
-        </Grid>
+       
 
         <Grid VerticalAlignment="Top" Height="120" Background="{ThemeResource BackdropAcrylicBrush}">
             <TextBlock x:Name="Title" Text="Accounts" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40,45,0,0" FontSize="30" />

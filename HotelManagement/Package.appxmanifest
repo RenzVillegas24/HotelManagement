@@ -3,7 +3,7 @@
   <Identity
     Name="99dcfaa8-08e6-42bc-9eeb-18375607fa14"
     Publisher="CN=RenzCute"
-    Version="1.0.0.0" />
+    Version="1.0.8.0" />
   <mp:PhoneIdentity PhoneProductId="99dcfaa8-08e6-42bc-9eeb-18375607fa14" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
   <Properties>
     <DisplayName>HotelManagement</DisplayName>
@@ -20,7 +20,7 @@
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="HotelManagement.App">
       <uap:VisualElements DisplayName="HotelManagement" Description="Project for a single page C++/WinRT Universal Windows Platform (UWP) app with no predefined layout"
         Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\Square310x310Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"  Square310x310Logo="Assets\Square310x310Logo.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square310x310Logo"/>
           </uap:ShowNameOnTiles>

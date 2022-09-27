@@ -1,0 +1,142 @@
+﻿<Page
+    x:Class="HotelManagement.SignUpForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HotelManagement"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" >
+    <Grid>
+        <ScrollViewer  Style="{StaticResource customScrollViewer}">
+            <StackPanel Margin="35,150,35,35">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="225"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <StackPanel Margin="5,5,5,5">
+                            <TextBlock Text="Last Name" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                            <TextBox x:Name="txtbxLastName" Grid.Column="0" Margin="0,10,0,5" PlaceholderText="Last name"/>
+
+                        </StackPanel>
+                        <StackPanel Margin="5,5,4,5">
+                            <TextBlock Text="First Name" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                            <TextBox x:Name="txtbxFirstName" Grid.Column="1" Margin="0,10,0,5" PlaceholderText="First name"/>
+
+                        </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Margin="5,5,5,5" Grid.Column="0">
+                                <TextBlock Text="Middle Name" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                                <TextBox x:Name="txtbxMiddleName" Grid.Column="2" Margin="0,10,0,5" PlaceholderText="Middle name"/>
+
+                            </StackPanel>
+                            <StackPanel Margin="5,5,5,5" Grid.Column="1">
+                                <TextBlock Text="Suffix" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                                <TextBox x:Name="txtbxSuffixName" Grid.Column="3" Margin="0,10,0,5" PlaceholderText="Suffix"/>
+
+                            </StackPanel>
+                            
+                        </Grid>
+
+                    </StackPanel>
+                    <Grid  Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Border Height="200" Width="200" CornerRadius="20" Grid.Row="0" Background="#BFFAEBD7" BorderBrush="Gray" BorderThickness="1.5"/>
+                        <Border Height="200" Width="200" CornerRadius="20" Grid.Row="0">
+                            <Border.Background>
+                                <ImageBrush ImageSource="Assets/Account/id_empty.png" Stretch="Uniform"/>
+                            </Border.Background>
+                        </Border>
+                        <Button HorizontalAlignment="Center" Margin="6" Width="200"  Grid.Row="1">
+                            Choose ID
+                        </Button>
+                    </Grid>
+
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="5,5" Grid.Column="0">
+                        <TextBlock Text="Sex" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                        <ComboBox x:Name="cmbxSex" Margin="0,10"  HorizontalAlignment="Stretch">
+                            <ComboBoxItem Content="Male"/>
+                            <ComboBoxItem Content="Female"/>
+                            <ComboBoxItem Content="Other"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="5,5" Grid.Column="1">
+                        <TextBlock Text="Birth Date" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                        <DatePicker x:Name="txtbxBirthDate" Margin="0,10" HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+                    <StackPanel Margin="5,5" Grid.Column="2">
+                        <TextBlock Text="Civil Status" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                        <ComboBox x:Name="cmbxCivil" Margin="0,10"  HorizontalAlignment="Stretch">
+                            <ComboBoxItem Content="Single"/>
+                            <ComboBoxItem Content="Married"/>
+                            <ComboBoxItem Content="Widow"/>
+                            <ComboBoxItem Content="Legally Separated"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="5,5" Grid.Column="3">
+                        <TextBlock Text="Nationality" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                        <TextBox x:Name="txtbxNationality" Margin="0,10" PlaceholderText="Type your contact number" />
+                    </StackPanel>
+
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="5,5" Grid.Column="0">
+                        <TextBlock Text="Contact Number" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                        <TextBox x:Name="txtbxContact" Margin="0,10" PlaceholderText="Type your contact number" />
+                    </StackPanel>
+                    <StackPanel Margin="5,5" Grid.Column="1">
+                        <TextBlock Text="Email" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                        <TextBox x:Name="txtbxEmail" Margin="0,10" PlaceholderText="Type your email" />
+                    </StackPanel>
+
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="5,5,5,5" Grid.Column="0">
+                        <TextBlock Text="Username" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                        <TextBox x:Name="txtbxUsername" Margin="0,10" PlaceholderText="Type your username" />
+                    </StackPanel>
+                    <StackPanel Margin="5,5,5,5" Grid.Column="1">
+                        <TextBlock Text="Password" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13" Margin="16,0,0,0" FontFamily="{StaticResource Light}"/>
+                        <PasswordBox x:Name="txtbxPassword" Margin="0,10,0,5" PlaceholderText="Type your password"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
+
+        <Grid VerticalAlignment="Top" Height="120" Background="{ThemeResource BackdropAcrylicBrush}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,45,0,0">
+                <TextBlock x:Name="RootTitle" Text="Accounts" VerticalAlignment="Center" Margin="10,0,25,0" FontSize="30"  />
+                <Path VerticalAlignment="Center" Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="10" Height="15" Stretch="Uniform"  Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"/>
+                <TextBlock x:Name="Title" Text="Sign-up" VerticalAlignment="Center" Margin="25,0,0,0" FontSize="30"  />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
