@@ -4,7 +4,7 @@
 #include "Account.g.cpp"
 #endif
 
-#include "GlobalVars.h"
+
 #include "winrt/Windows.UI.Popups.h"
 
 using namespace winrt;

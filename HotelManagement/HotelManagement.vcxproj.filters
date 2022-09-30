@@ -57,10 +57,11 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="MainPage.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="Globals.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="GlobalVars.h" />
+    <ClInclude Include="Globals.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -241,6 +242,18 @@
     <None Include="PropertySheet.props" />
     <None Include="packages.config" />
     <None Include="HotelManagement_TemporaryKey.pfx" />
+    <None Include="Assets\Database\refProvince.db">
+      <Filter>Assets\Database</Filter>
+    </None>
+    <None Include="Assets\Database\refRegion.db">
+      <Filter>Assets\Database</Filter>
+    </None>
+    <None Include="Assets\Database\refBrgy.db">
+      <Filter>Assets\Database</Filter>
+    </None>
+    <None Include="Assets\Database\refCitymun.db">
+      <Filter>Assets\Database</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />

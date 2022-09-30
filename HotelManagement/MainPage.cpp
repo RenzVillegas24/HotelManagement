@@ -7,9 +7,9 @@
 #include "winrt/Windows.UI.Xaml.Input.h"
 #include <iostream>
 
-#include "winrt/Windows.Storage.h"
+#include "winrt/Windows.UI.Popups.h"
 
-#include "GlobalVars.h"
+
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -30,6 +30,7 @@ namespace winrt::HotelManagement::implementation
 {
 
 
+
     int32_t MainPage::MyProperty()
     {
         throw hresult_not_implemented();
@@ -38,7 +39,18 @@ namespace winrt::HotelManagement::implementation
     void MainPage::MyProperty(int32_t /* value */)
     {
         throw hresult_not_implemented();
+
+
     }
+    //https://stackoverflow.com/questions/57139554/how-to-copy-a-file-from-visual-studio-project-to-uwp-applications-localfolder-o
+    Windows::Foundation::IAsyncAction MainPage::SendFileToLocal(hstring fromFolder, hstring fileName)
+    {
+        Windows::Storage::StorageFile file{
+             co_await Windows::Storage::StorageFile::GetFileFromApplicationUriAsync(Windows::Foundation::Uri{L"ms-appx:///Assets/" + fromFolder + L"/" + fileName})
+        };
+        co_await file.CopyAsync(localPath(), fileName, Windows::Storage::NameCollisionOption::ReplaceExisting);
+    }
+
 
 
     // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
@@ -47,9 +59,28 @@ namespace winrt::HotelManagement::implementation
 
     void MainPage::MainPivot_Loaded(IInspectable const& sender, RoutedEventArgs const& e)
     {
+        //Send assets to local files
+        SendFileToLocal(L"Database", L"refBrgy.db");
+        SendFileToLocal(L"Database", L"refCitymun.db");
+        SendFileToLocal(L"Database", L"refProvince.db");
+        SendFileToLocal(L"Database", L"refRegion.db");
+
+   
 
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
             (L"home", winrt::xaml_typename<Home>()));
+        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
+            (L"home_events", winrt::xaml_typename<Events>()));
+        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
+            (L"home_gyms", winrt::xaml_typename<Gyms>()));
+        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
+            (L"home_lobby", winrt::xaml_typename<Lobby>()));
+        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
+            (L"home_pools", winrt::xaml_typename<Pools>()));
+        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
+            (L"home_restaurant", winrt::xaml_typename<Restaurant>()));
+        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
+            (L"home_units", winrt::xaml_typename<Units>()));
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
             (L"bookings", winrt::xaml_typename<Booking>()));
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
@@ -87,13 +118,13 @@ namespace winrt::HotelManagement::implementation
 
         // sqlite
         
-        GlobalVars().dbPath(to_string(Windows::Storage::ApplicationData::Current().LocalFolder().Path()) + "\\data.db");
-
+        dbPath(to_string(localPath().Path()) + "\\data.db");
+    
         
 
         // open a connection to the database or create the file if it doesn't exist
         // default is READWRITE | CREATE
-        database db(GlobalVars().dbPath());
+        database db(dbPath());
 
 
         // create a new table, if needed
@@ -110,27 +141,30 @@ namespace winrt::HotelManagement::implementation
             "   middlename    TEXT     NOT NULL,"
             "   suffix        TEXT     NOT NULL,"
             //--              
-            "   gender        INTEGER  NOT NULL,"
+            "   gender        TEST     NOT NULL,"
             "   birthday      TEXT     NOT NULL,"
             //home address    
-            "   unit          TEXT     NOT NULL,"
-            "   block_nm      TEXT     NOT NULL,"
-            "   street        TEXT     NOT NULL,"
-            "   subdivision   TEXT     NOT NULL,"
+            "   untblck_etc   TEXT     NOT NULL,"
             "   barangay      TEXT     NOT NULL,"
             "   city          TEXT     NOT NULL,"
             "   province      TEXT     NOT NULL,"
             "   region        TEXT     NOT NULL,"
             "   country       TEXT     NOT NULL,"
+            //code
+            "   barangayCode  TEXT     NOT NULL,"
+            "   cityCode      TEXT     NOT NULL,"
+            "   provinceCode  TEXT     NOT NULL,"
+            "   regionCode    TEXT     NOT NULL,"
             //--              
             "   zip           TEXT     NOT NULL,"
             "   email         TEXT     NOT NULL,"
-            "   tele_nm       INTEGER  NOT NULL"
+            "   tele_nm       TEXT     NOT NULL"
             ");";
 
         db << "CREATE TABLE IF NOT EXISTS loggedin ("
             "   username      TEXT     NOT NULL,"
-            "   password      TEXT     NOT NULL"
+            "   password      TEXT     NOT NULL,"
+            "   isremembered  INTEGER  NOT NULL"
             ");";
 
             
@@ -139,7 +173,7 @@ namespace winrt::HotelManagement::implementation
 
 
 
-    void MainPage::navView_ItemInvoked(NavigationView const& sender, NavigationViewItemInvokedEventArgs const& args)
+    void MainPage::navView_ItemInvoked(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Microsoft::UI::Xaml::Controls::NavigationViewItemInvokedEventArgs const& args)
     {
         if (args.IsSettingsInvoked()) {
             navView_Navigate(L"settings", args.RecommendedNavigationTransitionInfo());
@@ -159,10 +193,10 @@ namespace winrt::HotelManagement::implementation
 
 
         if (navItemTag == L"accounts") {
-            if (GlobalVars().isLoggedIn())
-                m_pages.at(4) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<Account>());
+            if (isLoggedIn())
+                m_pages.at(m_pages.size() - 1) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<Account>());
             else 
-                m_pages.at(4) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<LoginScreen>());
+                m_pages.at(m_pages.size() - 1) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<LoginScreen>());
      
         }
             
@@ -203,7 +237,7 @@ namespace winrt::HotelManagement::implementation
     }
 
 
-    void MainPage::navView_BackRequested(NavigationView const& sender, NavigationViewBackRequestedEventArgs const& args)
+    void MainPage::navView_BackRequested(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Microsoft::UI::Xaml::Controls::NavigationViewBackRequestedEventArgs const& args)
     {
         TryGoBack();
 
@@ -225,7 +259,7 @@ namespace winrt::HotelManagement::implementation
             // SettingsItem is not part of NavView.MenuItems, and doesn't have a Tag.
         if (ContentFrame().SourcePageType().Name == winrt::xaml_typename<Settings>().Name)
         {
-            navView().SelectedItem(navView().SettingsItem().as<NavigationViewItem>());
+            navView().SelectedItem(navView().SettingsItem().as<muxc::NavigationViewItem>());
             //navView().Header(winrt::box_value(L"Settings"));
         }
 
@@ -235,7 +269,7 @@ namespace winrt::HotelManagement::implementation
                 {
                     for (auto&& eachMenuItem : navView().MenuItems())
                     {
-                        auto navigationViewItem = eachMenuItem.try_as<NavigationViewItem>();
+                        auto navigationViewItem = eachMenuItem.try_as<muxc::NavigationViewItem>();
                         if (navigationViewItem)
                         {
                             winrt::hstring hstringValue = winrt::unbox_value_or<winrt::hstring>(navigationViewItem.Tag(), L"");
@@ -253,14 +287,14 @@ namespace winrt::HotelManagement::implementation
 
 
 
-    void MainPage::navView_DisplayModeChanged(NavigationView const& sender, NavigationViewDisplayModeChangedEventArgs const& args)
+    void MainPage::navView_DisplayModeChanged(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Microsoft::UI::Xaml::Controls::NavigationViewDisplayModeChangedEventArgs const& args)
     {
         Thickness* m = new Thickness();
         m->Right = 0;
         m->Bottom = 0;
         m->Top = 0;
 
-        if (args.DisplayMode() == NavigationViewDisplayMode::Minimal)
+        if (args.DisplayMode() == winrt::Microsoft::UI::Xaml::Controls::NavigationViewDisplayMode::Minimal)
             m->Left = 95;
         else
             m->Left = 42;
@@ -269,32 +303,14 @@ namespace winrt::HotelManagement::implementation
 
     }
 
-    void MainPage::navView_PaneOpening(NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args)
+    void MainPage::navView_PaneOpening(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args)
     {
-        Thickness* m = new Thickness();
-        m->Right = 0;
-        m->Bottom = 0;
-        m->Top = 0;
-        m->Left = 42;
-
-        AppTitle().Margin(*m);
+   
     }
 
 
-    void MainPage::navView_PaneClosing(NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args)
+    void MainPage::navView_PaneClosing(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args)
     {
-        Thickness* m = new Thickness();
-        m->Right = 0;
-        m->Bottom = 0;
-        m->Top = 0;
-
-
-        if (navView().DisplayMode() == NavigationViewDisplayMode::Minimal)
-            m->Left = 95;
-        else
-            m->Left = 42;
-
-        AppTitle().Margin(*m);
 
     }
 }

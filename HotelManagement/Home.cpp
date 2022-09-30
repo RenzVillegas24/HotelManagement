@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 #include "Home.h"
-#include "GlobalVars.h"
+
 
 #include "winrt/Windows.UI.Xaml.h"
 #include "winrt/Windows.UI.Xaml.Media.h"
@@ -314,7 +314,7 @@ namespace winrt::HotelManagement::implementation
 
     IAsyncAction Home::btnReserve_Click(IInspectable const& sender, RoutedEventArgs const& e)
     {
-        if(GlobalVars().isLoggedIn())
+        if(isLoggedIn())
             Frame().Navigate(winrt::xaml_typename<Account>(), nullptr, DrillInNavigationTransitionInfo());
         else {
             MessageDialog dialog(L"No account has logged in this computer, would you like to login or create an account?", L"Not logged in");

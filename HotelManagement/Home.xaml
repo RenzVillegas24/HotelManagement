@@ -243,8 +243,9 @@
                             <StackPanel  Margin="60,0,60,40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
                                 <Button x:Name="btnReserve" Background="#59FF9700" FontSize="20" FontFamily="{StaticResource Thin}" Padding="30,15,30,15" Margin="8" Click="btnReserve_Click" >
                                     <Button.Resources>
-                                        <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumBrush" Color="{StaticResource SystemAccentColor}"/>
-                                        <SolidColorBrush x:Key="SystemControlBackgroundBaseMediumLowBrush" Color="#A6FF9700"/>
+                                        <StaticResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
+                                        <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
+                                        <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
                                     </Button.Resources>
                                     RESERVE NOW
                                 </Button>

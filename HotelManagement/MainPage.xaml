@@ -2,44 +2,82 @@
     x:Class="HotelManagement.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:HotelManagement"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:appmodel="using:Windows.ApplicationModel"
-    xmlns:IsAcrylicBrushPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypePresent(Windows.UI.Xaml.Media.AcrylicBrush)"
     xmlns:IsAcrylicBrushNotPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypeNotPresent(Windows.UI.Xaml.Media.AcrylicBrush)"
-    mc:Ignorable="d"
-    Name="MainPivot" 
-    IsAcrylicBrushPresent:Background="{ThemeResource SystemControlAltHighAcrylicWindowBrush}"  
-    IsAcrylicBrushNotPresent:Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="MainPivot_Loaded"
-    xmlns:controls="using:Microsoft.UI.Xaml.Controls">
+    xmlns:IsAcrylicBrushPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypePresent(Windows.UI.Xaml.Media.AcrylicBrush)"
+    xmlns:appmodel="using:Windows.ApplicationModel"
+    xmlns:c="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:HotelManagement"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="MainPivot"
+    IsAcrylicBrushNotPresent:Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    IsAcrylicBrushPresent:Background="{ThemeResource SystemControlAltHighAcrylicWindowBrush}"
+    Loaded="MainPivot_Loaded"
+    mc:Ignorable="d">
 
     <Grid x:Name="AppTitleBar" Margin="0,-1,0,0">
-        <NavigationView 
-            x:Name="navView" 
-            IsBackEnabled="True" 
-            UseLayoutRounding="True" 
-            ScrollViewer.VerticalScrollBarVisibility="Auto" 
-            FontSize="12"  FontFamily="{StaticResource Regular}" 
-            BackRequested="navView_BackRequested" 
-            DisplayModeChanged="navView_DisplayModeChanged" 
-            PaneOpening="navView_PaneOpening" PaneClosing="navView_PaneClosing" ItemInvoked="navView_ItemInvoked">
-            <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Home" Content="Home" Tag="home"/>
-                <NavigationViewItem Icon="Bookmarks" Content="Bookings" Tag="bookings"/>
-                <NavigationViewItem Icon="Shop" Content="Payment Methods" Tag="payment"/>
-                <NavigationViewItem Icon="Comment" Content="Customer Support" Tag="support"/>
-                <NavigationViewItem Icon="People" Content="Account" Tag="accounts" />
-            </NavigationView.MenuItems>
-            
-            <Frame x:Name="ContentFrame"/>
+        <c:NavigationView
+            x:Name="navView"
+            BackRequested="navView_BackRequested"
+            DisplayModeChanged="navView_DisplayModeChanged"
+            FontFamily="{StaticResource Regular}"
+            FontSize="12"
+            IsBackEnabled="True"
+            ItemInvoked="navView_ItemInvoked"
+            PaneClosing="navView_PaneClosing"
+            PaneOpening="navView_PaneOpening"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            UseLayoutRounding="True">
+            <c:NavigationView.MenuItems>
+                <c:NavigationViewItem
+                    Content="Home"
+                    Icon="Home"
+                    Tag="home">
+                    <c:NavigationViewItem.MenuItems>
+                        <c:NavigationViewItem Content="Events" Tag="home_events" />
+                        <c:NavigationViewItem Content="Gyms" Tag="home_gyms" />
+                        <c:NavigationViewItem Content="Lobby" Tag="home_lobby" />
+                        <c:NavigationViewItem Content="Pools" Tag="home_pools" />
+                        <c:NavigationViewItem Content="Restaurant" Tag="home_restaurant" />
+                        <c:NavigationViewItem Content="Units" Tag="home_units" />
+                    </c:NavigationViewItem.MenuItems>
+                </c:NavigationViewItem>
+                <c:NavigationViewItem
+                    Content="Bookings"
+                    Icon="Bookmarks"
+                    Tag="bookings" />
+                <c:NavigationViewItem
+                    Content="Payment Methods"
+                    Icon="Shop"
+                    Tag="payment" />
+                <c:NavigationViewItem
+                    Content="Customer Support"
+                    Icon="Comment"
+                    Tag="support" />
+                <c:NavigationViewItem
+                    Content="Account"
+                    Icon="People"
+                    Tag="accounts" />
+            </c:NavigationView.MenuItems>
 
-        </NavigationView>
-        
-        <Grid Margin="42, 0, 0, 0" x:Name="AppTitle" Background="Transparent" Height="40" VerticalAlignment="Top">
-            <TextBlock Style="{StaticResource CaptionTextBlockStyle}" x:Name="TitleText"
-                       Text="{x:Bind appmodel:Package.Current.DisplayName}" Opacity="0"
-                       IsHitTestVisible="True" Margin="6,12,0,0" FontFamily="{StaticResource Regular}"  />
+            <Frame x:Name="ContentFrame" />
+
+        </c:NavigationView>
+
+        <Grid
+            x:Name="AppTitle"
+            Height="40"
+            Margin="42,0,0,0"
+            VerticalAlignment="Top"
+            Background="Transparent">
+            <TextBlock
+                x:Name="TitleText"
+                Margin="6,12,0,0"
+                FontFamily="{StaticResource Regular}"
+                IsHitTestVisible="True"
+                Opacity="0"
+                Style="{StaticResource CaptionTextBlockStyle}"
+                Text="{x:Bind appmodel:Package.Current.DisplayName}" />
         </Grid>
     </Grid>
 </Page>
