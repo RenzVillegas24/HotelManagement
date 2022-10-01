@@ -8,7 +8,7 @@
 #include <iostream>
 
 #include "winrt/Windows.UI.Popups.h"
-
+#include "Globals.h"
 
 
 using namespace winrt;
@@ -42,6 +42,7 @@ namespace winrt::HotelManagement::implementation
 
 
     }
+
     //https://stackoverflow.com/questions/57139554/how-to-copy-a-file-from-visual-studio-project-to-uwp-applications-localfolder-o
     Windows::Foundation::IAsyncAction MainPage::SendFileToLocal(hstring fromFolder, hstring fileName)
     {
@@ -110,64 +111,10 @@ namespace winrt::HotelManagement::implementation
         navView_Navigate(L"home", Animation::EntranceNavigationTransitionInfo());
 
 
-
-
         //NavigationCacheMode(Navigation::NavigationCacheMode::Enabled);
 
 
-
-        // sqlite
-        
-        dbPath(to_string(localPath().Path()) + "\\data.db");
-    
-        
-
-        // open a connection to the database or create the file if it doesn't exist
-        // default is READWRITE | CREATE
-        database db(dbPath());
-
-
-        // create a new table, if needed
-        db << "CREATE TABLE IF NOT EXISTS accounts ("
-            "   id            INTEGER PRIMARY KEY AUTOINCREMENT,"
-            "   username      TEXT     NOT NULL,"
-            "   password      TEXT     NOT NULL,"
-            "   icon          TEXT     NOT NULL,"
-            "   civil         TEXT     NOT NULL,"
-            "   nationality   TEXT     NOT NULL,"
-            //name            
-            "   firstname     TEXT     NOT NULL,"
-            "   lastname      TEXT     NOT NULL,"
-            "   middlename    TEXT     NOT NULL,"
-            "   suffix        TEXT     NOT NULL,"
-            //--              
-            "   gender        TEST     NOT NULL,"
-            "   birthday      TEXT     NOT NULL,"
-            //home address    
-            "   untblck_etc   TEXT     NOT NULL,"
-            "   barangay      TEXT     NOT NULL,"
-            "   city          TEXT     NOT NULL,"
-            "   province      TEXT     NOT NULL,"
-            "   region        TEXT     NOT NULL,"
-            "   country       TEXT     NOT NULL,"
-            //code
-            "   barangayCode  TEXT     NOT NULL,"
-            "   cityCode      TEXT     NOT NULL,"
-            "   provinceCode  TEXT     NOT NULL,"
-            "   regionCode    TEXT     NOT NULL,"
-            //--              
-            "   zip           TEXT     NOT NULL,"
-            "   email         TEXT     NOT NULL,"
-            "   tele_nm       TEXT     NOT NULL"
-            ");";
-
-        db << "CREATE TABLE IF NOT EXISTS loggedin ("
-            "   username      TEXT     NOT NULL,"
-            "   password      TEXT     NOT NULL,"
-            "   isremembered  INTEGER  NOT NULL"
-            ");";
-
-            
+        initDatabase();
 
     }
 
@@ -223,6 +170,10 @@ namespace winrt::HotelManagement::implementation
         // Navigate only if the selected page isn't currently loaded.
         if (pageTypeName.Name != L"" && preNavPageType.Name != pageTypeName.Name)
             ContentFrame().Navigate(pageTypeName, nullptr, transitionInfo);
+
+
+
+       
 
     }
 

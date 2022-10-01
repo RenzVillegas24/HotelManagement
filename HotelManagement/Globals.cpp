@@ -11,20 +11,23 @@ namespace winrt::HotelManagement::implementation
         );
 
 
+
         InMemoryRandomAccessStream ras = InMemoryRandomAccessStream();
         {
-
             BitmapEncoder encoder = co_await BitmapEncoder::CreateForTranscodingAsync(
                 ras, decoder
             );
 
+
             double mxSz = max(decoder.PixelWidth(), decoder.PixelHeight()),
-                mnSz = min(decoder.PixelWidth(), decoder.PixelHeight());
+                    mnSz = min(decoder.PixelWidth(), decoder.PixelHeight());
 
             double ratio[] = { 1,1 };
 
+            double ratioMxMn = mxSz / mnSz;
 
-            ratio[decoder.PixelHeight() > decoder.PixelWidth()] = mxSz / mnSz;
+
+            ratio[decoder.PixelHeight() > decoder.PixelWidth()] = ratioMxMn;
 
 
 
@@ -33,18 +36,18 @@ namespace winrt::HotelManagement::implementation
 
 
             BitmapBounds bounds = BitmapBounds();
-            bounds.Height = size;
-            bounds.Width = size;
+            bounds.Height = (uint32_t)size;
+            bounds.Width = (uint32_t)size;
 
-            int adj = mxSz * (mxSz / mnSz) - mxSz;
+            double adj = (size * ratioMxMn - size) / 2;
 
             if (decoder.PixelWidth() > decoder.PixelHeight()) {
-                bounds.X = (size * adj) / 2;
-                bounds.Y = 0;
+                bounds.X = uint32_t(adj);
+                bounds.Y = uint32_t(0);
             }
             else {
-                bounds.X = 0;
-                bounds.Y = (size * adj) / 2;
+                bounds.X = uint32_t(0);
+                bounds.Y = uint32_t(adj);
             }
 
             encoder.BitmapTransform().Bounds(bounds);

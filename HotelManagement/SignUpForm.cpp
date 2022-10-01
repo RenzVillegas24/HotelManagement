@@ -12,6 +12,8 @@
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Globalization.DateTimeFormatting.h>
 
+#include <winrt/Windows.ApplicationModel.DataTransfer.h>
+
 #include <winrt/Windows.UI.Xaml.Media.Imaging.h>
 
 using namespace winrt;
@@ -31,25 +33,20 @@ namespace winrt::HotelManagement::implementation
     int32_t SignUpForm::MyProperty()
     {
         throw hresult_not_implemented();
-    }
-
-    void SignUpForm::MyProperty(int32_t /* value */)
-    {
-        throw hresult_not_implemented();
-
-        
        
     }
 
-    vector<array<string, 2>> regionS;
-    vector<array<string, 2>> provinceS;
-    vector<array<string, 2>> cityMunicipalS;
-    vector<array<string, 2>> barangayS;
-    string brgySelCode;
-    hstring imageIDURI = L"";
+    void  SignUpForm::MyProperty(int32_t /* value */)
+    {
+              
+        throw hresult_not_implemented();
+       
+    }
+
 
     void SignUpForm::cmbxCountry_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e)
     {
+        
 
         if (cmbxCountry().SelectedItem() != nullptr) {
             sqlite_config config;
@@ -80,7 +77,6 @@ namespace winrt::HotelManagement::implementation
                     array<string, 2> data = { region, code };
                     regionS.push_back(data);
                     
-
                     
 
                 };
@@ -307,7 +303,7 @@ VillaricaPonsho
 
 
 */
-    Storage::StorageFile imgIDFile = Storage::StorageFile(nullptr);
+
 
     Windows::Foundation::IAsyncAction SignUpForm::btnConfirm_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
@@ -388,125 +384,88 @@ VillaricaPonsho
                 }
 
                 if (isAccountAlready) {
-                    try {
+                    initDatabase();
 
+                    try {
                    
                         auto bdayFmt = Globalization::DateTimeFormatting::DateTimeFormatter(L"{month.integer(2)}/{day.integer(2)}/{year.full}");
 
-                        // create a new table, if needed
-                        db << "CREATE TABLE IF NOT EXISTS accounts ("
-                            "   id            INTEGER PRIMARY KEY AUTOINCREMENT,"
-                            "   username      TEXT     NOT NULL,"
-                            "   password      TEXT     NOT NULL,"
-                            "   icon          TEXT     NOT NULL,"
-                            "   civil         TEXT     NOT NULL,"
-                            "   nationality   TEXT     NOT NULL,"
-                            //name            
-                            "   firstname     TEXT     NOT NULL,"
-                            "   lastname      TEXT     NOT NULL,"
-                            "   middlename    TEXT     NOT NULL,"
-                            "   suffix        TEXT     NOT NULL,"
-                            //--              
-                            "   gender        TEST     NOT NULL,"
-                            "   birthday      TEXT     NOT NULL,"
-                            //home address    
-                            "   untblck_etc   TEXT     NOT NULL,"
-                            "   barangay      TEXT     NOT NULL,"
-                            "   city          TEXT     NOT NULL,"
-                            "   province      TEXT     NOT NULL,"
-                            "   region        TEXT     NOT NULL,"
-                            "   country       TEXT     NOT NULL,"
-                            //code
-                            "   barangayCode  TEXT     NOT NULL,"
-                            "   cityCode      TEXT     NOT NULL,"
-                            "   provinceCode  TEXT     NOT NULL,"
-                            "   regionCode    TEXT     NOT NULL,"
-                            //--              
-                            "   zip           TEXT     NOT NULL,"
-                            "   email         TEXT     NOT NULL,"
-                            "   tele_nm       TEXT     NOT NULL"
-                            ");";
-
-                        db << "CREATE TABLE IF NOT EXISTS loggedin ("
-                            "   username      TEXT     NOT NULL,"
-                            "   password      TEXT     NOT NULL,"
-                            "   isremembered  INTEGER  NOT NULL"
-                            ");";
-
-
 
                         db << "INSERT INTO accounts ("
-                            "   username     ,"
-                            "   password     ,"
-                            "   icon         ,"
-                            "   civil        ,"
-                            "   nationality  ,"
-                            //name           
-                            "   firstname    ,"
-                            "   lastname     ,"
-                            "   middlename   ,"
-                            "   suffix       ,"
-                            //--             
-                            "   gender       ,"
-                            "   birthday     ,"
-                            //home address   
-                            "   untblck_etc  ,"
-                            "   barangay     ,"
-                            "   city         ,"
-                            "   province     ,"
-                            "   region       ,"
-                            "   country      ,"
-                            //code address
-                            "   barangayCode ,"
-                            "   cityCode     ,"
-                            "   provinceCode ,"
-                            "   regionCode   ,"
-                            //--             
-                            "   zip          ,"
-                            "   email        ,"
-                            "   tele_nm      )"
+                            "   username      ,"
+                            "   password      ,"
+                            "   icon          ,"
+                            "   civil         ,"
+                            "   nationality   ,"
+                            //name            
+                            "   firstName     ,"
+                            "   lastName      ,"
+                            "   middleName    ,"
+                            "   suffix        ,"
+                            //--              
+                            "   gender        ,"
+                            "   birthday      ,"
+                            //home address    
+                            "   untBlck_etc   ,"
+                            "   barangay      ,"
+                            "   city          ,"
+                            "   province      ,"
+                            "   region        ,"
+                            "   country       ,"
+                            //code
+                            "   barangayCode  ,"
+                            "   cityCode      ,"
+                            "   provinceCode  ,"
+                            "   regionCode    ,"
+                            //--              
+                            "   zip           ,"
+                            "   email         ,"
+                            "   teleNum       ,"
+                            "   isAdmin       "
+                            ")"
                      
 
-                            "VALUES('" +
-                                      to_string(txtbxUsername().Text())                                        + "', " +
-                            " '" +    to_string(txtbxPassword().Password())                                    + "', " +
+                            "VALUES("
+                            " '" +
+                                      to_string(txtbxUsername().Text())                                        + "', " 
+                            " '" +    to_string(txtbxPassword().Password())                                    + "', " 
                             " '" +    to_string(co_await ImageToBase64(imgIDFile, 250)) +  "', " +
-                            " '" +    to_string(cmbxCivil().SelectedItem().as<TextBlock>().Text())             + "', " +
-                            " '" +    to_string(txtbxNationality().Text())                                     + "', " +
+                            " '" +    to_string(cmbxCivil().SelectedItem().as<TextBlock>().Text())             + "', " 
+                            " '" +    to_string(txtbxNationality().Text())                                     + "', " 
                                       
-                            " '" +    to_string(txtbxFirstName().Text())                                       + "', " +
-                            " '" +    to_string(txtbxLastName().Text())                                        + "', " +
-                            " '" +    to_string(txtbxMiddleName().Text())                                      + "', " +
-                            " '" +    to_string(txtbxSuffixName().Text())                                      + "', " +
+                            " '" +    to_string(txtbxFirstName().Text())                                       + "', " 
+                            " '" +    to_string(txtbxLastName().Text())                                        + "', " 
+                            " '" +    to_string(txtbxMiddleName().Text())                                      + "', " 
+                            " '" +    to_string(txtbxSuffixName().Text())                                      + "', " 
                                       
-                            " '" +    to_string(cmbxGender().SelectedItem().as<TextBlock>().Text())            + "', " +
-                            " '" +    to_string(bdayFmt.Format(txtbxBirthDate().Date()))                       + "', " +
+                            " '" +    std::to_string(cmbxGender().SelectedIndex())                             + "', " 
+                            " '" +    to_string(bdayFmt.Format(txtbxBirthDate().Date()))                       + "', " 
                                       
-                            " '" +    to_string(txtbxUnitBuildingEtc().Text())                                 + "', " +
-                            " '" +    to_string(cmbxBarangay().SelectedItem().as<TextBlock>().Text())          + "', " +
-                            " '" +    to_string(cmbxCityMunicipal().SelectedItem().as<TextBlock>().Text())     + "', " +
-                            " '" +    to_string(cmbxProvince().SelectedItem().as<TextBlock>().Text())          + "', " +
-                            " '" +    to_string(cmbxRegion().SelectedItem().as<TextBlock>().Text())            + "', " +
-                            " '" +    to_string(cmbxCountry().SelectedItem().as<TextBlock>().Text())           + "', " +
+                            " '" +    to_string(txtbxUnitBuildingEtc().Text())                                 + "', " 
+                            " '" +    to_string(cmbxBarangay().SelectedItem().as<TextBlock>().Text())          + "', " 
+                            " '" +    to_string(cmbxCityMunicipal().SelectedItem().as<TextBlock>().Text())     + "', " 
+                            " '" +    to_string(cmbxProvince().SelectedItem().as<TextBlock>().Text())          + "', " 
+                            " '" +    to_string(cmbxRegion().SelectedItem().as<TextBlock>().Text())            + "', " 
+                            " '" +    to_string(cmbxCountry().SelectedItem().as<TextBlock>().Text())           + "', " 
                                       
-                            " '" +    brgySelCode                                                              + "', " +
-                            " '" +    cityMunicipalS.at(cmbxCityMunicipal().SelectedIndex()).at(1)             + "', " +
-                            " '" +    provinceS.at(cmbxProvince().SelectedIndex()).at(1)                       + "', " +
-                            " '" +    regionS.at(cmbxRegion().SelectedIndex()).at(1)                           + "', " +
+                            " '" +    brgySelCode                                                              + "', " 
+                            " '" +    cityMunicipalS.at(cmbxCityMunicipal().SelectedIndex()).at(1)             + "', " 
+                            " '" +    provinceS.at(cmbxProvince().SelectedIndex()).at(1)                       + "', " 
+                            " '" +    regionS.at(cmbxRegion().SelectedIndex()).at(1)                           + "', " 
                                       
-                            " '" +    to_string(txtbxZipCode().Text())                                         + "', " +
-                            " '" +    to_string(txtbxEmail().Text())                                           + "', " +
-                            " '" +    to_string(txtbxContact().Text())                                         + "' );";
+                            " '" +    to_string(txtbxZipCode().Text())                                         + "', " 
+                            " '" +    to_string(txtbxEmail().Text())                                           + "', " 
+                            " '" +    to_string(txtbxContact().Text())                                         + "', "
+                            " '0' );";
 
 
-                        co_await ImageToBase64(imgIDFile, 250);
 
 
                         MessageDialog dialog(L"The account was successfully created!", L"Successfully added account");
                         auto& res = co_await dialog.ShowAsync();
 
-                        if (res.Label() == L"Ok") {
-
+                        if (res.Label() == L"Yes") {
+                            Frame().GoBack();
                         }
 
 
@@ -559,32 +518,58 @@ VillaricaPonsho
         picker.FileTypeFilter().Append(L".jpeg");
         picker.FileTypeFilter().Append(L".png");
         picker.FileTypeFilter().Append(L".bmp");
-
+        picker.FileTypeFilter().Append(L".gif");
 
 
         imgIDFile = co_await picker.PickSingleFileAsync();
         
         
-        auto stream = co_await imgIDFile.OpenAsync(Storage::FileAccessMode::Read);
-        
-        auto bitmapImg = UI::Xaml::Media::Imaging::BitmapImage();
-        co_await bitmapImg.SetSourceAsync(stream);
-
-
-        
-        auto decoder = Graphics::Imaging::BitmapDecoder::CreateAsync(stream);
         if (imgIDFile != nullptr)
         {
+            auto stream = co_await imgIDFile.OpenAsync(Storage::FileAccessMode::Read);
+        
+            auto bitmapImg = UI::Xaml::Media::Imaging::BitmapImage();
+            co_await bitmapImg.SetSourceAsync(stream);
+
+        
+            auto decoder = Graphics::Imaging::BitmapDecoder::CreateAsync(stream);
             imgID().ImageSource(bitmapImg);
             imageIDURI = imgIDFile.Path();
 
+
+            auto hhh = co_await ImageToBase64(imgIDFile, 250);
+           
+            winrt::Windows::ApplicationModel::DataTransfer::DataPackage dataPackage =  winrt::Windows::ApplicationModel::DataTransfer::DataPackage::DataPackage();
+            dataPackage.SetText(hhh);
+
+            winrt::Windows::ApplicationModel::DataTransfer::Clipboard::SetContent(dataPackage);
+            
+            
+            const char* s = to_string(hhh).c_str();
+            size_t start = 0;
+            size_t end = 100; 
+
+            auto nnn = to_string(hhh).substr(start, end - start);
+
+            MessageDialog dialog(to_hstring(nnn) + L"...", L"Copied");
+            co_await dialog.ShowAsync();
         }
 
         
     }
 
 
+    void SignUpForm::Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+
+
+    }
+
+  
+
 }
+
+
 
 
 

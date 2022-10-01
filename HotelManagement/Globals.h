@@ -18,4 +18,5 @@ namespace winrt::HotelManagement::implementation
     IAsyncOperation<hstring> ImageToBase64(StorageFile sourceFile, int size);
     IAsyncOperation<BitmapImage> Base64ToImage(hstring sourceFile);
 
+
 }

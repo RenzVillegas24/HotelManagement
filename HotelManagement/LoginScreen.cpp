@@ -92,7 +92,7 @@ namespace winrt::HotelManagement::implementation
 					db << "INSERT INTO loggedin ( "
 						"username, "
 						"password, "
-						"isremembered "
+						"isRemembered "
 						")"
 						"VALUES (" 
 						" '" + to_string(txtbxUsername().Text()) + " '," +
