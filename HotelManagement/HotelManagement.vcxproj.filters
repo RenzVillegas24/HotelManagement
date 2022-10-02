@@ -63,38 +63,26 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Assets\Include\sqlite_modern_cpp\lists\error_codes.h">
-      <Filter>Assets\Include\sqlite_modern_cpp\lists</Filter>
+      <Filter>lists</Filter>
     </ClInclude>
     <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\function_traits.h">
-      <Filter>Assets\Include\sqlite_modern_cpp\utility</Filter>
+      <Filter>utility</Filter>
     </ClInclude>
     <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\uncaught_exceptions.h">
-      <Filter>Assets\Include\sqlite_modern_cpp\utility</Filter>
+      <Filter>utility</Filter>
     </ClInclude>
     <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\utf16_utf8.h">
-      <Filter>Assets\Include\sqlite_modern_cpp\utility</Filter>
+      <Filter>utility</Filter>
     </ClInclude>
     <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\variant.h">
-      <Filter>Assets\Include\sqlite_modern_cpp\utility</Filter>
+      <Filter>utility</Filter>
     </ClInclude>
-    <ClInclude Include="Assets\Include\sqlite_modern_cpp\errors.h">
-      <Filter>Assets\Include\sqlite_modern_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Assets\Include\sqlite_modern_cpp\log.h">
-      <Filter>Assets\Include\sqlite_modern_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Assets\Include\sqlite_modern_cpp\sqlcipher.h">
-      <Filter>Assets\Include\sqlite_modern_cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Assets\Include\sqlite_modern_cpp.h">
-      <Filter>Assets\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Assets\Include\sqlite3.h">
-      <Filter>Assets\Include</Filter>
-    </ClInclude>
-    <ClInclude Include="Assets\Include\sqlite3ext.h">
-      <Filter>Assets\Include</Filter>
-    </ClInclude>
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\errors.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\log.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\sqlcipher.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp.h" />
+    <ClInclude Include="Assets\Include\sqlite3.h" />
+    <ClInclude Include="Assets\Include\sqlite3ext.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -270,13 +258,13 @@
     <Filter Include="Assets\Database">
       <UniqueIdentifier>{e2a03eda-89a0-4e68-9b99-91fd55a48e63}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Assets\Include\sqlite_modern_cpp">
+    <Filter Include="sqlite_modern_cpp">
       <UniqueIdentifier>{ec039d84-4209-4cbc-9748-1ca46947fe96}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Assets\Include\sqlite_modern_cpp\lists">
+    <Filter Include="lists">
       <UniqueIdentifier>{66b59148-c579-4156-b2ff-dbc2421b5f39}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Assets\Include\sqlite_modern_cpp\utility">
+    <Filter Include="utility">
       <UniqueIdentifier>{e10e5e4e-29d6-46c8-bccc-24d9492c1615}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -296,9 +284,7 @@
     <None Include="Assets\Database\refCitymun.db">
       <Filter>Assets\Database</Filter>
     </None>
-    <None Include="Assets\Include\sqlite3.dll">
-      <Filter>Assets\Include</Filter>
-    </None>
+    <None Include="Assets\Include\sqlite3.dll" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="readme.txt" />
@@ -342,8 +328,6 @@
     </Font>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="Assets\Include\sqlite3.lib">
-      <Filter>Assets\Include</Filter>
-    </Library>
+    <Library Include="Assets\Include\sqlite3.lib" />
   </ItemGroup>
 </Project>
