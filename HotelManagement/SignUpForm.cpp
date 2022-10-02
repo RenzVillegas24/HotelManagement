@@ -11,10 +11,10 @@
 #include <winrt/Windows.Graphics.Imaging.h>
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Globalization.DateTimeFormatting.h>
-
 #include <winrt/Windows.ApplicationModel.DataTransfer.h>
-
 #include <winrt/Windows.UI.Xaml.Media.Imaging.h>
+#include <winrt/Windows.UI.Xaml.Controls.h>
+
 
 using namespace winrt;
 using namespace Windows;
@@ -47,7 +47,6 @@ namespace winrt::HotelManagement::implementation
     void SignUpForm::cmbxCountry_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e)
     {
         
-
         if (cmbxCountry().SelectedItem() != nullptr) {
             sqlite_config config;
             config.flags = OpenFlags::READONLY;
@@ -86,8 +85,10 @@ namespace winrt::HotelManagement::implementation
             }
             catch (exception& e)
             {
-                MessageDialog dialog(to_hstring(e.what()), L"Database Error");
-                dialog.ShowAsync();
+                Dialog(
+                    L"SQL Error",
+                    to_hstring(e.what()),
+                    L"Ok");
             }
         }
     }
@@ -128,8 +129,10 @@ namespace winrt::HotelManagement::implementation
             }
             catch (exception& e)
             {
-                MessageDialog dialog(to_hstring(e.what()), L"Database Error");
-                dialog.ShowAsync();
+                Dialog(
+                    L"SQL Error",
+                    to_hstring(e.what()),
+                    L"Ok");
             }
         }
     }
@@ -166,8 +169,10 @@ namespace winrt::HotelManagement::implementation
             }
             catch (exception& e)
             {
-                MessageDialog dialog(to_hstring(e.what()), L"Database Error");
-                dialog.ShowAsync();
+                Dialog(
+                    L"SQL Error",
+                    to_hstring(e.what()),
+                    L"Ok");
             }
 
 
@@ -205,8 +210,10 @@ namespace winrt::HotelManagement::implementation
             }
             catch (exception& e)
             {
-                MessageDialog dialog(to_hstring(e.what()), L"Database Error");
-                dialog.ShowAsync();
+                Dialog(
+                    L"SQL Error",
+                    to_hstring(e.what()),
+                    L"Ok");
             }
 
         }
@@ -237,8 +244,10 @@ namespace winrt::HotelManagement::implementation
             }
             catch (exception& e)
             {
-                MessageDialog dialog(to_hstring(e.what()), L"Database Error");
-                dialog.ShowAsync();
+                Dialog(
+                    L"SQL Error",
+                    to_hstring(e.what()),
+                    L"Ok");
             }
         }
     }
@@ -307,6 +316,7 @@ VillaricaPonsho
 
     Windows::Foundation::IAsyncAction SignUpForm::btnConfirm_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
+
         if (
             txtbxLastName().Text().empty() ||
             txtbxFirstName().Text().empty() ||
@@ -329,8 +339,12 @@ VillaricaPonsho
             txtbxConfirmPassword().Password().empty() ||
             imageIDURI.empty()
             ) {
-            MessageDialog dialog(L"Some items are empty,\nplease try again..." , L"Input Error");
-            dialog.ShowAsync();
+
+            co_await Dialog(
+                L"Input Error",
+                L"Some items are empty,\nplease try again...",
+                L"Ok");
+
         }
         else {
             hstring errors = L"";
@@ -344,6 +358,9 @@ VillaricaPonsho
 
             if (txtbxZipCode().Text().size() != 4)
                 errors = errors + L"\n● Zip code should be 4 numbers only.";
+            else
+                if (to_string(txtbxZipCode().Text()).find_first_not_of("0123456789") != string::npos)
+                    errors = errors + L"\n● Zip code numbers should contains numbers only.";
             
             if (txtbxEmail().Text().size() < 10) 
                 errors = errors + L"\n● Email should be atleast 10 characters.";
@@ -461,32 +478,43 @@ VillaricaPonsho
 
 
 
-                        MessageDialog dialog(L"The account was successfully created!", L"Successfully added account");
-                        auto& res = co_await dialog.ShowAsync();
+                        auto res = co_await Dialog(
+                            L"Successfully added account",
+                            L"The account was successfully created!",
+                            L"Ok");
 
-                        if (res.Label() == L"Yes") {
+                        if (res == ContentDialogResult::None) {
                             Frame().GoBack();
                         }
 
 
                     }
                     catch (exception& e) {
-                        MessageDialog dialog(to_hstring(e.what()), L"Database Error");
-                        dialog.ShowAsync();
+                  
+                        Dialog(
+                            L"SQL Error",
+                            to_hstring(e.what()),
+                            L"Ok");
                     }
 
                 }
                 else {
 
-                    MessageDialog dialog(L"The account you are using are already used,\nplease try again...", L"Account already exists");
-                    dialog.ShowAsync();
-                }
+                    co_await Dialog(
+                        L"Account already exists",
+                        L"The account you are using are already used,\nPlease try again...",
+                        L"Ok");
 
+                }
             }
             else {
 
-                MessageDialog dialog(L"There are errors on your inputs:" + errors + L"\nplease try again...", L"Input Error");
-                dialog.ShowAsync();
+                co_await Dialog(
+                    L"Input Error",
+                    L"There are errors on your inputs:" + errors + L"\n\n+Please try again...",
+                    L"Ok");
+
+               
             }
         }
     }
@@ -494,18 +522,15 @@ VillaricaPonsho
   
     Windows::Foundation::IAsyncAction SignUpForm::btnCancel_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
+        auto res = co_await Dialog(
+            L"Leaving Confirmation",
+            L"Do you want to cancel the registration?\nLeaving will be reset the changes.",
+            L"No",
+            L"Yes");
 
-        MessageDialog dialog(L"Are you want to cancel your registration?\nOnce you leave the page, the inserted info will reset.", L"Leaving Confirmation");
-        
-
-        dialog.Commands().Append(UICommand(L"Yes", nullptr));
-        dialog.Commands().Append(UICommand(L"No", nullptr));
-        auto& result = co_await dialog.ShowAsync();
-
-
-        if (result.Label() == L"Yes")
+        if (res == ContentDialogResult::Primary)
             Frame().GoBack();
-
+        
     }
 
     Windows::Foundation::IAsyncAction SignUpForm::btnChooseImage_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
@@ -547,21 +572,25 @@ VillaricaPonsho
             
             const char* s = to_string(hhh).c_str();
             size_t start = 0;
-            size_t end = 100; 
+            size_t end = 50; 
 
             auto nnn = to_string(hhh).substr(start, end - start);
+            
 
-            MessageDialog dialog(to_hstring(nnn) + L"...", L"Copied");
-            co_await dialog.ShowAsync();
+            co_await Dialog(
+                L"Copied",
+                to_hstring(nnn) + L"...",
+                L"Ok");
+
         }
 
-        
     }
 
 
     void SignUpForm::Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
 
+        
 
     }
 

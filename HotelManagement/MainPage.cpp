@@ -84,12 +84,19 @@ namespace winrt::HotelManagement::implementation
             (L"home_units", winrt::xaml_typename<Units>()));
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
             (L"bookings", winrt::xaml_typename<Booking>()));
-        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
-            (L"payment", winrt::xaml_typename<Payment>()));
+
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
             (L"support", winrt::xaml_typename<Support>()));
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
+            (L"home_restaurant", winrt::xaml_typename<Restaurant>()));
+        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
             (L"accounts", winrt::xaml_typename<Account>()));
+
+        m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
+            (L"account_createAcct", winrt::xaml_typename<SignUpForm>()));
+
+        //m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName> (L"payment", winrt::xaml_typename<Payment>()));
+        
 
         //minimum size
         ApplicationView::GetForCurrentView().SetPreferredMinSize(Size(500, 500));
@@ -127,7 +134,9 @@ namespace winrt::HotelManagement::implementation
             
         }
         else if (args.InvokedItemContainer())
-        {
+        { 
+
+
             navView_Navigate(unbox_value_or<hstring>( args.InvokedItemContainer().Tag(), L"").c_str(), args.RecommendedNavigationTransitionInfo());
         }
     }
@@ -138,17 +147,14 @@ namespace winrt::HotelManagement::implementation
         Windows::UI::Xaml::Interop::TypeName pageTypeName;
 
 
-
         if (navItemTag == L"accounts") {
             if (isLoggedIn())
-                m_pages.at(m_pages.size() - 1) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<Account>());
+                m_pages.at(m_pages.size() - 2) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<Account>());
             else 
-                m_pages.at(m_pages.size() - 1) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<LoginScreen>());
+                m_pages.at(m_pages.size() - 2) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<LoginScreen>());
      
         }
             
-
-
 
 
 
@@ -178,27 +184,58 @@ namespace winrt::HotelManagement::implementation
     }
 
   
-    bool MainPage::TryGoBack()
+    Windows::Foundation::IAsyncOperation<bool> MainPage::TryGoBack()
     {
-        if (!ContentFrame().CanGoBack()) return false;
+
+         if (!ContentFrame().CanGoBack()) co_return false;
+
+
+         // Leave confirmation while signing up
+         if (ContentFrame().SourcePageType().Name != winrt::xaml_typename<Settings>().Name)
+         {
+
+             auto curTag = winrt::unbox_value_or<winrt::hstring>(navView().SelectedItem().as<muxc::NavigationViewItem>().Tag(), L"");
+
+             if (curTag == L"account_createAcct") {
+                 auto res = co_await Dialog(
+                     L"Leaving Confirmation",
+                     L"Do you want to cancel the registration?\nLeaving will be reset the changes.",
+                     L"No",
+                     L"Yes");
+
+                 if (res == ContentDialogResult::Primary)
+                     ContentFrame().GoBack();
+             }
+             else {
+
+                ContentFrame().GoBack();
+                co_return true;
+             }
         
-        ContentFrame().GoBack();
-        return true;
+         }
+         else {
+
+             ContentFrame().GoBack();
+             co_return true;
+         }
+         
+
+
         
     }
 
 
-    void MainPage::navView_BackRequested(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Microsoft::UI::Xaml::Controls::NavigationViewBackRequestedEventArgs const& args)
+    Windows::Foundation::IAsyncAction MainPage::navView_BackRequested(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Microsoft::UI::Xaml::Controls::NavigationViewBackRequestedEventArgs const& args)
     {
-        TryGoBack();
+        co_await TryGoBack();
 
     }
 
-	void MainPage::System_BackRequested( Windows::Foundation::IInspectable const& /* sender */, Windows::UI::Core::BackRequestedEventArgs const& args)
+    Windows::Foundation::IAsyncAction MainPage::System_BackRequested( Windows::Foundation::IInspectable const& /* sender */, Windows::UI::Core::BackRequestedEventArgs const& args)
 	{
 		if (!args.Handled())
 		{
-			args.Handled(TryGoBack());
+			args.Handled(co_await TryGoBack());
 		}
 	}
 
@@ -213,7 +250,6 @@ namespace winrt::HotelManagement::implementation
             navView().SelectedItem(navView().SettingsItem().as<muxc::NavigationViewItem>());
             //navView().Header(winrt::box_value(L"Settings"));
         }
-
         else if (ContentFrame().SourcePageType().Name != L"")
             for (auto&& eachPage : m_pages)
                 if (eachPage.second.Name == args.SourcePageType().Name)
@@ -223,6 +259,21 @@ namespace winrt::HotelManagement::implementation
                         auto navigationViewItem = eachMenuItem.try_as<muxc::NavigationViewItem>();
                         if (navigationViewItem)
                         {
+                            for (auto&& eachMenuItemLow : navigationViewItem.MenuItems())
+                            {
+                                auto navigationViewItemLow = eachMenuItemLow.try_as<muxc::NavigationViewItem>();
+                                if (navigationViewItemLow) {
+                                    winrt::hstring hstringValueLow = winrt::unbox_value_or<winrt::hstring>(navigationViewItemLow.Tag(), L"");
+                                    if (hstringValueLow == eachPage.first)
+                                    {
+                                        navView().SelectedItem(navigationViewItemLow);
+                                        //navView().Header(navigationViewItem.Content());
+
+                                    }
+                                }
+
+                            }
+
                             winrt::hstring hstringValue = winrt::unbox_value_or<winrt::hstring>(navigationViewItem.Tag(), L"");
                             if (hstringValue == eachPage.first)
                             {
@@ -233,6 +284,7 @@ namespace winrt::HotelManagement::implementation
                     }
                     break;
                 }
+
     }
 
 

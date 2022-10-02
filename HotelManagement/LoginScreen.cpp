@@ -4,6 +4,8 @@
 #include "LoginScreen.g.cpp"
 #endif
 
+#include "Globals.h"
+
 
 
 #include "winrt/Windows.UI.Popups.h"
@@ -14,13 +16,16 @@ using namespace winrt;
 using namespace Windows::UI::Xaml;
 
 using namespace winrt;
-using namespace Windows::Foundation;
-using namespace Windows::UI::Popups;
 
 using namespace Windows::UI::Xaml::Media::Animation;
 
 using namespace sqlite;
 using namespace std;
+
+using namespace Windows;
+using namespace Foundation;
+using namespace UI::Popups;
+using namespace Controls;
 
 namespace winrt::HotelManagement::implementation
 {
@@ -46,18 +51,18 @@ namespace winrt::HotelManagement::implementation
 			hstring Content = L"";
 			if (txtbxUsername().Text().empty())
 				if (txtbxPassword().Password().empty())
-					Content = L"The username and password textbox was empty, please try again.";
+					Content = L"The username and password textbox was empty,\nPlease try again.";
 				else
-					Content = L"The username textbox was empty, please try again.";
+					Content = L"The username textbox was empty,\nPlease try again.";
 			else if (txtbxPassword().Password().empty())
-				Content = L"The password textbox was empty, please try again.";
+				Content = L"The password textbox was empty,\nPlease try again.";
 
 
 
-			MessageDialog dialog(Content, TitleErr);
-			dialog.ShowAsync();
 
-			return;
+			co_await Dialog(TitleErr, Content, L"Ok");
+
+			co_return;
 		}
 
 		string password;
@@ -80,14 +85,16 @@ namespace winrt::HotelManagement::implementation
 			if (isAccountPresent) {
 				if (password != to_string(txtbxPassword().Password().c_str()))
 				{
-					MessageDialog dialog(L"Password not matched, please try again.", TitleErr);
-					co_await dialog.ShowAsync();
+					co_await Dialog(TitleErr, L"Password not matched,\nPlease try again.", L"Ok");
+
 				}
 				else
 				{
+					co_await Dialog(
+						L"Logged in successfully!", 
+						L"Welcome back " + txtbxUsername().Text() + L"\nYou may now proceed.", 
+						L"Ok");
 
-					MessageDialog dialog(L"Welcome back " + txtbxUsername().Text() + L"!\nYou have successfully logged in your account. You may now proceed.", L"Logged in successfully!");
-					co_await dialog.ShowAsync();
 
 					db << "INSERT INTO loggedin ( "
 						"username, "
@@ -108,17 +115,19 @@ namespace winrt::HotelManagement::implementation
 				}
 			}
 			else {
-				MessageDialog dialog(L"Account not found!\nWould you like to create account using this username instead?", TitleErr);
-				dialog.Commands().Append(UICommand(L"Yes", nullptr));
-				dialog.Commands().Append(UICommand(L"No", nullptr));
-				auto& result = co_await dialog.ShowAsync();
-
-
 				auto t = SlideNavigationTransitionInfo();
 				t.Effect(SlideNavigationTransitionEffect::FromRight);
 
-				if (result.Label() == L"Yes")
+				auto res = co_await Dialog(
+					TitleErr,
+					L"Account not found!\nWould you like to create account instead?",
+					L"No",
+					L"Yes");
+
+				if (res == ContentDialogResult::Primary)
 					Frame().Navigate(winrt::xaml_typename<SignUpForm>(), nullptr, t);
+
+
 			}
 		}
 	}

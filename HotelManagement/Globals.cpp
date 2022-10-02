@@ -1,6 +1,17 @@
 #include "pch.h"
 #include "Globals.h"
 
+
+using namespace winrt;
+using namespace Windows;
+using namespace UI::Xaml::Media::Imaging;
+using namespace Graphics::Imaging;
+using namespace Storage;
+using namespace Streams;
+using namespace Foundation;
+using namespace std;
+
+
 namespace winrt::HotelManagement::implementation
 {
 
@@ -76,5 +87,53 @@ namespace winrt::HotelManagement::implementation
         img.SetSourceAsync(ras);
 
         co_return img;
+    }
+
+    winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Controls::ContentDialogResult> Dialog(hstring titleText, hstring contentText, hstring closeButtonText) {
+        auto title = winrt::Windows::UI::Xaml::Controls::TextBlock(); 
+        title.Text(titleText);
+
+        auto content = winrt::Windows::UI::Xaml::Controls::TextBlock(); 
+        content.Text(contentText);
+
+        winrt::Windows::UI::Xaml::Controls::ContentDialog dialog; 
+        dialog.Title(title); 
+        dialog.Content(content);
+        dialog.CloseButtonText(closeButtonText);
+
+        co_return co_await dialog.ShowAsync();
+    }
+
+    winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Controls::ContentDialogResult> Dialog(hstring titleText, hstring contentText, hstring closeButtonText, hstring primaryButtonText) {
+        auto title = winrt::Windows::UI::Xaml::Controls::TextBlock(); 
+        title.Text(titleText);
+
+        auto content = winrt::Windows::UI::Xaml::Controls::TextBlock(); 
+        content.Text(contentText);
+
+        winrt::Windows::UI::Xaml::Controls::ContentDialog dialog; 
+        dialog.Title(title); 
+        dialog.Content(content);
+        dialog.CloseButtonText(closeButtonText);
+        dialog.PrimaryButtonText(primaryButtonText);
+
+        co_return co_await dialog.ShowAsync();
+    }
+
+    winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Controls::ContentDialogResult> Dialog(hstring titleText, hstring contentText, hstring closeButtonText, hstring primaryButtonText, hstring secondaryButtonText) {
+        auto title = winrt::Windows::UI::Xaml::Controls::TextBlock();
+        title.Text(titleText);
+
+        auto content = winrt::Windows::UI::Xaml::Controls::TextBlock();
+        content.Text(contentText);
+
+        winrt::Windows::UI::Xaml::Controls::ContentDialog dialog;
+        dialog.Title(title);
+        dialog.Content(content);
+        dialog.CloseButtonText(closeButtonText);
+        dialog.PrimaryButtonText(primaryButtonText);
+        dialog.SecondaryButtonText(secondaryButtonText);
+
+        co_return co_await dialog.ShowAsync();
     }
 }

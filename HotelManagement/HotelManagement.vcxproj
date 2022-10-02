@@ -134,6 +134,17 @@
       <DependentUpon>Account.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="Assets\Include\sqlite3.h" />
+    <ClInclude Include="Assets\Include\sqlite3ext.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\errors.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\lists\error_codes.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\log.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\sqlcipher.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\function_traits.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\uncaught_exceptions.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\utf16_utf8.h" />
+    <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\variant.h" />
     <ClInclude Include="Events.h">
       <DependentUpon>Events.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -453,6 +464,7 @@
     <None Include="Assets\Database\refRegion.db">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="Assets\Include\sqlite3.dll" />
     <None Include="HotelManagement_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="PropertySheet.props" />
@@ -473,6 +485,9 @@
     <Font Include="Assets\Fonts\ProductSans-Regular.ttf" />
     <Font Include="Assets\Fonts\ProductSans-Thin.ttf" />
     <Font Include="Assets\Fonts\ProductSans-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Assets\Include\sqlite3.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

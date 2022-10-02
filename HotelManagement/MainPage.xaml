@@ -34,12 +34,30 @@
                     Icon="Home"
                     Tag="home">
                     <c:NavigationViewItem.MenuItems>
-                        <c:NavigationViewItem Content="Events" Tag="home_events" />
-                        <c:NavigationViewItem Content="Gyms" Tag="home_gyms" />
-                        <c:NavigationViewItem Content="Lobby" Tag="home_lobby" />
-                        <c:NavigationViewItem Content="Pools" Tag="home_pools" />
-                        <c:NavigationViewItem Content="Restaurant" Tag="home_restaurant" />
-                        <c:NavigationViewItem Content="Units" Tag="home_units" />
+                        <c:NavigationViewItem
+                            Margin="12,0,0,0"
+                            Content="Units"
+                            Tag="home_units" />
+                        <c:NavigationViewItem
+                            Margin="12,0,0,0"
+                            Content="Events"
+                            Tag="home_events" />
+                        <c:NavigationViewItem
+                            Margin="12,0,0,0"
+                            Content="Gyms"
+                            Tag="home_gyms" />
+                        <c:NavigationViewItem
+                            Margin="12,0,0,0"
+                            Content="Lobby"
+                            Tag="home_lobby" />
+                        <c:NavigationViewItem
+                            Margin="12,0,0,0"
+                            Content="Pools"
+                            Tag="home_pools" />
+                        <c:NavigationViewItem
+                            Margin="12,0,0,0"
+                            Content="Restaurant"
+                            Tag="home_restaurant" />
                     </c:NavigationViewItem.MenuItems>
                 </c:NavigationViewItem>
                 <c:NavigationViewItem
@@ -47,17 +65,20 @@
                     Icon="Bookmarks"
                     Tag="bookings" />
                 <c:NavigationViewItem
-                    Content="Payment Methods"
-                    Icon="Shop"
-                    Tag="payment" />
-                <c:NavigationViewItem
                     Content="Customer Support"
                     Icon="Comment"
                     Tag="support" />
                 <c:NavigationViewItem
                     Content="Account"
                     Icon="People"
-                    Tag="accounts" />
+                    Tag="accounts">
+                    <c:NavigationViewItem.MenuItems>
+                        <c:NavigationViewItem
+                            Margin="12,0,0,0"
+                            Content="Create Account"
+                            Tag="account_createAcct" />
+                    </c:NavigationViewItem.MenuItems>
+                </c:NavigationViewItem>
             </c:NavigationView.MenuItems>
 
             <Frame x:Name="ContentFrame" />
