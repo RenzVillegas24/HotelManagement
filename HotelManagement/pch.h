@@ -41,7 +41,7 @@
 
 //Tutorial installing libaries: https://stackoverflow.com/questions/23882112/how-to-add-static-libraries-to-a-visual-studio-project
 //Source:   https://stackoverflow.com/questions/56993480/how-to-connect-to-sql-server-from-c-winrt-uwp-app
-#include "Assets/Include/sqlite_modern_cpp.h"
+#include "sqlite_modern_cpp.h"
 
 namespace winrt::HotelManagement::implementation
 {

@@ -246,9 +246,6 @@
     <Filter Include="Assets\Fonts">
       <UniqueIdentifier>{01280fbe-50f8-4e4a-bfac-04a547128f58}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Assets\Include">
-      <UniqueIdentifier>{cb820747-e979-40a8-b66b-d88891dcb02d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="AccountManagement">
       <UniqueIdentifier>{c2770b08-bafd-4ab8-847f-99764fd2e9f3}</UniqueIdentifier>
     </Filter>
