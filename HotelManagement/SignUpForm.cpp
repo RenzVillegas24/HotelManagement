@@ -583,6 +583,11 @@ VillaricaPonsho
                 L"Copied",
                 to_hstring(nnn) + L"...",
                 L"Ok");
+
+
+            auto img = co_await Base64ToImage(hhh);
+            imgID().ImageSource(img);
+
             
 #endif // DEBUG
 

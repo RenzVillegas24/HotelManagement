@@ -15,7 +15,7 @@ namespace winrt::HotelManagement::implementation
         int32_t MyProperty();
         void MyProperty(int32_t value);
 
-        void Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
+        Windows::Foundation::IAsyncAction Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
     };
 }
 
