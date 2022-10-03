@@ -4,7 +4,7 @@
 #include "winrt/Windows.Security.Cryptography.h"
 
 //for debugging
-#define DEBUG
+//#define DEBUG
 
 
 namespace winrt::HotelManagement::implementation

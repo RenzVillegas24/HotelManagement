@@ -87,9 +87,8 @@ namespace winrt::HotelManagement::implementation
         auto buff = Security::Cryptography::CryptographicBuffer::DecodeFromBase64String(sourceFile);
 
         InMemoryRandomAccessStream ras = InMemoryRandomAccessStream();
-
         co_await ras.WriteAsync(buff);
-
+        ras.Seek(0);    //reset to read the buffer
 
         BitmapImage img = BitmapImage();
         img.SetSourceAsync(ras);
