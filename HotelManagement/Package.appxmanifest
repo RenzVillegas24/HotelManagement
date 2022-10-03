@@ -3,7 +3,7 @@
   <Identity
     Name="99dcfaa8-08e6-42bc-9eeb-18375607fa14"
     Publisher="CN=RenzCute"
-    Version="1.0.8.0" />
+    Version="1.2.10.0" />
   <mp:PhoneIdentity PhoneProductId="99dcfaa8-08e6-42bc-9eeb-18375607fa14" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
   <Properties>
     <DisplayName>HotelManagement</DisplayName>

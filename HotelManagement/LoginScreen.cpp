@@ -102,9 +102,9 @@ namespace winrt::HotelManagement::implementation
 						"isRemembered "
 						")"
 						"VALUES (" 
-						" '" + to_string(txtbxUsername().Text()) + " '," +
-						" '" + to_string(txtbxPassword().Password()) + " '," +
-						" '" + std::to_string(Chk_Remember().IsChecked().GetBoolean() ? 1 : 0) + " '" +
+						" '" + to_string(txtbxUsername().Text()) + "'," +
+						" '" + to_string(txtbxPassword().Password()) + "'," +
+						" '" + std::to_string(Chk_Remember().IsChecked().GetBoolean() ? 1 : 0) + "'" +
 						");";
 
 					

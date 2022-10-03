@@ -1,6 +1,14 @@
 #include "pch.h"
 #include "Globals.h"
 
+#include <time.h>
+#include <iomanip>
+#include <sstream>
+
+
+
+#define _CRT
+#define _CRT_SECURE_NO_WARNINGS
 
 using namespace winrt;
 using namespace Windows;
@@ -10,7 +18,7 @@ using namespace Storage;
 using namespace Streams;
 using namespace Foundation;
 using namespace std;
-
+using time_point = std::chrono::system_clock::time_point;
 
 namespace winrt::HotelManagement::implementation
 {
@@ -80,7 +88,7 @@ namespace winrt::HotelManagement::implementation
 
         InMemoryRandomAccessStream ras = InMemoryRandomAccessStream();
 
-        ras.WriteAsync(buff);
+        co_await ras.WriteAsync(buff);
 
 
         BitmapImage img = BitmapImage();
@@ -139,4 +147,66 @@ namespace winrt::HotelManagement::implementation
 
         co_return co_await dialog.ShowAsync();
     }
+
+
+    //source: https://stackoverflow.com/questions/321849/strptime-equivalent-on-windows
+    char* strptime(const char* s,
+        const char* f,
+        struct tm* tm) {
+        // Isn't the C++ standard lib nice? std::get_time is defined such that its
+        // format parameters are the exact same as strptime. Of course, we have to
+        // create a string stream first, and imbue it with the current C locale, and
+        // we also have to make sure we return the right things if it fails, or
+        // if it succeeds, but this is still far simpler an implementation than any
+        // of the versions in any of the C standard libraries.
+        std::istringstream input(s);
+        input.imbue(std::locale(setlocale(LC_ALL, nullptr)));
+        input >> std::get_time(tm, f);
+        if (input.eof()) return (char*)(s + strlen(s));
+        if (input.fail()) {
+            return nullptr;
+        }
+        return (char*)(s + input.tellg());
+
+    }
+
+
+    std::tm to_tm(const std::string_view& date) {
+        std::tm t{};
+
+        if (sscanf_s(date.data(), "%d/%d/%d",
+            &t.tm_mon,
+            &t.tm_mday,
+            &t.tm_year
+            ) != 3)
+            throw std::runtime_error("Invalid date format: " + std::string(date));
+
+        t.tm_year -= 1900;
+        --t.tm_mon;
+        t.tm_isdst = -1;  // guess if DST should be in effect when calling mktime
+        errno = 0;
+        std::mktime(&t);
+
+        return t;
+    }
+
+    //source: https://stackoverflow.com/questions/34857119/how-to-convert-stdchronotime-point-to-string
+    std::string serializeTimePoint(const time_point& time, const std::string& format)
+    {
+        std::time_t tt = std::chrono::system_clock::to_time_t(time);
+        std::tm tm;
+        localtime_s(&tm, &tt);
+
+        char buff[70];
+        if (strftime(buff, sizeof buff, "%B %e, %Y", &tm)) {
+            puts(buff);
+        }
+        else {
+            puts("strftime failed");
+        }
+
+        return buff;
+    }
+
+  
 }

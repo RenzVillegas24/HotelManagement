@@ -13,103 +13,51 @@
     <Grid>
         <ScrollViewer Style="{StaticResource customScrollViewer}">
             <StackPanel Margin="35,150,35,35">
+                <StackPanel.Resources>
+                    <ThemeShadow x:Key="shadow" />
+                </StackPanel.Resources>
                 <TextBlock
-                    Margin="17,10,0,0"
+                    Margin="20,10,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="{StaticResource Thin}"
                     FontSize="25"
-                    Text="Personal Informations" />
-                <Rectangle
-                    Grid.Column="1"
-                    Height="1.5"
-                    Margin="0,3,0,10"
-                    HorizontalAlignment="Stretch"
-                    Fill="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
-                    Opacity="0.35" />
+                    Text="Basic Informations" />
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="210" />
-                        <ColumnDefinition Width="3*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel
-                        Grid.Column="1"
-                        Margin="12,0,0,0"
-                        Orientation="Vertical">
-                        <StackPanel Margin="5,5,5,5">
-                            <TextBlock
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                FontFamily="{StaticResource Light}"
-                                FontSize="13"
-                                Text="Last Name" />
-                            <TextBlock
-                                x:Name="txtLastName"
-                                Grid.Column="0"
-                                FontSize="17"
-                                Text="Test 1" />
+                <Grid
+                    Grid.Column="0"
+                    Margin="8,0"
+                    HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-                        </StackPanel>
-                        <StackPanel Margin="15,5,5,5">
-                            <TextBlock
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                FontFamily="{StaticResource Light}"
-                                FontSize="13"
-                                Text="First Name" />
-                            <TextBlock
-                                x:Name="txtFirstName"
-                                Grid.Column="1"
-                                FontSize="17"
-                                Text="Test 1" />
+                </Grid>
 
-                        </StackPanel>
-
-                        <StackPanel Margin="15,5,5,5">
-                            <TextBlock
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                FontFamily="{StaticResource Light}"
-                                FontSize="13"
-                                Text="Middle Name" />
-                            <TextBlock
-                                x:Name="txtMiddleName"
-                                Grid.Column="2"
-                                FontSize="17"
-                                Text="Test 1" />
-
-                        </StackPanel>
-                        <StackPanel Margin="15,5,5,5">
-                            <TextBlock
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                FontFamily="{StaticResource Light}"
-                                FontSize="13"
-                                Text="Suffix" />
-                            <TextBlock
-                                x:Name="txtSuffixName"
-                                Grid.Column="3"
-                                FontSize="17"
-                                Text="Test 1" />
-
-                        </StackPanel>
-
-
-                    </StackPanel>
-                    <Grid
-                        Grid.Column="0"
-                        Margin="18,0,0,0"
-                        HorizontalAlignment="Left">
+                <Border
+                    Margin="10,20"
+                    Padding="20"
+                    Background="{StaticResource BackdropAcrylicBrush}"
+                    CornerRadius="10"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30">
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
+
                         <Border
                             x:Name="gridImg"
                             Grid.Row="0"
-                            Width="190"
-                            Height="190"
+                            Width="200"
+                            Height="200"
+                            Margin="0,0,0,20"
                             Background="#BFFAEBD7"
                             BorderBrush="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
                             BorderThickness="1.5"
@@ -133,362 +81,671 @@
 
                             </Border>
                         </Border>
+
+                        <Button
+                            x:Name="btnName"
+                            Grid.Row="1"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="23" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Full Name" />
+                                <TextBlock
+                                    x:Name="txtName"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="Villarica, Ponsho Pilato Jr."
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
+                        <Button
+                            x:Name="btnBirthday"
+                            Grid.Row="2"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Birthday" />
+                                <TextBlock
+                                    x:Name="txtBirthday"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="December 25, 2000"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
+                        <Button
+                            x:Name="btnGender"
+                            Grid.Row="3"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Gender" />
+                                <TextBlock
+                                    x:Name="txtGender"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="Half Zombie, Half Human"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
+                        <Button
+                            x:Name="btnCivil"
+                            Grid.Row="4"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Civil" />
+                                <TextBlock
+                                    x:Name="txtCivil"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="Married"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
+                        <Button
+                            x:Name="btnNationality"
+                            Grid.Row="5"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Nationality" />
+                                <TextBlock
+                                    x:Name="txtNationality"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="Filipino"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
                     </Grid>
-
-                </Grid>
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Margin="5,5">
-                        <TextBlock
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Gender" />
-                        <TextBlock
-                            x:Name="txtGender"
-                            Grid.Column="3"
-                            FontSize="17"
-                            Text="Test 1" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" Margin="5,5">
-                        <TextBlock
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Birth Date" />
-                        <TextBlock
-                            x:Name="txtBirthDate"
-                            Grid.Column="3"
-                            FontSize="17"
-                            Text="Test 1" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="2" Margin="5,5">
-                        <TextBlock
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Civil Status" />
-                        <TextBlock
-                            x:Name="txtCivil"
-                            Grid.Column="3"
-                            FontSize="17"
-                            Text="Test 1" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="3" Margin="5,5">
-                        <TextBlock
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Nationality" />
-                        <TextBlock
-                            x:Name="txtNationality"
-                            Grid.Column="3"
-                            FontSize="17"
-                            Text="Test 1" />
-                    </StackPanel>
-
-                </Grid>
+                </Border>
 
 
 
                 <TextBlock
-                    Margin="17,20,0,0"
+                    Margin="20,20,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="{StaticResource Thin}"
                     FontSize="25"
                     Text="Permanent Address Informations" />
-                <Rectangle
-                    Grid.Column="1"
-                    Height="1.5"
-                    Margin="0,3,0,10"
-                    HorizontalAlignment="Stretch"
-                    Fill="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
-                    Opacity="0.35" />
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
+                <Border
+                    Margin="10,20"
+                    Padding="20"
+                    Background="{StaticResource BackdropAcrylicBrush}"
+                    CornerRadius="10"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Column="0" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Country" />
-                        <ComboBox
-                            x:Name="cmbxCountry"
-                            Margin="0,10"
+                        <Button
+                            x:Name="btnAddress"
+                            Grid.Row="1"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            DropDownOpened="cmbxCountry_DropDownOpened"
-                            PlaceholderText="Select country"
-                            SelectionChanged="cmbxCountry_SelectionChanged">
-                            <TextBlock Text="Philippines" />
-                        </ComboBox>
-                    </StackPanel>
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Address" />
+                                <TextBlock
+                                    x:Name="txtAddress"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text=""
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
 
-                    <StackPanel Grid.Column="1" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Region" />
-                        <ComboBox
-                            x:Name="cmbxRegion"
-                            Margin="0,10"
-                            HorizontalAlignment="Stretch"
-                            DropDownOpened="cmbxRegion_DropDownOpened"
-                            PlaceholderText="Select region"
-                            SelectionChanged="cmbxRegion_SelectionChanged" />
-                    </StackPanel>
+                            </Grid>
+                        </Button>
 
-                    <StackPanel Grid.Column="2" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Province" />
-                        <ComboBox
-                            x:Name="cmbxProvince"
-                            Margin="0,10"
+                        <Button
+                            x:Name="btnZip"
+                            Grid.Row="2"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            DropDownOpened="cmbxProvince_DropDownOpened"
-                            PlaceholderText="Select province"
-                            SelectionChanged="cmbxProvince_SelectionChanged" />
-                    </StackPanel>
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Zip Code" />
+                                <TextBlock
+                                    x:Name="txtZip"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="Half Zombie, Half Human"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
 
-                    <StackPanel Grid.Column="3" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="City/Municipal" />
-                        <ComboBox
-                            x:Name="cmbxCityMunicipal"
-                            Margin="0,10"
-                            HorizontalAlignment="Stretch"
-                            DropDownOpened="cmbxCityMunicipal_DropDownOpened"
-                            PlaceholderText="Select city/municipal"
-                            SelectionChanged="cmbxCityMunicipal_SelectionChanged" />
-                    </StackPanel>
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </Border>
 
-                    <StackPanel Grid.Column="4" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Barangay" />
-                        <ComboBox
-                            x:Name="cmbxBarangay"
-                            Margin="0,10"
-                            HorizontalAlignment="Stretch"
-                            DropDownOpened="cmbxBarangay_DropDownOpened"
-                            PlaceholderText="Select barangay"
-                            SelectionChanged="cmbxBarangay_SelectionChanged" />
-                    </StackPanel>
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Unit/Room, Building Name, Lot/Block/House/Building Number, Street, Subdivision/Village"
-                            TextTrimming="WordEllipsis" />
-                        <TextBox
-                            x:Name="txtbxUnitBuildingEtc"
-                            Margin="0,10"
-                            PlaceholderText="Type the infos seperated by comma (,)" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Zip Code" />
-                        <TextBox
-                            x:Name="txtbxZipCode"
-                            Margin="0,10"
-                            PlaceholderText="Type your zip code" />
-                    </StackPanel>
-                </Grid>
+
 
                 <TextBlock
-                    Margin="17,20,0,0"
+                    Margin="20,20,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="{StaticResource Thin}"
                     FontSize="25"
                     Text="Contact Informations" />
-                <Rectangle
-                    Grid.Column="1"
-                    Height="1.5"
-                    Margin="0,3,0,10"
-                    HorizontalAlignment="Stretch"
-                    Fill="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
-                    Opacity="0.35" />
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Margin="5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Contact Number" />
-                        <TextBox
-                            x:Name="txtbxContact"
-                            Margin="0,10"
-                            PlaceholderText="Type your contact number" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" Margin="5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Email" />
-                        <TextBox
-                            x:Name="txtbxEmail"
-                            Margin="0,10"
-                            PlaceholderText="Type your email" />
-                    </StackPanel>
+                <Border
+                    Margin="10,20"
+                    Padding="20"
+                    Background="{StaticResource BackdropAcrylicBrush}"
+                    CornerRadius="10"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                </Grid>
+                        <Button
+                            x:Name="btnContact"
+                            Grid.Row="1"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Contact" />
+                                <TextBlock
+                                    x:Name="txtContact"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="09999999999"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
+                        <Button
+                            x:Name="btnEmail"
+                            Grid.Row="2"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Email" />
+                                <TextBlock
+                                    x:Name="txtEmail"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="temporary@email.com"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </Border>
+
 
                 <TextBlock
-                    Margin="17,20,0,0"
+                    Margin="20,20,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     FontFamily="{StaticResource Thin}"
                     FontSize="25"
                     Text="Account Informations" />
-                <Rectangle
-                    Grid.Column="1"
-                    Height="1.5"
-                    Margin="0,3,0,10"
-                    HorizontalAlignment="Stretch"
-                    Fill="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
-                    Opacity="0.35" />
 
-                <StackPanel Grid.Column="0" Margin="5,5,5,5">
-                    <TextBlock
-                        Margin="12,0,0,0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        FontFamily="{StaticResource Light}"
-                        FontSize="13"
-                        Text="Username" />
-                    <TextBox
-                        x:Name="txtbxUsername"
-                        Margin="0,10"
-                        PlaceholderText="Type your username" />
-                </StackPanel>
+                <Border
+                    Margin="10,20"
+                    Padding="20"
+                    Background="{StaticResource BackdropAcrylicBrush}"
+                    CornerRadius="10"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Password" />
-                        <PasswordBox
-                            x:Name="txtbxPassword"
-                            Margin="0,10,0,5"
-                            PlaceholderText="Type your password" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" Margin="5,5,5,5">
-                        <TextBlock
-                            Margin="12,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="13"
-                            Text="Confirm Password" />
-                        <PasswordBox
-                            x:Name="txtbxConfirmPassword"
-                            Margin="0,10,0,5"
-                            PlaceholderText="Type your password again" />
-                    </StackPanel>
-                </Grid>
 
-                <Grid
-                    Width="350"
-                    Margin="0,25,0,0"
-                    HorizontalAlignment="Right">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <Button
-                        x:Name="btnConfirm"
-                        Grid.Column="0"
-                        Margin="5"
-                        HorizontalAlignment="Stretch"
-                        Background="#59FF9700"
-                        Click="btnConfirm_Click">
-                        <Button.Resources>
-                            <StaticResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
-                            <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
-                            <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
-                        </Button.Resources>
-                        Confirm
-                    </Button>
 
-                    <Button
-                        x:Name="btnCancel"
-                        Grid.Column="1"
-                        Margin="5"
-                        HorizontalAlignment="Stretch"
-                        Click="btnCancel_Click">
-                        Cancel
-                    </Button>
-                </Grid>
+                        <Button
+                            x:Name="btnAdmin"
+                            Grid.Row="0"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,20"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="15"
+                                    Text="Register this account as admin" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
+                        <Button
+                            x:Name="btnUsername"
+                            Grid.Row="1"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Username" />
+                                <TextBlock
+                                    x:Name="txtUsername"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="09999999999"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
+                        <Button
+                            x:Name="btnPassword"
+                            Grid.Row="2"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,15"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="13"
+                                    Text="Password" />
+                                <TextBlock
+                                    x:Name="txtPassword"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="17"
+                                    Text="passabog"
+                                    TextTrimming="CharacterEllipsis" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+                        <Button
+                            x:Name="btnLogout"
+                            Grid.Row="4"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,20"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="15"
+                                    Text="Logout" />
+
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </Border>
+
+
+                <TextBlock
+                    Margin="20,20,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    FontFamily="{StaticResource Thin}"
+                    FontSize="25"
+                    Text="Payment Methods" />
+
+                <Border
+                    Margin="10,20"
+                    Padding="20"
+                    Background="{StaticResource BackdropAcrylicBrush}"
+                    CornerRadius="10"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+
+
+                        <Button
+                            x:Name="btnAddPayment"
+                            Grid.Row="0"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,20"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="15"
+                                    Text="Add payment accounts" />
+                                <Path
+                                    Grid.Column="2"
+                                    Width="7"
+                                    Height="12"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                                    Stretch="Uniform" />
+
+                            </Grid>
+                        </Button>
+
+                    </Grid>
+                </Border>
+
+       
+
             </StackPanel>
         </ScrollViewer>
 
@@ -508,19 +765,6 @@
                     VerticalAlignment="Center"
                     FontSize="30"
                     Text="Accounts" />
-                <Path
-                    Width="10"
-                    Height="15"
-                    VerticalAlignment="Center"
-                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                    Stretch="Uniform" />
-                <TextBlock
-                    x:Name="Title"
-                    Margin="25,0,0,0"
-                    VerticalAlignment="Center"
-                    FontSize="30"
-                    Text="Sign-up" />
             </StackPanel>
         </Grid>
     </Grid>

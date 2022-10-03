@@ -12,6 +12,10 @@
     <Grid>
         <ScrollViewer Style="{StaticResource customScrollViewer}">
             <StackPanel Margin="35,150,35,35">
+                <StackPanel.Resources>
+                    <ThemeShadow x:Key="shadow" />
+                </StackPanel.Resources>
+
 
                 <TextBlock
                     Margin="17,10,0,0"
@@ -19,7 +23,7 @@
                     VerticalAlignment="Top"
                     FontFamily="{StaticResource Thin}"
                     FontSize="25"
-                    Text="Personal Informations" />
+                    Text="Basic Informations" />
                 <Rectangle
                     Grid.Column="1"
                     Height="1.5"
@@ -27,6 +31,7 @@
                     HorizontalAlignment="Stretch"
                     Fill="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
                     Opacity="0.35" />
+
 
                 <Grid>
                     <Grid.ColumnDefinitions>

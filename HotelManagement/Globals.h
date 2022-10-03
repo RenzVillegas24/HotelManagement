@@ -4,7 +4,8 @@
 #include "winrt/Windows.Security.Cryptography.h"
 
 //for debugging
-//#define DEBUG
+#define DEBUG
+
 
 namespace winrt::HotelManagement::implementation
 {
@@ -16,4 +17,7 @@ namespace winrt::HotelManagement::implementation
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::ContentDialogResult> Dialog(hstring titleText, hstring contentText, hstring closeButtonText, hstring primaryButtonText);
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::ContentDialogResult> Dialog(hstring titleText, hstring contentText, hstring closeButtonText, hstring primaryButtonText, hstring secondaryButtonText);
 
+    char* strptime(const char* s, const char* f, struct tm* tm);
+    std::string serializeTimePoint(const std::chrono::system_clock::time_point& time, const std::string& format);
+    std::tm to_tm(const std::string_view& date);
 }

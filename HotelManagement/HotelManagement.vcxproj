@@ -89,7 +89,7 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
-    <AppInstallerUri>C:\Users\RenzCute\source\repos\HotelManagement</AppInstallerUri>
+    <AppInstallerUri>C:\Users\RenzCute\source\repos\HotelManagement\Publish</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageDir>C:\Users\RenzCute\source\repos\HotelManagement\HotelManagement\Publish\</AppxPackageDir>
   </PropertyGroup>
@@ -110,6 +110,7 @@
     <ClCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Windows</SubSystem>
