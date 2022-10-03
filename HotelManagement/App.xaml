@@ -719,13 +719,7 @@
                             </Setter.Value>
                         </Setter>
                     </Style>
-
-
-
                 </ResourceDictionary>
-
-
-
             </c:XamlControlsResources.MergedDictionaries>
         </c:XamlControlsResources>
     </Application.Resources>

@@ -3,9 +3,12 @@
 #include <winrt/Windows.Graphics.h>
 #include "winrt/Windows.Security.Cryptography.h"
 
+//for debugging
+//#define DEBUG
 
 namespace winrt::HotelManagement::implementation
 {
+  
     Windows::Foundation::IAsyncOperation<hstring> ImageToBase64(Windows::Storage::StorageFile sourceFile, int size);
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Media::Imaging::BitmapImage> Base64ToImage(hstring sourceFile);
 

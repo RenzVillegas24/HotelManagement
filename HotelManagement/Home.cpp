@@ -15,6 +15,7 @@
 #endif
 #include "winrt/Windows.UI.Popups.h"
 #include <winrt/Windows.UI.Xaml.Media.Animation.h>
+#include <Globals.h>
 
 using namespace winrt;
 using namespace winrt::Windows::UI::Xaml::Controls;
@@ -317,21 +318,20 @@ namespace winrt::HotelManagement::implementation
         if(isLoggedIn())
             Frame().Navigate(winrt::xaml_typename<Account>(), nullptr, DrillInNavigationTransitionInfo());
         else {
-            MessageDialog dialog(L"No account has logged in this computer, would you like to login or create an account?", L"Not logged in");
-            dialog.Commands().Append(UICommand(L"Login", nullptr));
-            dialog.Commands().Append(UICommand(L"Create an account", nullptr));
-            dialog.Commands().Append(UICommand(L"Cancel", nullptr));
-            auto& result = co_await dialog.ShowAsync();
+
+            auto res = co_await Dialog(
+                L"Not logged in",
+                L"No account has logged in this computer.\nWould you like to login or create an account instead?",
+                L"No",
+                L"Log In",
+                L"Sign Up");
 
 
-            auto t = SlideNavigationTransitionInfo();
-            t.Effect(SlideNavigationTransitionEffect::FromRight);
+            if (res == ContentDialogResult::Primary)
+                Frame().Navigate(winrt::xaml_typename<LoginScreen>(), nullptr, DrillInNavigationTransitionInfo());
+            else if (res == ContentDialogResult::Secondary)
+                Frame().Navigate(winrt::xaml_typename<SignUpForm>(), nullptr, DrillInNavigationTransitionInfo());
 
-            if (result.Label() == L"Login")
-                Frame().Navigate(winrt::xaml_typename<LoginScreen>(), nullptr, t);
-            else if (result.Label() == L"Create an account")
-                Frame().Navigate(winrt::xaml_typename<SignUpForm>(), nullptr, t);
-            
 
         }
         

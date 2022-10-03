@@ -89,6 +89,9 @@ namespace winrt::HotelManagement::implementation
         co_return img;
     }
 
+    
+
+
     winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Controls::ContentDialogResult> Dialog(hstring titleText, hstring contentText, hstring closeButtonText) {
         auto title = winrt::Windows::UI::Xaml::Controls::TextBlock(); 
         title.Text(titleText);

@@ -5,6 +5,7 @@
 
 //storage
 #include "winrt/Windows.Storage.h"
+#include <Globals.h>
 
 using namespace winrt;
 using namespace Windows::ApplicationModel;
@@ -113,6 +114,23 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 void App::OnSuspending([[maybe_unused]] IInspectable const& sender, [[maybe_unused]] SuspendingEventArgs const& e)
 {
     // Save application state and stop any background activity
+    if (isLoggedIn()) {
+        int isRemembered;
+        sqlite::database db(dbPath());
+
+        try {
+            db << "SELECT isRemembered FROM loggedin LIMIT 1;"
+                >> isRemembered;
+
+            if (!isRemembered)
+                db << "DELETE FROM loggedin;";
+
+        }
+        catch (std::exception& e) {
+            return;
+        }
+    }
+
 }
 
 /// <summary>
@@ -124,3 +142,4 @@ void App::OnNavigationFailed(IInspectable const&, NavigationFailedEventArgs cons
 {
     throw hresult_error(E_FAIL, hstring(L"Failed to load Page ") + e.SourcePageType().Name);
 }
+

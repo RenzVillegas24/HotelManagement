@@ -40,7 +40,6 @@ namespace winrt::HotelManagement::implementation
     {
         throw hresult_not_implemented();
 
-
     }
 
     //https://stackoverflow.com/questions/57139554/how-to-copy-a-file-from-visual-studio-project-to-uwp-applications-localfolder-o

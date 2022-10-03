@@ -546,43 +546,50 @@ VillaricaPonsho
         picker.FileTypeFilter().Append(L".gif");
 
 
+        imgLoading().Begin();
         imgIDFile = co_await picker.PickSingleFileAsync();
         
         
         if (imgIDFile != nullptr)
         {
+
             auto stream = co_await imgIDFile.OpenAsync(Storage::FileAccessMode::Read);
         
             auto bitmapImg = UI::Xaml::Media::Imaging::BitmapImage();
             co_await bitmapImg.SetSourceAsync(stream);
 
         
-            auto decoder = Graphics::Imaging::BitmapDecoder::CreateAsync(stream);
+            auto decoder = co_await Graphics::Imaging::BitmapDecoder::CreateAsync(stream);
             imgID().ImageSource(bitmapImg);
             imageIDURI = imgIDFile.Path();
 
 
-            auto hhh = co_await ImageToBase64(imgIDFile, 250);
-           
-            winrt::Windows::ApplicationModel::DataTransfer::DataPackage dataPackage =  winrt::Windows::ApplicationModel::DataTransfer::DataPackage::DataPackage();
-            dataPackage.SetText(hhh);
 
+#ifdef DEBUG
+
+            auto hhh = co_await ImageToBase64(imgIDFile, 250);
+
+            winrt::Windows::ApplicationModel::DataTransfer::DataPackage dataPackage = winrt::Windows::ApplicationModel::DataTransfer::DataPackage::DataPackage();
+            dataPackage.SetText(hhh);
             winrt::Windows::ApplicationModel::DataTransfer::Clipboard::SetContent(dataPackage);
-            
-            
+
             const char* s = to_string(hhh).c_str();
             size_t start = 0;
-            size_t end = 50; 
+            size_t end = 50;
 
             auto nnn = to_string(hhh).substr(start, end - start);
-            
 
             co_await Dialog(
                 L"Copied",
                 to_hstring(nnn) + L"...",
                 L"Ok");
+            
+#endif // DEBUG
 
+           
         }
+
+        imgUnloading().Begin();
 
     }
 

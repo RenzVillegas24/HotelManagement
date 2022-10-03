@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:HotelManagement"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Loaded="Page_Loaded">
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
 
     <Grid>
         <ScrollViewer Style="{StaticResource customScrollViewer}">
@@ -108,24 +109,50 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Border
+                            x:Name="gridImg"
                             Grid.Row="0"
                             Width="175"
                             Height="175"
                             Background="#BFFAEBD7"
-                            BorderBrush="{ThemeResource ButtonBorderThemeBrush}"
+                            BorderBrush="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
                             BorderThickness="1.5"
-                            CornerRadius="5" />
-                        <Border
-                            Grid.Row="0"
-                            Width="175"
-                            Height="175"
-                            CornerRadius="5">
-                            <Border.Background>
-                                <ImageBrush
-                                    x:Name="imgID"
-                                    ImageSource="Assets/Account/id_empty.png"
-                                    Stretch="UniformToFill" />
-                            </Border.Background>
+                            CornerRadius="5"
+                            UseLayoutRounding="True">
+                            <Border.Resources>
+                                <Storyboard x:Name="imgLoading">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgLoadingBack"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="0"
+                                        To="1"
+                                        Duration="0:0:0.15" />
+                                </Storyboard>
+                                <Storyboard x:Name="imgUnloading" BeginTime="0:0:0.5">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgLoadingBack"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="1"
+                                        To="0"
+                                        Duration="0:0:0.3" />
+                                </Storyboard>
+                            </Border.Resources>
+                            <Border CornerRadius="5" UseLayoutRounding="True">
+                                <Border.Background>
+                                    <ImageBrush
+                                        x:Name="imgID"
+                                        ImageSource="Assets/Account/id_empty.png"
+                                        Stretch="UniformToFill" />
+                                </Border.Background>
+                                <Border
+                                    x:Name="imgLoadingBack"
+                                    Background="{StaticResource BackdropAcrylicBrush}"
+                                    CornerRadius="5"
+                                    Opacity="0"
+                                    UseLayoutRounding="True">
+                                    <c:ProgressRing x:Name="imageLoading" Background="{StaticResource AppBarBackgroundThemeBrush}" />
+                                </Border>
+
+                            </Border>
                         </Border>
                         <Button
                             x:Name="btnChooseImage"

@@ -104,7 +104,7 @@ namespace winrt::HotelManagement::implementation
 						"VALUES (" 
 						" '" + to_string(txtbxUsername().Text()) + " '," +
 						" '" + to_string(txtbxPassword().Password()) + " '," +
-						" '" + std::to_string(Chk_Remember().IsChecked() ?  1: 0) + " '" +
+						" '" + std::to_string(Chk_Remember().IsChecked().GetBoolean() ? 1 : 0) + " '" +
 						");";
 
 					
@@ -145,9 +145,11 @@ namespace winrt::HotelManagement::implementation
 
 	void LoginScreen::btnForgot_Click(IInspectable const& sender, RoutedEventArgs const& e)
 	{
-		winrt::Windows::UI::Popups::MessageDialog dialog(dbPathH(), L"Local");
+#ifdef DEBUG
+			winrt::Windows::UI::Popups::MessageDialog dialog(dbPathH(), L"Local");
+			dialog.ShowAsync();
+#endif // DEBUG
 
-		dialog.ShowAsync();
 	}
 
 	void LoginScreen::Page_Loaded(IInspectable const& sender, RoutedEventArgs const& e)

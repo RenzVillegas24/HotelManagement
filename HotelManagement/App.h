@@ -11,6 +11,7 @@ namespace winrt::HotelManagement::implementation
         void OnNavigationFailed(IInspectable const&, Windows::UI::Xaml::Navigation::NavigationFailedEventArgs const&);
 
 
+        void Application_Suspending(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::ApplicationModel::SuspendingEventArgs const& e);
     };
    
 }
