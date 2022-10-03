@@ -35,27 +35,27 @@
                     Tag="home">
                     <c:NavigationViewItem.MenuItems>
                         <c:NavigationViewItem
-                            Margin="12,0,0,0"
+                            Margin="12,0"
                             Content="Units"
                             Tag="home_units" />
                         <c:NavigationViewItem
-                            Margin="12,0,0,0"
+                            Margin="12,0"
                             Content="Events"
                             Tag="home_events" />
                         <c:NavigationViewItem
-                            Margin="12,0,0,0"
+                            Margin="12,0"
                             Content="Gyms"
                             Tag="home_gyms" />
                         <c:NavigationViewItem
-                            Margin="12,0,0,0"
+                            Margin="12,0"
                             Content="Lobby"
                             Tag="home_lobby" />
                         <c:NavigationViewItem
-                            Margin="12,0,0,0"
+                            Margin="12,0"
                             Content="Pools"
                             Tag="home_pools" />
                         <c:NavigationViewItem
-                            Margin="12,0,0,0"
+                            Margin="12,0"
                             Content="Restaurant"
                             Tag="home_restaurant" />
                     </c:NavigationViewItem.MenuItems>
@@ -74,7 +74,7 @@
                     Tag="accounts">
                     <c:NavigationViewItem.MenuItems>
                         <c:NavigationViewItem
-                            Margin="12,0,0,0"
+                            Margin="12,0"
                             Content="Create Account"
                             Tag="account_createAcct" />
                     </c:NavigationViewItem.MenuItems>
