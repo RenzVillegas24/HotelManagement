@@ -111,15 +111,13 @@
                                     FontSize="17"
                                     Text="Villarica, Ponsho Pilato Jr."
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
                                     HorizontalAlignment="Right"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -153,15 +151,13 @@
                                     FontSize="17"
                                     Text="December 25, 2000"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -195,15 +191,13 @@
                                     FontSize="17"
                                     Text="Half Zombie, Half Human"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -237,15 +231,13 @@
                                     FontSize="17"
                                     Text="Married"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -279,15 +271,13 @@
                                     FontSize="17"
                                     Text="Filipino"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -348,15 +338,13 @@
                                     FontSize="17"
                                     Text=""
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -390,15 +378,13 @@
                                     FontSize="17"
                                     Text="Half Zombie, Half Human"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -458,15 +444,13 @@
                                     FontSize="17"
                                     Text="09999999999"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -500,15 +484,13 @@
                                     FontSize="17"
                                     Text="temporary@email.com"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
@@ -537,51 +519,18 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
 
-
-                        <Button
-                            x:Name="btnAdmin"
-                            Grid.Row="0"
-                            Width="Auto"
-                            Margin="0,3"
-                            Padding="20,20"
-                            HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="20" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock
-                                    Grid.Column="0"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
-                                    FontSize="15"
-                                    Text="Register this account as admin" />
-                                <Path
-                                    Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
-
-                            </Grid>
-                        </Button>
-
                         <Button
                             x:Name="btnUsername"
-                            Grid.Row="1"
+                            Grid.Row="0"
                             Width="Auto"
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch" Click="btnUsername_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -603,27 +552,25 @@
                                     FontSize="17"
                                     Text="09999999999"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
 
                         <Button
                             x:Name="btnPassword"
-                            Grid.Row="2"
+                            Grid.Row="1"
                             Width="Auto"
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch" Click="btnPassword_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -645,18 +592,84 @@
                                     FontSize="17"
                                     Text="passabog"
                                     TextTrimming="CharacterEllipsis" />
-                                <Path
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
 
                             </Grid>
                         </Button>
+
+
+                        <Button
+                            x:Name="btnAdmin"
+                            Grid.Row="2"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,20"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnAdmin_Click">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    x:Name="txtAdmin"
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="15"
+                                    Text="Register this account as admin" />
+
+                                <FontIcon
+                                    Grid.Column="2"
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
+
+                            </Grid>
+                        </Button>
+
+
+                        <Button
+                            x:Name="btnStaySigned"
+                            Grid.Row="3"
+                            Width="Auto"
+                            Margin="0,3"
+                            Padding="20,9"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnStaySigned_Click">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="80" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="15"
+                                    Text="Stay signed in" />
+
+                                <ToggleSwitch
+                                    x:Name="toggleStaySigned"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Right"
+                                    FlowDirection="RightToLeft"
+                                    Toggled="toggleStaySigned_Toggled" />
+
+                            </Grid>
+                        </Button>
+
                         <Button
                             x:Name="btnLogout"
                             Grid.Row="4"
@@ -664,7 +677,8 @@
                             Margin="0,3"
                             Padding="20,20"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnLogout_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
@@ -728,15 +742,15 @@
                                     FontFamily="{StaticResource Light}"
                                     FontSize="15"
                                     Text="Add payment accounts" />
-                                <Path
+
+
+                                <FontIcon
                                     Grid.Column="2"
-                                    Width="7"
-                                    Height="12"
-                                    Margin="12,0,0,0"
-                                    VerticalAlignment="Center"
-                                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
-                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    Stretch="Uniform" />
+                                    HorizontalAlignment="Right"
+                                    FontFamily="Segoe Fluent Icons"
+                                    FontSize="13"
+                                    Glyph="&#xE76C;" />
+
 
                             </Grid>
                         </Button>
@@ -744,7 +758,7 @@
                     </Grid>
                 </Border>
 
-       
+
 
             </StackPanel>
         </ScrollViewer>

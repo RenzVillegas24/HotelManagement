@@ -94,6 +94,8 @@ namespace winrt::HotelManagement::implementation
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
             (L"account_createAcct", winrt::xaml_typename<SignUpForm>()));
 
+
+        //m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName> (L"registered", winrt::xaml_typename<SignUpForm>()));
         //m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName> (L"payment", winrt::xaml_typename<Payment>()));
         
 

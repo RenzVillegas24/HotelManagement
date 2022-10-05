@@ -69,7 +69,7 @@
                                 Padding="10,0"
                                 FontFamily="{StaticResource Light}"
                                 FontSize="13">
-                                <TextBlock Padding="0,8" Text="Remember me" />
+                                <TextBlock Padding="0,8" Text="Stay signed in" />
                             </CheckBox>
                             <Button
                                 x:Name="btnForgot"

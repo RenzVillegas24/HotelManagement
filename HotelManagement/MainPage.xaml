@@ -62,12 +62,16 @@
                 </c:NavigationViewItem>
                 <c:NavigationViewItem
                     Content="Bookings"
-                    Icon="Bookmarks"
+                    Icon="Tag"
                     Tag="bookings" />
                 <c:NavigationViewItem
                     Content="Customer Support"
                     Icon="Comment"
                     Tag="support" />
+                <c:NavigationViewItem
+                    Content="Registered Accounts"
+                    Icon="List"
+                    Tag="registered" />
                 <c:NavigationViewItem
                     Content="Account"
                     Icon="People"

@@ -1,0 +1,9 @@
+namespace HotelManagement
+{
+    [default_interface]
+    runtimeclass RegAdmin : Windows.UI.Xaml.Controls.Page
+    {
+        RegAdmin();
+        Int32 MyProperty;
+    }
+}
