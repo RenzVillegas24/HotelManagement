@@ -1469,9 +1469,13 @@ namespace winrt::HotelManagement::implementation
                 );
             else {
                 auto bdayFmt = winrt::Windows::Globalization::DateTimeFormatting::DateTimeFormatter::DateTimeFormatter(L"{month.integer(2)}/{day.integer(2)}/{year.full}");
+                db << "BEGIN;";
+
                 db << "UPDATE accounts SET birthday = ? WHERE username = ?;"
                     << to_string(bdayFmt.Format(newBirthday.Date()))
                     << user;
+
+                db << "COMMIT;";
 
                 co_await Dialog(
                     L"Account updated successfully",
