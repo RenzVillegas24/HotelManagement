@@ -52,35 +52,140 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <Border
+                        <Button
                             x:Name="gridImg"
                             Grid.Row="0"
                             Width="200"
                             Height="200"
-                            Margin="0,0,0,20"
-                            Background="#BFFAEBD7"
-                            BorderBrush="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
+                            Margin="0,0,0,30"
+                            Padding="0"
+                            HorizontalAlignment="Center"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
                             BorderThickness="1.5"
+                            Click="gridImg_Click"
                             CornerRadius="5"
+                            PointerEntered="gridImg_PointerEntered"
+                            PointerExited="gridImg_PointerExited"
+                            Shadow="{StaticResource shadow}"
+                            Translation="0,0,20"
                             UseLayoutRounding="True">
-                            <Border CornerRadius="5" UseLayoutRounding="True">
+                            <Button.Resources>
+                                <Storyboard x:Name="imgOut">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgChangeTxt"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="1"
+                                        Duration="0:0:0.15" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imageLoading"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.15" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgLoadingBack"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0.9"
+                                        Duration="0:0:0.15" />
+                                </Storyboard>
+                                <Storyboard x:Name="imgHover">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgChangeTxt"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.3" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imageLoading"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.3" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgLoadingBack"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.3" />
+                                </Storyboard>
+                                <Storyboard x:Name="imgLoading">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgChangeTxt"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.15" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imageLoading"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="1"
+                                        Duration="0:0:0.15" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgLoadingBack"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="1"
+                                        Duration="0:0:0.15" />
+                                </Storyboard>
+                                <Storyboard x:Name="imgUnloading" BeginTime="0:0:0.5">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgChangeTxt"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.15" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imageLoading"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.3" />
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="imgLoadingBack"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
+                                        Duration="0:0:0.3" />
+                                </Storyboard>
+                            </Button.Resources>
+                            <Border CornerRadius="4" UseLayoutRounding="True">
                                 <Border.Background>
                                     <ImageBrush
                                         x:Name="imgID"
                                         ImageSource="Assets/Account/id_empty.png"
                                         Stretch="UniformToFill" />
                                 </Border.Background>
-                                <Border
-                                    x:Name="imgLoadingBack"
-                                    Background="{StaticResource BackdropAcrylicBrush}"
-                                    CornerRadius="5"
-                                    Opacity="0"
-                                    UseLayoutRounding="True">
-                                    <c:ProgressRing x:Name="imageLoading" Background="{StaticResource AppBarBackgroundThemeBrush}" />
-                                </Border>
+                                <Grid>
+                                    <Border
+                                        x:Name="imgLoadingBack"
+                                        Background="{StaticResource BackdropAcrylicBrush}"
+                                        CornerRadius="5"
+                                        Opacity="0"
+                                        UseLayoutRounding="True" />
+                                    <Border
+                                        x:Name="imgChangeTxt"
+                                        Padding="10"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Background="{StaticResource BackdropAcrylicBrush}"
+                                        CornerRadius="5"
+                                        Opacity="0"
+                                        Shadow="{StaticResource shadow}"
+                                        Translation="0, 0, 30">
+                                        <StackPanel>
+                                            <FontIcon
+                                                Grid.Column="2"
+                                                HorizontalAlignment="Center"
+                                                FontFamily="Segoe Fluent Icons"
+                                                FontSize="25"
+                                                Glyph="&#xE722;" />
+                                            <TextBlock
+                                                Margin="0,2,0,0"
+                                                HorizontalAlignment="Center"
+                                                FontFamily="{StaticResource Light}"
+                                                Text="Change image" />
+                                        </StackPanel>
+                                    </Border>
+                                    <c:ProgressRing
+                                        x:Name="imageLoading"
+                                        Background="{StaticResource AppBarBackgroundThemeBrush}"
+                                        Opacity="0" />
+                                </Grid>
 
                             </Border>
-                        </Border>
+                        </Button>
 
                         <Button
                             x:Name="btnName"
@@ -89,7 +194,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnName_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -108,8 +214,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="Villarica, Ponsho Pilato Jr."
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -129,7 +235,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnBirthday_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -148,8 +255,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="December 25, 2000"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -169,7 +276,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnGender_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -188,8 +296,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="Half Zombie, Half Human"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -209,7 +317,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnCivil_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -228,8 +337,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="Married"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -249,7 +358,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnNationality_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -268,8 +378,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="Filipino"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -316,7 +426,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnAddress_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -335,8 +446,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text=""
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -356,7 +467,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnZip_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -375,8 +487,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="Half Zombie, Half Human"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -422,7 +534,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnContact_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -441,8 +554,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="09999999999"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -462,7 +575,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnEmail_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -481,8 +595,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="temporary@email.com"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -530,7 +644,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch" Click="btnUsername_Click">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnUsername_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -549,8 +664,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="09999999999"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon
@@ -570,7 +685,8 @@
                             Margin="0,3"
                             Padding="20,15"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch" Click="btnPassword_Click">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnPassword_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="100" />
@@ -589,8 +705,8 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Regular}"
                                     FontSize="17"
-                                    Text="passabog"
                                     TextTrimming="CharacterEllipsis" />
 
                                 <FontIcon

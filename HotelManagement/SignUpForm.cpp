@@ -351,10 +351,10 @@ VillaricaPonsho
 
 
             if (txtbxContact().Text().size() != 11) 
-                errors = errors + L"\n● Contact numbers should be 11 numbers only.";
+                errors = errors + L"\n● Contact number should be 11 numbers only.";
             else 
                 if (to_string(txtbxContact().Text()).find_first_not_of("0123456789") != string::npos)
-                    errors = errors + L"\n● Contact numbers should contains numbers only.";
+                    errors = errors + L"\n● Contact number should contains numbers only.";
 
             if (txtbxZipCode().Text().size() != 4)
                 errors = errors + L"\n● Zip code should be 4 numbers only.";
@@ -365,11 +365,14 @@ VillaricaPonsho
             if (txtbxEmail().Text().size() < 10) 
                 errors = errors + L"\n● Email should be atleast 10 characters.";
             else 
-                if (txtbxPassword().Password() != txtbxConfirmPassword().Password())
-                    errors = errors + L"\n● Password doesn't match with password confirmation.";
+                if (to_string(txtbxEmail().Text()).find_first_not_of("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._-?#@*$&!") != string::npos)
+                    errors = errors + L"\n● Emails should contains alphabets, numbers and special characters (._-?#@*$&!) only.";
+
 
             if (txtbxPassword().Password().size() <= 6) 
                 errors = errors + L"\n● Password should be atleast 7 characters.";
+            else if (txtbxPassword().Password() != txtbxConfirmPassword().Password())
+                errors = errors + L"\n● Password doesn't match with password confirmation.";
             else 
                 if (to_string(txtbxPassword().Password()).find_first_not_of("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._-?#@*$&!") != string::npos)
                     errors = errors + L"\n● Password should contains alphabets, numbers and special characters (._-?#@*$&!) only.";
