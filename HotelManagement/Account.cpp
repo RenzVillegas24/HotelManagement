@@ -1270,13 +1270,13 @@ namespace winrt::HotelManagement::implementation
         newCivil.HorizontalAlignment(HorizontalAlignment::Stretch);
         newCivil.PlaceholderText(L"Civil status");
 
-        auto item1 = TextBlock(); title.Text(L"Single");
+        auto item1 = TextBlock(); item1.Text(L"Single");
         newCivil.Items().Append(item1);
-        auto item2 = TextBlock(); title.Text(L"Married");
+        auto item2 = TextBlock(); item2.Text(L"Married");
         newCivil.Items().Append(item2);
-        auto item3 = TextBlock(); title.Text(L"Widow");
+        auto item3 = TextBlock(); item3.Text(L"Widow");
         newCivil.Items().Append(item3);
-        auto item4 = TextBlock(); title.Text(L"Legally Seperated");
+        auto item4 = TextBlock(); item4.Text(L"Legally Seperated");
         newCivil.Items().Append(item4);
 
 
@@ -1354,11 +1354,11 @@ namespace winrt::HotelManagement::implementation
         newGender.HorizontalAlignment(HorizontalAlignment::Stretch);
         newGender.PlaceholderText(L"Gender");
 
-        auto item1 = TextBlock(); title.Text(L"Male");
+        auto item1 = TextBlock(); item1.Text(L"Male");
         newGender.Items().Append(item1);
-        auto item2 = TextBlock(); title.Text(L"Female");
+        auto item2 = TextBlock(); item2.Text(L"Female");
         newGender.Items().Append(item2);
-        auto item3 = TextBlock(); title.Text(L"Other");
+        auto item3 = TextBlock(); item3.Text(L"Other");
         newGender.Items().Append(item3);
 
 
@@ -1785,8 +1785,17 @@ namespace winrt::HotelManagement::implementation
 
     }
 
+    void Account::btnAddPayment_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+        auto t = SlideNavigationTransitionInfo();
+        t.Effect(SlideNavigationTransitionEffect::FromRight);
+
+        Frame().Navigate(winrt::xaml_typename<Payment>(), nullptr, t);
+    }
 
 }
+
+
 
 
 

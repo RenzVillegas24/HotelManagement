@@ -316,7 +316,7 @@ namespace winrt::HotelManagement::implementation
     IAsyncAction Home::btnReserve_Click(IInspectable const& sender, RoutedEventArgs const& e)
     {
         if(isLoggedIn())
-            Frame().Navigate(winrt::xaml_typename<Account>(), nullptr, DrillInNavigationTransitionInfo());
+            Frame().Navigate(winrt::xaml_typename<Booking>(), nullptr, DrillInNavigationTransitionInfo());
         else {
 
             auto res = co_await Dialog(

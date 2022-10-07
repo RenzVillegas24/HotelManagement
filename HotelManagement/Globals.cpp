@@ -50,8 +50,14 @@ namespace winrt::HotelManagement::implementation
 
 
 
-            encoder.BitmapTransform().ScaledHeight(size * ratio[1]);
-            encoder.BitmapTransform().ScaledWidth(size * ratio[0]);
+
+            if (mnSz >= 250)
+            {
+                encoder.BitmapTransform().ScaledHeight(size * ratio[1]);
+                encoder.BitmapTransform().ScaledWidth(size * ratio[0]);
+            } else 
+                size = mnSz;
+                
 
 
             BitmapBounds bounds = BitmapBounds();
@@ -60,6 +66,7 @@ namespace winrt::HotelManagement::implementation
 
             double adj = (size * ratioMxMn - size) / 2;
 
+            //cropped ssss
             if (decoder.PixelWidth() > decoder.PixelHeight()) {
                 bounds.X = uint32_t(adj);
                 bounds.Y = uint32_t(0);

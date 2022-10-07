@@ -119,9 +119,11 @@
                             Width="175"
                             Height="175"
                             Background="#BFFAEBD7"
-                            BorderBrush="{ThemeResource AppBarSeparatorForegroundThemeBrush}"
+                            BorderBrush="{ThemeResource AppBarBorderThemeBrush}"
                             BorderThickness="1.5"
                             CornerRadius="5"
+                            Shadow="{StaticResource shadow}"
+                            Translation="0,0,10"
                             UseLayoutRounding="True">
                             <Border.Resources>
                                 <Storyboard x:Name="imgLoading">

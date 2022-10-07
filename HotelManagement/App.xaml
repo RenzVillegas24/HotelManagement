@@ -44,6 +44,13 @@
                                 <GradientStop Offset="1" Color="#E5000000" />
                             </LinearGradientBrush>
 
+                            <LinearGradientBrush x:Key="NormalGradient" StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#00000000" />
+                                <GradientStop Offset="1" Color="#000000" />
+                            </LinearGradientBrush>
+
+                            <Color x:Key="ApplicationPageBackgroundThemeBrushV2">#000000</Color>
+
                         </ResourceDictionary>
                         <ResourceDictionary x:Key="Light">
                             <AcrylicBrush
@@ -57,9 +64,15 @@
 
                             <LinearGradientBrush x:Key="BookingGradient" StartPoint="0.5,0" EndPoint="0.5,1">
                                 <GradientStop Color="#00FFFFFF" />
+                                <GradientStop Offset="1" Color="#E5FFFFFF" />
+                            </LinearGradientBrush>
+
+                            <LinearGradientBrush x:Key="NormalGradient" StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="#00FFFFFF" />
                                 <GradientStop Offset="1" Color="#FFFFFFFF" />
                             </LinearGradientBrush>
 
+                            <Color x:Key="ApplicationPageBackgroundThemeBrushV2">#FFFFFFFF</Color>
 
                         </ResourceDictionary>
                     </ResourceDictionary.ThemeDictionaries>
@@ -184,6 +197,8 @@
                             </Setter.Value>
                         </Setter>
                     </Style>
+
+
 
                     <Style x:Key="customScrollViewer" TargetType="ScrollViewer">
                         <Setter Property="HorizontalScrollMode" Value="Auto" />

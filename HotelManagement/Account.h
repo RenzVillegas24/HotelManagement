@@ -37,6 +37,8 @@ namespace winrt::HotelManagement::implementation
     
     private:
         bool isImgLoading;
+    public:
+        void btnAddPayment_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
     };
 }
 

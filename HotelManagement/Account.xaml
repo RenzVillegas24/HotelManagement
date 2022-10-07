@@ -151,7 +151,7 @@
                                     <Border
                                         x:Name="imgLoadingBack"
                                         Background="{StaticResource BackdropAcrylicBrush}"
-                                        CornerRadius="5"
+                                        CornerRadius="4"
                                         Opacity="0"
                                         UseLayoutRounding="True" />
                                     <Border
@@ -845,7 +845,7 @@
                             Margin="0,3"
                             Padding="20,20"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch">
+                            HorizontalContentAlignment="Stretch" Click="btnAddPayment_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />

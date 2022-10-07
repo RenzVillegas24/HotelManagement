@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
   <Identity
     Name="99dcfaa8-08e6-42bc-9eeb-18375607fa14"
-    Publisher="CN=RenzCute"
+    Publisher="CN=UWPGods"
     Version="1.2.12.0" />
   <mp:PhoneIdentity PhoneProductId="99dcfaa8-08e6-42bc-9eeb-18375607fa14" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
   <Properties>

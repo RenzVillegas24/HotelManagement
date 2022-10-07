@@ -222,6 +222,9 @@
       <Filter>Assets\Account</Filter>
     </Image>
     <Image Include="Assets\Square310x310Logo.scale-200.png" />
+    <Image Include="Assets\Home\Event6.jpg">
+      <Filter>Assets\Home</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />

@@ -1,247 +1,835 @@
 ﻿<Page
+    x:Class="HotelManagement.Home"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:HotelManagement"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:IsAcrylicBrushPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypePresent(Windows.UI.Xaml.Media.AcrylicBrush)"
+    xmlns:Custom="using:System.Numerics"
     xmlns:IsAcrylicBrushNotPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypeNotPresent(Windows.UI.Xaml.Media.AcrylicBrush)"
-   xmlns:Custom="using:System.Numerics"
-    x:Class="HotelManagement.Home"
-   mc:Ignorable="d" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
+    xmlns:IsAcrylicBrushPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypePresent(Windows.UI.Xaml.Media.AcrylicBrush)"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:HotelManagement"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="Page_Loaded"
+    Unloaded="Page_Unloaded"
+    mc:Ignorable="d">
 
     <Grid>
-        <Frame x:Name="ContentFrame" FontFamily="{StaticResource Regular}" >
+        <Frame x:Name="ContentFrame" FontFamily="{StaticResource Regular}">
             <ContentControl>
-                <FlipView x:Name="flipView_Main" 
-                          Style="{StaticResource FlipViewStyle1}" 
-                          ScrollViewer.IsScrollInertiaEnabled="True"
-                          ScrollViewer.CanContentRenderOutsideBounds="True"
-                          >
+                <FlipView
+                    x:Name="flipView_Main"
+                    ScrollViewer.CanContentRenderOutsideBounds="True"
+                    ScrollViewer.IsScrollInertiaEnabled="True"
+                    Style="{StaticResource FlipViewStyle1}">
                     <FlipView.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <VirtualizingStackPanel Orientation="Vertical"/>
+                            <VirtualizingStackPanel Orientation="Vertical" />
                         </ItemsPanelTemplate>
                     </FlipView.ItemsPanel>
 
                     <Grid>
-                        <FlipView Style="{StaticResource FlipViewStyle1}" x:Name="flipView_Discover" Background="Transparent" AllowFocusOnInteraction="False"  IsTabStop="False">
-                            <Image Source="Assets/Home/Discover1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Discover3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Discover2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Discover4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Discover5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Discover6.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Discover7.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Discover8.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
+                        <FlipView
+                            x:Name="flipView_Discover"
+                            AllowFocusOnInteraction="False"
+                            Background="Transparent"
+                            IsTabStop="False"
+                            Style="{StaticResource FlipViewStyle1}">
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover5.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover6.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover7.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover8.jpg"
+                                Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}"/>
-                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,0,0,55" FontSize="40" FontFamily="{StaticResource Black}">
+                        <Grid Background="{StaticResource BookingGradient}" />
+                        <TextBlock
+                            Margin="0,0,0,55"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="{StaticResource Black}"
+                            FontSize="40"
+                            TextAlignment="Center">
                             Discover
                         </TextBlock>
-                        <TextBlock VerticalAlignment="Center" FontFamily="{StaticResource Black}" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,55,0,0" FontSize="70" >
+                        <TextBlock
+                            Margin="0,55,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="{StaticResource Black}"
+                            FontSize="70"
+                            TextAlignment="Center">
                             MBC Lodge
                         </TextBlock>
-                        <Button x:Name="btnScrollDown" VerticalAlignment="Bottom" HorizontalAlignment="Center" 
-                                Style="{StaticResource RoundedButtonStyleTrans}" Padding="20,10,20,10" Margin="0,0,0,30" Click="btnScrollDown_Click">
+                        <Button
+                            x:Name="btnScrollDown"
+                            Margin="0,0,0,30"
+                            Padding="20,10,20,10"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Click="btnScrollDown_Click"
+                            Style="{StaticResource RoundedButtonStyleTrans}">
                             <Grid>
-                                <TextBlock VerticalAlignment="Bottom"  HorizontalAlignment="Center" Margin="0,0,0,25" FontSize="17" FontFamily="{StaticResource Thin}">
+                                <TextBlock
+                                    Margin="0,0,0,25"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Bottom"
+                                    FontFamily="{StaticResource Thin}"
+                                    FontSize="17">
                                     Scroll down to discover more
                                 </TextBlock>
-                                <Path VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,5" Fill="{ThemeResource ApplicationForegroundThemeBrush}" Data="M2.16,6.246 C2.385,6.246 2.61,6.308 2.81,6.442 L9.039,10.598 L15.076,6.401 C15.617,6.042 16.346,6.188 16.705,6.729 C17.065,7.268 16.92,8 16.38,8.359 L9.692,12.989 C9.298,13.253 8.784,13.254 8.388,12.991 L1.508,8.402 C0.966,8.042 0.82,7.31 1.179,6.77 C1.407,6.429 1.78,6.246 2.16,6.246 L2.16,6.246 Z" />
+                                <Path
+                                    Margin="0,0,0,5"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Bottom"
+                                    Data="M2.16,6.246 C2.385,6.246 2.61,6.308 2.81,6.442 L9.039,10.598 L15.076,6.401 C15.617,6.042 16.346,6.188 16.705,6.729 C17.065,7.268 16.92,8 16.38,8.359 L9.692,12.989 C9.298,13.253 8.784,13.254 8.388,12.991 L1.508,8.402 C0.966,8.042 0.82,7.31 1.179,6.77 C1.407,6.429 1.78,6.246 2.16,6.246 L2.16,6.246 Z"
+                                    Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
                             </Grid>
                         </Button>
                     </Grid>
                     <Grid>
-                        <FlipView Style="{StaticResource FlipViewStyle1}" x:Name="flipView_Units" Background="Transparent" AllowFocusOnInteraction="False"  IsTabStop="False">
-                            <Image Source="Assets/Home/Unit3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Unit1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Unit2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Unit4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Unit5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
+                        <FlipView
+                            x:Name="flipView_Units"
+                            AllowFocusOnInteraction="False"
+                            Background="Transparent"
+                            IsTabStop="False"
+                            Style="{StaticResource FlipViewStyle1}">
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Unit3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Unit1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Unit2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Unit4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Unit5.jpg"
+                                Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}"/>
-                        <Button x:Name="btnRooms" Style="{StaticResource RoundedButtonStyleTrans}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnRooms_Click">
-                            <TextBlock Text="Rooms." FontSize="80" FontFamily="{StaticResource Bold}" Padding="20,5,20,5"/>
+                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Button
+                            x:Name="btnRooms"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="btnRooms_Click"
+                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            <TextBlock
+                                Padding="20,5,20,5"
+                                FontFamily="{StaticResource Bold}"
+                                FontSize="80"
+                                Text="Rooms." />
                         </Button>
-                        <TextBlock VerticalAlignment="Bottom"  TextAlignment="Center" FontFamily="{StaticResource Light}"  HorizontalAlignment="Center" Opacity="0.7" Margin="80,0,80,70" FontSize="18" TextWrapping="Wrap">
-                            The colors, materials, and fabrics in our rooms are cozier, lighter, and more vibrant than others. 
+                        <TextBlock
+                            Margin="80,0,80,70"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            FontFamily="{StaticResource Light}"
+                            FontSize="18"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap">
+                            The colors, materials, and fabrics in our rooms are cozier, lighter, and more vibrant than others.
                             Rooms are light-filled and spacious, and during the day they are showered in sunlight.
                         </TextBlock>
-                        <StackPanel x:Name="indiUnits" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,35">
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
+                        <StackPanel
+                            x:Name="indiUnits"
+                            Margin="0,0,0,35"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
                         </StackPanel>
                     </Grid>
                     <Grid>
-                        <FlipView Style="{StaticResource FlipViewStyle1}" x:Name="flipView_Gym" Background="Transparent" AllowFocusOnInteraction="False" IsTabStop="False">
-                            <Image Source="Assets/Home/Gym4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Gym1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Gym2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Gym3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Gym5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
+                        <FlipView
+                            x:Name="flipView_Gym"
+                            AllowFocusOnInteraction="False"
+                            Background="Transparent"
+                            IsTabStop="False"
+                            Style="{StaticResource FlipViewStyle1}">
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Gym4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Gym1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Gym2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Gym3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Gym5.jpg"
+                                Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}"/>
-                        <Button x:Name="btnGyms" Style="{StaticResource RoundedButtonStyleTrans}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnGyms_Click">
-                            <TextBlock Text="Gyms." FontSize="80" FontFamily="{StaticResource Black}" Padding="20,5,20,20"/>
+                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Button
+                            x:Name="btnGyms"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="btnGyms_Click"
+                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            <TextBlock
+                                Padding="20,5,20,20"
+                                FontFamily="{StaticResource Black}"
+                                FontSize="80"
+                                Text="Gyms." />
                         </Button>
-                        <TextBlock VerticalAlignment="Bottom"  TextAlignment="Center" FontFamily="{StaticResource Light}"  HorizontalAlignment="Center" Opacity="0.7" Margin="80,0,80,70" FontSize="18" TextWrapping="Wrap">
-                            We provide our provides guests with unprecedented opportunities to pursue their fitness, mindfulness, 
+                        <TextBlock
+                            Margin="80,0,80,70"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            FontFamily="{StaticResource Light}"
+                            FontSize="18"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap">
+                            We provide our provides guests with unprecedented opportunities to pursue their fitness, mindfulness,
                             and nutritional goals. Complete with equipment to stay fit for daily living.
                         </TextBlock>
-                        <StackPanel x:Name="indiGym" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,35">
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
+                        <StackPanel
+                            x:Name="indiGym"
+                            Margin="0,0,0,35"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
                         </StackPanel>
                     </Grid>
                     <Grid>
-                        <FlipView Style="{StaticResource FlipViewStyle1}" x:Name="flipView_Restaurant" Background="Transparent" AllowFocusOnInteraction="False" IsTabStop="False">
-                            <Image Source="Assets/Home/Restaurant5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Restaurant1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Restaurant2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Restaurant3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Restaurant4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
+                        <FlipView
+                            x:Name="flipView_Restaurant"
+                            AllowFocusOnInteraction="False"
+                            Background="Transparent"
+                            IsTabStop="False"
+                            Style="{StaticResource FlipViewStyle1}">
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Restaurant5.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Restaurant1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Restaurant2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Restaurant3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Restaurant4.jpg"
+                                Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}"/>
-                        <Button x:Name="btnRestaurant" Style="{StaticResource RoundedButtonStyleTrans}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnRestaurant_Click">
-                            <TextBlock Text="Restaurant." FontSize="80" FontFamily="{StaticResource Black}" Padding="20,5,20,5"/>
+                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Button
+                            x:Name="btnRestaurant"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="btnRestaurant_Click"
+                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            <TextBlock
+                                Padding="20,5,20,5"
+                                FontFamily="{StaticResource Black}"
+                                FontSize="80"
+                                Text="Restaurant." />
                         </Button>
-                        <TextBlock VerticalAlignment="Bottom"  TextAlignment="Center" FontFamily="{StaticResource Light}"  HorizontalAlignment="Center" Opacity="0.7" Margin="80,0,80,70" FontSize="18" TextWrapping="Wrap">
+                        <TextBlock
+                            Margin="80,0,80,70"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            FontFamily="{StaticResource Light}"
+                            FontSize="18"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap">
                             Feast from around the world featuring live cooking stations, home-baked breads, fresh pastas, sushi and more.
                             Spices presents the flavorful cuisines of Japanese, Korean, Thailand, Vietnam, Singapore and India
                         </TextBlock>
-                        <StackPanel x:Name="indiRestaurant" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,35">
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
+                        <StackPanel
+                            x:Name="indiRestaurant"
+                            Margin="0,0,0,35"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
                         </StackPanel>
                     </Grid>
                     <Grid>
-                        <FlipView Style="{StaticResource FlipViewStyle1}" x:Name="flipView_Pool" Background="Transparent" AllowFocusOnInteraction="False" IsTabStop="False">
-                            <Image Source="Assets/Home/Pool4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Pool1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Pool2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Pool3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Pool5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
+                        <FlipView
+                            x:Name="flipView_Pool"
+                            AllowFocusOnInteraction="False"
+                            Background="Transparent"
+                            IsTabStop="False"
+                            Style="{StaticResource FlipViewStyle1}">
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Pool4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Pool1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Pool2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Pool3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Pool5.jpg"
+                                Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}"/>
-                        <Button x:Name="btnPools" Style="{StaticResource RoundedButtonStyleTrans}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnPools_Click">
-                            <TextBlock Text="Pools." FontSize="80" FontFamily="{StaticResource Black}" Padding="20,5,20,5"/>
+                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Button
+                            x:Name="btnPools"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="btnPools_Click"
+                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            <TextBlock
+                                Padding="20,5,20,5"
+                                FontFamily="{StaticResource Black}"
+                                FontSize="80"
+                                Text="Pools." />
                         </Button>
-                        <TextBlock VerticalAlignment="Bottom"  TextAlignment="Center" FontFamily="{StaticResource Light}"  HorizontalAlignment="Center" Opacity="0.7" Margin="80,0,80,70" FontSize="18" TextWrapping="Wrap">
+                        <TextBlock
+                            Margin="80,0,80,70"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            FontFamily="{StaticResource Light}"
+                            FontSize="18"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap">
                             Swimming pool was reconfigured and re-engineered with brand new state-of-the-art pumps and filter system.
                             Decorative spouts and jets were also installed to add novel flavor and provides a spectacular sunset view.
                         </TextBlock>
-                        <StackPanel x:Name="indiPool" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,35">
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
+                        <StackPanel
+                            x:Name="indiPool"
+                            Margin="0,0,0,35"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
                         </StackPanel>
                     </Grid>
                     <Grid>
-                        <FlipView Style="{StaticResource FlipViewStyle1}" x:Name="flipView_Lobby" Background="Transparent" AllowFocusOnInteraction="False" IsTabStop="False">
-                            <Image Source="Assets/Home/Lobby1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Lobby2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Lobby3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Lobby4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Lobby5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
+                        <FlipView
+                            x:Name="flipView_Lobby"
+                            AllowFocusOnInteraction="False"
+                            Background="Transparent"
+                            IsTabStop="False"
+                            Style="{StaticResource FlipViewStyle1}">
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Lobby1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Lobby2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Lobby3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Lobby4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Lobby5.jpg"
+                                Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}"/>
-                        <Button x:Name="btnLobby" Style="{StaticResource RoundedButtonStyleTrans}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnLobby_Click">
-                            <TextBlock Text="Lobby." FontSize="80" FontFamily="{StaticResource Black}" Padding="20,5,20,20"/>
+                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Button
+                            x:Name="btnLobby"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="btnLobby_Click"
+                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            <TextBlock
+                                Padding="20,5,20,20"
+                                FontFamily="{StaticResource Black}"
+                                FontSize="80"
+                                Text="Lobby." />
                         </Button>
-                        <TextBlock VerticalAlignment="Bottom"  TextAlignment="Center" FontFamily="{StaticResource Light}"  HorizontalAlignment="Center" Opacity="0.7" Margin="80,0,80,70" FontSize="18" TextWrapping="Wrap">
-                            The Lobby Lounge has been a favorite meeting place for foreign and local guests. It offers guests seeking respite 
+                        <TextBlock
+                            Margin="80,0,80,70"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            FontFamily="{StaticResource Light}"
+                            FontSize="18"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap">
+                            The Lobby Lounge has been a favorite meeting place for foreign and local guests. It offers guests seeking respite
                             from the daily hustle and bustle of the metro a warm welcome. With plush an inviting ambiance.
                         </TextBlock>
-                        <StackPanel x:Name="indiLobby" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,35">
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
+                        <StackPanel
+                            x:Name="indiLobby"
+                            Margin="0,0,0,35"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
                         </StackPanel>
                     </Grid>
                     <Grid>
-                        <FlipView Style="{StaticResource FlipViewStyle1}" x:Name="flipView_Events" Background="Transparent" AllowFocusOnInteraction="False" IsTabStop="False">
-                            <Image Source="Assets/Home/Event1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Event2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Event3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Event4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Event5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
+                        <FlipView
+                            x:Name="flipView_Events"
+                            AllowFocusOnInteraction="False"
+                            Background="Transparent"
+                            IsTabStop="False"
+                            Style="{StaticResource FlipViewStyle1}">
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Event1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Event2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Event3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Event4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Event5.jpg"
+                                Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}"/>
-                        <Button x:Name="btnEvents" Style="{StaticResource RoundedButtonStyleTrans}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnEvents_Click">
-                            <TextBlock Text="Events." FontSize="80" FontFamily="{StaticResource Black}" Padding="20,5,20,5"/>
+                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Button
+                            x:Name="btnEvents"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Click="btnEvents_Click"
+                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            <TextBlock
+                                Padding="20,5,20,5"
+                                FontFamily="{StaticResource Black}"
+                                FontSize="80"
+                                Text="Events." />
                         </Button>
-                        <TextBlock VerticalAlignment="Bottom"  TextAlignment="Center" FontFamily="{StaticResource Light}"  HorizontalAlignment="Center" Opacity="0.7" Margin="80,0,80,70" FontSize="18" TextWrapping="Wrap">
+                        <TextBlock
+                            Margin="80,0,80,70"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            FontFamily="{StaticResource Light}"
+                            FontSize="18"
+                            Opacity="0.7"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap">
                             The esteemed choice for business events, private receptions and dream weddings.
                         </TextBlock>
-                        <StackPanel x:Name="indiEvents" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,35">
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
-                            <Ellipse Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="5" Height="5" Margin="7,0,7,0"/>
+                        <StackPanel
+                            x:Name="indiEvents"
+                            Margin="0,0,0,35"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Ellipse
+                                Width="5"
+                                Height="5"
+                                Margin="7,0,7,0"
+                                Fill="{ThemeResource ApplicationForegroundThemeBrush}" />
                         </StackPanel>
                     </Grid>
 
 
                     <Grid>
 
-                        <FlipView Style="{StaticResource FlipViewStyle1}" Opacity=".3" x:Name="flipView_All" Background="Transparent" AllowFocusOnInteraction="False" IsTabStop="False">
-                            
-                            <Image Source="Assets/Home/Discover6.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Unit3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Gym4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Restaurant3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Pool2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Lobby3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Event2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            
-                            <Image Source="Assets/Home/Discover3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Unit5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Gym3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Restaurant2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Pool1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Lobby2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Event3.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
+                        <FlipView
+                            x:Name="flipView_All"
+                            AllowFocusOnInteraction="False"
+                            Background="Transparent"
+                            IsTabStop="False"
+                            Opacity=".3"
+                            Style="{StaticResource FlipViewStyle1}">
 
-                            <Image Source="Assets/Home/Discover4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Unit2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Gym1.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill" />
-                            <Image Source="Assets/Home/Restaurant4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Pool5.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Event4.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            <Image Source="Assets/Home/Lobby2.jpg" HorizontalAlignment="Center"  VerticalAlignment="Center"  Stretch="UniformToFill"/>
-                            
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover6.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Unit3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Gym4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Restaurant3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Pool2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Lobby3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Event2.jpg"
+                                Stretch="UniformToFill" />
+
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Unit5.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Gym3.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Restaurant2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Pool1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Lobby2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Event3.jpg"
+                                Stretch="UniformToFill" />
+
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Discover4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Unit2.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Gym1.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Restaurant4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Pool5.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Event4.jpg"
+                                Stretch="UniformToFill" />
+                            <Image
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Source="Assets/Home/Lobby2.jpg"
+                                Stretch="UniformToFill" />
+
                         </FlipView>
-                        <Grid Background="{StaticResource BackdropAcrylicBrush}" Opacity="0.8"/>
-                        <Grid Background="{StaticResource AppBarBackgroundThemeBrush}" Opacity="0.2"/>
+                        <Grid Background="{StaticResource BackdropAcrylicBrush}" Opacity="0.8" />
+                        <Grid Background="{StaticResource AppBarBackgroundThemeBrush}" Opacity="0.2" />
                         <Grid Margin="0,120,0,0">
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,0,40,200">
-                                <TextBlock FontSize="25" FontFamily="{StaticResource Light}" TextAlignment="Center" TextWrapping="Wrap" >
+                            <StackPanel
+                                Margin="40,0,40,200"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                                <TextBlock
+                                    FontFamily="{StaticResource Light}"
+                                    FontSize="25"
+                                    TextAlignment="Center"
+                                    TextWrapping="Wrap">
                                     Experience the authenticity of being a Filipino, only here at
                                 </TextBlock>
-                                <TextBlock FontSize="80" FontFamily="{StaticResource Black}" TextAlignment="Center">
-                                   MBC Lodge.
+                                <TextBlock
+                                    FontFamily="{StaticResource Black}"
+                                    FontSize="80"
+                                    TextAlignment="Center">
+                                    MBC Lodge.
                                 </TextBlock>
                             </StackPanel>
-                            <TextBlock Opacity="0.7" HorizontalAlignment="Center" VerticalAlignment="Bottom" TextAlignment="Center" FontFamily="Regular" FontSize="15" TextWrapping="Wrap" Margin="60,0,60,140" >
-                                 To have a reservation or booking please proceed to our booking section.<LineBreak/>For bookings, reservation and inqueries, please contact us on landline at (632) 4252 0422 or email bookings@mbclodge.com.
-                            </TextBlock>
-                            <StackPanel  Margin="60,0,60,40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
-                                <Button x:Name="btnReserve" Background="#59FF9700" FontSize="20" FontFamily="{StaticResource Thin}" Padding="30,15,30,15" Margin="8" Click="btnReserve_Click" >
+                            <TextBlock
+                                Margin="60,0,60,140"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                FontFamily="Regular"
+                                FontSize="15"
+                                Opacity="0.7"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap">
+                                To have a reservation or booking please proceed to our booking section.<LineBreak />
+                                For bookings, reservation and inqueries, please contact us on landline at (632) 4252 0422 or email bookings@mbclodge.com.</TextBlock>
+                            <StackPanel
+                                Margin="60,0,60,40"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Orientation="Horizontal">
+                                <Button
+                                    x:Name="btnReserve"
+                                    Margin="8"
+                                    Padding="30,15,30,15"
+                                    Background="#59FF9700"
+                                    Click="btnReserve_Click"
+                                    FontFamily="{StaticResource Thin}"
+                                    FontSize="20">
                                     <Button.Resources>
                                         <StaticResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
                                         <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
@@ -249,7 +837,13 @@
                                     </Button.Resources>
                                     RESERVE NOW
                                 </Button>
-                                <Button x:Name="btnHelp" FontSize="20" FontFamily="{StaticResource Thin}" Padding="30,15,30,15" Margin="8" Click="btnHelp_Click">
+                                <Button
+                                    x:Name="btnHelp"
+                                    Margin="8"
+                                    Padding="30,15,30,15"
+                                    Click="btnHelp_Click"
+                                    FontFamily="{StaticResource Thin}"
+                                    FontSize="20">
                                     NEED HELP?
                                 </Button>
                             </StackPanel>
@@ -261,8 +855,17 @@
         </Frame>
 
 
-        <Grid VerticalAlignment="Top" Height="120" Background="{ThemeResource BackdropAcrylicBrush}">
-            <TextBlock x:Name="Title" Text="Home" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40,45,0,0" FontSize="30" />
+        <Grid
+            Height="120"
+            VerticalAlignment="Top"
+            Background="{ThemeResource BackdropAcrylicBrush}">
+            <TextBlock
+                x:Name="Title"
+                Margin="40,45,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                FontSize="30"
+                Text="Home" />
         </Grid>
     </Grid>
 </Page>
