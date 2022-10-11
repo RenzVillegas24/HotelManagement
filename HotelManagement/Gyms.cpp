@@ -2,8 +2,8 @@
 #include "Gyms.h"
 #if __has_include("Gyms.g.cpp")
 #include "Gyms.g.cpp"
-#include "Globals.h"
 #endif
+#include "Globals.h"
 
 #include <winrt/Windows.UI.Xaml.Media.Animation.h>
 

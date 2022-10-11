@@ -2,16 +2,14 @@
     x:Class="HotelManagement.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:IsAcrylicBrushNotPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypeNotPresent(Windows.UI.Xaml.Media.AcrylicBrush)"
-    xmlns:IsAcrylicBrushPresent="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsTypePresent(Windows.UI.Xaml.Media.AcrylicBrush)"
     xmlns:appmodel="using:Windows.ApplicationModel"
     xmlns:c="using:Microsoft.UI.Xaml.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:HotelManagement"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Name="MainPivot"
-    IsAcrylicBrushNotPresent:Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    IsAcrylicBrushPresent:Background="{ThemeResource SystemControlAltHighAcrylicWindowBrush}"
+    x:FieldModifier="public"
+    Background="{StaticResource SystemControlAltHighAcrylicWindowBrush}"
     Loaded="MainPivot_Loaded"
     mc:Ignorable="d">
 
@@ -71,7 +69,8 @@
                 <c:NavigationViewItem
                     Content="Registered Accounts"
                     Icon="List"
-                    Tag="registered" />
+                    Tag="registered"
+                    Visibility="Collapsed" />
                 <c:NavigationViewItem
                     Content="Account"
                     Icon="People"
@@ -81,6 +80,11 @@
                             Margin="12,0"
                             Content="Create Account"
                             Tag="account_createAcct" />
+                        <c:NavigationViewItem
+                            Margin="12,0"
+                            Content="Logout"
+                            Tag="account_logout"
+                            Visibility="Collapsed" />
                     </c:NavigationViewItem.MenuItems>
                 </c:NavigationViewItem>
             </c:NavigationView.MenuItems>

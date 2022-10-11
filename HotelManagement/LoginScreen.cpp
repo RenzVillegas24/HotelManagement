@@ -112,6 +112,18 @@ namespace winrt::HotelManagement::implementation
 					t.Effect(SlideNavigationTransitionEffect::FromRight);
 
 					Frame().Navigate(winrt::xaml_typename<Account>(), nullptr, t);
+
+					Frame().Parent().as<Microsoft::UI::Xaml::Controls::NavigationView>().MenuItems().GetAt(4).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().MenuItems().GetAt(1)
+						.as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Visible);
+
+					int isAdmin;
+
+					db << "SELECT isAdmin FROM accounts WHERE username = ?;"
+						<< to_string(txtbxUsername().Text().c_str())
+						>> isAdmin;
+
+					if (isAdmin)
+						Frame().Parent().as<Microsoft::UI::Xaml::Controls::NavigationView>().MenuItems().GetAt(3).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Visible);
 				}
 			}
 			else {

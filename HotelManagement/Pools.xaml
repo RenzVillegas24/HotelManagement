@@ -2,24 +2,278 @@
     x:Class="HotelManagement.Pools"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:HotelManagement"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:HotelManagement"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{StaticResource ApplicationPageBackgroundThemeBrushV2}"
     FontFamily="{StaticResource Regular}"
+    Loaded="Page_Loaded"
     mc:Ignorable="d">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <FlipView
+            x:Name="mainFlipView"
+            AllowFocusOnInteraction="False"
+            Background="Transparent"
+            IsTabStop="False"
+            Style="{StaticResource FlipViewStyle1}">
+            <FlipView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </FlipView.ItemsPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
 
-        </StackPanel>
+                <ParallaxView
+                    x:Name="parallax1"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            Margin="0,200,0,100"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Home/Pool3.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{StaticResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{StaticResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Swimming Pool for our Guests
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{StaticResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        If you like swimming and relaxing it is an ideal place to stay, it is a little bit outside of the city but with a connecting indoor and outdoor swimming pool it is perfect.
+                    </TextBlock>
+                </StackPanel>
 
-        <Grid VerticalAlignment="Top" Height="120" Background="{ThemeResource BackdropAcrylicBrush}">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,35,0,0">
-                <Button x:Name="HomeTitle" FontFamily="{StaticResource Regular}" Padding="13,6,13,10" FontSize="30" Style="{StaticResource RoundedButtonStyleTrans}" Margin="0,0,15,0" Click="HomeTitle_Click">
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax2"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            Margin="0,100"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Home/Pool4.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{StaticResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{StaticResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Aesthetically Pleasing Scenary
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{StaticResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        MBC Lodge’s swimming pool was reconfigured and re-engineered with brand new state-of-the-art pumps and filter system. Decorative spouts and jets were also installed to add novel flavor. The Pool area of the Hotel provides a spectacular sunset view.
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax3"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            Margin="0,100"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Home/Pool5.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{StaticResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{StaticResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Enjoy, Relax and Have Fun!
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{StaticResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Shaded by the lush tropical garden, this breathtaking oasis sits right in the heart of Manila. Swim laps in the pool or simply sit back, relax, order a refreshing drink and light snack from our Lobby Lounge and have them served to you at the pool side.
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax4"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Home/Pool1.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{StaticResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{StaticResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Book now!
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{StaticResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Our pools are open for our stay-in guests, so what are you waiting for? Go ahead and soak up the sun on one of our sun loungers. Book now!
+                    </TextBlock>
+                    <Button
+                        x:Name="btnReserve"
+                        Margin="0,30,0,0"
+                        Padding="30,15,30,15"
+                        HorizontalAlignment="Center"
+                        Background="#59FF9700"
+                        Click="btnReserve_Click"
+                        FontFamily="{StaticResource Thin}"
+                        FontSize="20">
+                        <Button.Resources>
+                            <StaticResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
+                            <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
+                            <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
+                        </Button.Resources>
+                        RESERVE NOW
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+        </FlipView>
+
+        <Grid
+            Height="120"
+            VerticalAlignment="Top"
+            Background="{ThemeResource BackdropAcrylicBrush}">
+            <StackPanel
+                Margin="30,35,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="HomeTitle"
+                    Margin="0,0,15,0"
+                    Padding="13,6,13,10"
+                    Click="HomeTitle_Click"
+                    FontFamily="{StaticResource Regular}"
+                    FontSize="30"
+                    Style="{StaticResource RoundedButtonStyleTrans}">
                     Home
                 </Button>
-                <Path VerticalAlignment="Center" Fill="{ThemeResource ApplicationForegroundThemeBrush}" Width="10" Height="15" Stretch="Uniform"  Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"/>
-                <TextBlock x:Name="Title" Text="Pools" VerticalAlignment="Center" Margin="25,-4,0,0" FontSize="30" />
+                <Path
+                    Width="10"
+                    Height="15"
+                    VerticalAlignment="Center"
+                    Data="m317.25 231.04-32.855 34.188 114.84 110.85-114.84 110.7 32.855 34.188 132.6-127.87 17.758-17.02-17.758-17.168z"
+                    Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                    Stretch="Uniform" />
+                <TextBlock
+                    x:Name="Title"
+                    Margin="25,-4,0,0"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    Text="Pools" />
 
             </StackPanel>
         </Grid>

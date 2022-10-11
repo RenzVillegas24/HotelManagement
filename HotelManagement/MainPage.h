@@ -36,7 +36,7 @@ namespace winrt::HotelManagement::implementation
         void navView_PaneOpening(muxc::NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args);
         void navView_PaneClosing(muxc::NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args);
         void navView_ItemInvoked(muxc::NavigationView const& sender, muxc::NavigationViewItemInvokedEventArgs const& args);
-        void navView_Navigate(std::wstring navItemTag, Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo);
+        Windows::Foundation::IAsyncAction navView_Navigate(std::wstring navItemTag, Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo);
         void On_Navigated(Windows::Foundation::IInspectable const& /* sender */, Windows::UI::Xaml::Navigation::NavigationEventArgs const& args);
 
         Windows::Foundation::IAsyncAction navView_BackRequested(muxc::NavigationView const& sender, muxc::NavigationViewBackRequestedEventArgs const& args);

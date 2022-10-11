@@ -47,6 +47,12 @@
     <Page Include="Payment.xaml">
       <Filter>AccountManagement</Filter>
     </Page>
+    <Page Include="Blank.xaml">
+      <Filter>Menus</Filter>
+    </Page>
+    <Page Include="RegisteredAccounts.xaml">
+      <Filter>Menus</Filter>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="App.idl" />

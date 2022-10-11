@@ -142,6 +142,10 @@
     <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\uncaught_exceptions.h" />
     <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\utf16_utf8.h" />
     <ClInclude Include="Assets\Include\sqlite_modern_cpp\utility\variant.h" />
+    <ClInclude Include="Blank.h">
+      <DependentUpon>Blank.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="Events.h">
       <DependentUpon>Events.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -182,6 +186,10 @@
       <DependentUpon>Pools.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
+    <ClInclude Include="RegisteredAccounts.h">
+      <DependentUpon>RegisteredAccounts.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClInclude>
     <ClInclude Include="Restaurant.h">
       <DependentUpon>Restaurant.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -210,6 +218,9 @@
     <Page Include="Account.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Blank.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Events.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -235,6 +246,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pools.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RegisteredAccounts.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Restaurant.xaml">
@@ -321,6 +335,10 @@
       <DependentUpon>Account.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="Blank.cpp">
+      <DependentUpon>Blank.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="Events.cpp">
       <DependentUpon>Events.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -364,6 +382,10 @@
       <DependentUpon>Pools.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
+    <ClCompile Include="RegisteredAccounts.cpp">
+      <DependentUpon>RegisteredAccounts.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </ClCompile>
     <ClCompile Include="Restaurant.cpp">
       <DependentUpon>Restaurant.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -392,6 +414,10 @@
     </Midl>
     <Midl Include="App.idl">
       <DependentUpon>App.xaml</DependentUpon>
+    </Midl>
+    <Midl Include="Blank.idl">
+      <DependentUpon>Blank.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Midl>
     <Midl Include="Events.idl">
       <DependentUpon>Events.xaml</DependentUpon>
@@ -426,6 +452,10 @@
     </Midl>
     <Midl Include="Pools.idl">
       <DependentUpon>Pools.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="RegisteredAccounts.idl">
+      <DependentUpon>RegisteredAccounts.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
     <Midl Include="Restaurant.idl">

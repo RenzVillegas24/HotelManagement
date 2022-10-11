@@ -1,12 +1,12 @@
 ﻿#pragma once
 
-#include "Lobby.g.h"
+#include "RegisteredAccounts.g.h"
 
 namespace winrt::HotelManagement::implementation
 {
-    struct Lobby : LobbyT<Lobby>
+    struct RegisteredAccounts : RegisteredAccountsT<RegisteredAccounts>
     {
-        Lobby() 
+        RegisteredAccounts() 
         {
             // Xaml objects should not call InitializeComponent during construction.
             // See https://github.com/microsoft/cppwinrt/tree/master/nuget#initializecomponent
@@ -15,16 +15,13 @@ namespace winrt::HotelManagement::implementation
         int32_t MyProperty();
         void MyProperty(int32_t value);
 
-        void HomeTitle_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
-
         void Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
-        winrt::Windows::Foundation::IAsyncAction btnReserve_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
     };
 }
 
 namespace winrt::HotelManagement::factory_implementation
 {
-    struct Lobby : LobbyT<Lobby, implementation::Lobby>
+    struct RegisteredAccounts : RegisteredAccountsT<RegisteredAccounts, implementation::RegisteredAccounts>
     {
     };
 }

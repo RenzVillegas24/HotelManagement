@@ -22,6 +22,7 @@ using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::ViewManagement;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::ApplicationModel::Core;
+using namespace Animation;
 
 using namespace sqlite;
 using namespace std;
@@ -59,6 +60,8 @@ namespace winrt::HotelManagement::implementation
 
     void MainPage::MainPivot_Loaded(IInspectable const& sender, RoutedEventArgs const& e)
     {
+        dbPath(to_string(localPath().Path()) + "\\data.db");
+
         //Send assets to local files
         SendFileToLocal(L"Database", L"refBrgy.db");
         SendFileToLocal(L"Database", L"refCitymun.db");
@@ -87,7 +90,7 @@ namespace winrt::HotelManagement::implementation
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
             (L"support", winrt::xaml_typename<Support>()));
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
-            (L"home_restaurant", winrt::xaml_typename<Restaurant>()));
+            (L"registered", winrt::xaml_typename<RegisteredAccounts>()));
         m_pages.push_back(std::make_pair<std::wstring, Interop::TypeName>
             (L"accounts", winrt::xaml_typename<Account>()));
 
@@ -122,6 +125,25 @@ namespace winrt::HotelManagement::implementation
         //NavigationCacheMode(Navigation::NavigationCacheMode::Enabled);
 
 
+        if (isLoggedIn()) {
+            database db(dbPath());
+
+            string userLogged;
+            int isAdmin;
+
+            db << "SELECT username, isRemembered FROM loggedin;"
+                >> userLogged;
+
+            db << "SELECT isAdmin FROM accounts WHERE username = ?;"
+                << userLogged
+                >> isAdmin;
+
+            navView().MenuItems().GetAt(3).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(isAdmin ? Visibility::Visible : Visibility::Collapsed);
+        }
+
+        navView().MenuItems().GetAt(4).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().MenuItems().GetAt(1)
+            .as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(isLoggedIn() ? Visibility::Visible : Visibility::Collapsed);
+
         initDatabase();
 
     }
@@ -143,7 +165,7 @@ namespace winrt::HotelManagement::implementation
     }
 
 
-    void MainPage::navView_Navigate(std::wstring navItemTag, Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo)
+    Windows::Foundation::IAsyncAction MainPage::navView_Navigate(std::wstring navItemTag, Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo)
     {
         Windows::UI::Xaml::Interop::TypeName pageTypeName;
 
@@ -155,7 +177,31 @@ namespace winrt::HotelManagement::implementation
                 m_pages.at(m_pages.size() - 2) = std::make_pair<std::wstring, Interop::TypeName>(L"accounts", winrt::xaml_typename<LoginScreen>());
      
         }
-            
+        else if (navItemTag == L"account_logout")
+        {
+            ContentFrame().Navigate(winrt::xaml_typename<Blank>(), nullptr, DrillInNavigationTransitionInfo());
+            auto res = co_await Dialog(
+                L"Logging out",
+                L"You are about to log out your account.\nWould you like to continue logging out?",
+                L"No",
+                L"Yes");
+
+
+            if (res == ContentDialogResult::Primary)
+            {
+                ContentFrame().Navigate(winrt::xaml_typename<Home>(), nullptr, DrillInNavigationTransitionInfo());
+                database db(dbPath());
+                db << "DELETE FROM loggedin;";
+                ContentFrame().BackStack().Clear();
+
+                navView().MenuItems().GetAt(3).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Collapsed);
+
+                navView().MenuItems().GetAt(4).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().MenuItems().GetAt(1)
+                    .as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Collapsed);
+            }
+            else
+                TryGoBack();
+        }
 
 
 
@@ -250,7 +296,8 @@ namespace winrt::HotelManagement::implementation
         {
             navView().SelectedItem(navView().SettingsItem().as<muxc::NavigationViewItem>());
             //navView().Header(winrt::box_value(L"Settings"));
-        }
+        
+        } 
         else if (ContentFrame().SourcePageType().Name != L"")
             for (auto&& eachPage : m_pages)
                 if (eachPage.second.Name == args.SourcePageType().Name)

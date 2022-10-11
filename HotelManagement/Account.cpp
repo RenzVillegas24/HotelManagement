@@ -170,6 +170,12 @@ namespace winrt::HotelManagement::implementation
             sqlite::database db(dbPath());
 
             db << "DELETE FROM loggedin;";
+
+            Frame().Parent().as<Microsoft::UI::Xaml::Controls::NavigationView>().MenuItems().GetAt(4).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().MenuItems().GetAt(1)
+                .as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Collapsed);
+            Frame().Parent().as<Microsoft::UI::Xaml::Controls::NavigationView>().MenuItems().GetAt(3).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Collapsed);
+            Frame().BackStack().Clear();
+
         }
 
 
@@ -197,10 +203,16 @@ namespace winrt::HotelManagement::implementation
 
     Windows::Foundation::IAsyncAction Account::btnAdmin_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
-        
+
+        string password, user;
         database db(dbPath());
+
+        db << "SELECT username, password FROM loggedin;"
+            >> tie(user, password);
+        
         int isAdmin;
-        db << "SELECT isAdmin FROM accounts;"
+        db << "SELECT isAdmin FROM accounts WHERE username = ?;"
+            << user
             >> isAdmin;
 
         #pragma region "Generate Dialog"
@@ -250,10 +262,6 @@ namespace winrt::HotelManagement::implementation
 
         if (res == ContentDialogResult::Primary) {
 
-            string password, user;
-
-            db << "SELECT username, password FROM loggedin;"
-                >> tie(user, password);
 
             
             bool adminPassed = L"#qWeR3" == adminPass.Password(),
@@ -273,6 +281,7 @@ namespace winrt::HotelManagement::implementation
                         L"Your may now proceed.",
                         L"Ok"
                     );
+
                     txtAdmin().Text(L"Register this account as admin");
                 }
                 else {
@@ -284,6 +293,8 @@ namespace winrt::HotelManagement::implementation
                     txtAdmin().Text(L"Unregister this account from admin");
                 }
 
+                Frame().Parent().as<Microsoft::UI::Xaml::Controls::NavigationView>().MenuItems().GetAt(3).as
+                    <Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(!isAdmin ? Visibility::Visible : Visibility::Collapsed);
             }
             else
             {

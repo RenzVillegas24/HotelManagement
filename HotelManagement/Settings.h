@@ -15,6 +15,14 @@ namespace winrt::HotelManagement::implementation
         int32_t MyProperty();
         void MyProperty(int32_t value);
 
+        void btnMicaTheme_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
+        void toggleMicaTheme_Toggled(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
+
+
+    private:
+        static Windows::UI::Xaml::DependencyProperty m_isMicaEnable;
+    public:
+        void Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
     };
 }
 

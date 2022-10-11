@@ -108,8 +108,8 @@
                         FontSize="40"
                         TextAlignment="Center"
                         TextWrapping="Wrap">
-                        State-of-the-art<LineBreak/>Life Fitness Equipment.
-                    </TextBlock>
+                        State-of-the-art<LineBreak />
+                        Life Fitness Equipment.</TextBlock>
                     <TextBlock
                         Margin="80,0,80,0"
                         HorizontalAlignment="Center"

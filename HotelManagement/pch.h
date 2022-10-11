@@ -53,5 +53,7 @@ namespace winrt::HotelManagement::implementation
 
     bool isLoggedIn(void);
     bool initDatabase(void);
+
+
 }
 

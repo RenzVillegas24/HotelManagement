@@ -1,0 +1,9 @@
+namespace HotelManagement
+{
+    [default_interface]
+    runtimeclass RegisteredAccounts : Windows.UI.Xaml.Controls.Page
+    {
+        RegisteredAccounts();
+        Int32 MyProperty;
+    }
+}
