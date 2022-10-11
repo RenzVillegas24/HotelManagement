@@ -20,4 +20,6 @@ namespace winrt::HotelManagement::implementation
     char* strptime(const char* s, const char* f, struct tm* tm);
     std::string serializeTimePoint(const std::chrono::system_clock::time_point& time, const std::string& format);
     std::tm to_tm(const std::string_view& date);
+
+
 }

@@ -45,7 +45,6 @@
 
 namespace winrt::HotelManagement::implementation
 {
-    std::string dataPath;
     std::string dbPath(std::string);
     std::string dbPath();
     winrt::Windows::Storage::IStorageFolder localPath();
@@ -54,6 +53,6 @@ namespace winrt::HotelManagement::implementation
     bool isLoggedIn(void);
     bool initDatabase(void);
 
-
+    std::string dataPath;
 }
 

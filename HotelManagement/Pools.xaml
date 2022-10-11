@@ -5,8 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:HotelManagement"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Background="{StaticResource ApplicationPageBackgroundThemeBrushV2}"
-    FontFamily="{StaticResource Regular}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrushV2}"
+    FontFamily="{ThemeResource Regular}"
     Loaded="Page_Loaded"
     mc:Ignorable="d">
 
@@ -16,7 +16,7 @@
             AllowFocusOnInteraction="False"
             Background="Transparent"
             IsTabStop="False"
-            Style="{StaticResource FlipViewStyle1}">
+            Style="{ThemeResource FlipViewStyle1}">
             <FlipView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Vertical" />
@@ -44,7 +44,7 @@
                 <Grid
                     Grid.Row="0"
                     Margin="0,0,0,-5"
-                    Background="{StaticResource NormalGradient}" />
+                    Background="{ThemeResource NormalGradient}" />
                 <StackPanel
                     Grid.RowSpan="2"
                     Margin="0,50"
@@ -53,7 +53,7 @@
                         Margin="20"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        FontFamily="{StaticResource Black}"
+                        FontFamily="{ThemeResource Black}"
                         FontSize="40"
                         TextAlignment="Center"
                         TextWrapping="Wrap">
@@ -63,7 +63,7 @@
                         Margin="80,0,80,0"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
-                        FontFamily="{StaticResource Light}"
+                        FontFamily="{ThemeResource Light}"
                         FontSize="18"
                         Opacity="0.7"
                         TextAlignment="Center"
@@ -95,7 +95,7 @@
                 <Grid
                     Grid.Row="0"
                     Margin="0,0,0,-5"
-                    Background="{StaticResource NormalGradient}" />
+                    Background="{ThemeResource NormalGradient}" />
                 <StackPanel
                     Grid.RowSpan="2"
                     Margin="0,50"
@@ -104,7 +104,7 @@
                         Margin="20"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        FontFamily="{StaticResource Black}"
+                        FontFamily="{ThemeResource Black}"
                         FontSize="40"
                         TextAlignment="Center"
                         TextWrapping="Wrap">
@@ -114,7 +114,7 @@
                         Margin="80,0,80,0"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
-                        FontFamily="{StaticResource Light}"
+                        FontFamily="{ThemeResource Light}"
                         FontSize="18"
                         Opacity="0.7"
                         TextAlignment="Center"
@@ -146,7 +146,7 @@
                 <Grid
                     Grid.Row="0"
                     Margin="0,0,0,-5"
-                    Background="{StaticResource NormalGradient}" />
+                    Background="{ThemeResource NormalGradient}" />
                 <StackPanel
                     Grid.RowSpan="2"
                     Margin="0,50"
@@ -155,7 +155,7 @@
                         Margin="20"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        FontFamily="{StaticResource Black}"
+                        FontFamily="{ThemeResource Black}"
                         FontSize="40"
                         TextAlignment="Center"
                         TextWrapping="Wrap">
@@ -165,7 +165,7 @@
                         Margin="80,0,80,0"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
-                        FontFamily="{StaticResource Light}"
+                        FontFamily="{ThemeResource Light}"
                         FontSize="18"
                         Opacity="0.7"
                         TextAlignment="Center"
@@ -195,7 +195,7 @@
                 <Grid
                     Grid.Row="0"
                     Margin="0,0,0,-5"
-                    Background="{StaticResource NormalGradient}" />
+                    Background="{ThemeResource NormalGradient}" />
                 <StackPanel
                     Grid.RowSpan="2"
                     Margin="0,50"
@@ -204,7 +204,7 @@
                         Margin="20"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
-                        FontFamily="{StaticResource Black}"
+                        FontFamily="{ThemeResource Black}"
                         FontSize="40"
                         TextAlignment="Center"
                         TextWrapping="Wrap">
@@ -214,7 +214,7 @@
                         Margin="80,0,80,0"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
-                        FontFamily="{StaticResource Light}"
+                        FontFamily="{ThemeResource Light}"
                         FontSize="18"
                         Opacity="0.7"
                         TextAlignment="Center"
@@ -228,12 +228,12 @@
                         HorizontalAlignment="Center"
                         Background="#59FF9700"
                         Click="btnReserve_Click"
-                        FontFamily="{StaticResource Thin}"
+                        FontFamily="{ThemeResource Thin}"
                         FontSize="20">
                         <Button.Resources>
-                            <StaticResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
-                            <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
-                            <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
+                            <ThemeResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
+                            <ThemeResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
+                            <ThemeResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
                         </Button.Resources>
                         RESERVE NOW
                     </Button>
@@ -256,9 +256,9 @@
                     Margin="0,0,15,0"
                     Padding="13,6,13,10"
                     Click="HomeTitle_Click"
-                    FontFamily="{StaticResource Regular}"
+                    FontFamily="{ThemeResource Regular}"
                     FontSize="30"
-                    Style="{StaticResource RoundedButtonStyleTrans}">
+                    Style="{ThemeResource RoundedButtonStyleTrans}">
                     Home
                 </Button>
                 <Path

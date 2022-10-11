@@ -6,49 +6,87 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:HotelManagement"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Loaded="Page_Loaded">
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
 
     <Grid>
-        
-            <StackPanel Margin="35,150,35,35">
-                <StackPanel.Resources>
-                    <ThemeShadow x:Key="shadow" />
-                </StackPanel.Resources>
 
-                <Button
-                    x:Name="btnMicaTheme"
-                    Grid.Row="3"
-                    Width="Auto"
-                    Margin="0,3"
-                    Padding="20,9"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Stretch"
-                    Click="btnMicaTheme_Click">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="80" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                            Grid.Column="0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Light}"
-                            FontSize="15">
-                            Use mica theme (Windows 11 only)
-                        </TextBlock>
+        <StackPanel Margin="35,150,35,35">
+            <StackPanel.Resources>
+                <ThemeShadow x:Key="shadow" />
+            </StackPanel.Resources>
 
-                        <ToggleSwitch
-                            x:Name="toggleMicaTheme"
-                            Grid.Column="1"
-                            HorizontalAlignment="Right"
-                            FlowDirection="RightToLeft"
-                            Toggled="toggleMicaTheme_Toggled" />
+            <Button
+                x:Name="btnMicaTheme"
+                Grid.Row="3"
+                Width="Auto"
+                Margin="0,3"
+                Padding="20,9"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                Click="btnMicaTheme_Click">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="{StaticResource Light}"
+                        FontSize="15">
+                        Use mica theme (Windows 11 only)
+                    </TextBlock>
 
-                    </Grid>
-                </Button>
-            </StackPanel>
-     
+                    <ToggleSwitch
+                        x:Name="toggleMicaTheme"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        FlowDirection="RightToLeft"
+                        Toggled="toggleMicaTheme_Toggled" />
+
+                </Grid>
+            </Button>
+
+
+            <Button
+                x:Name="btnTheme"
+                Grid.Row="3"
+                Width="Auto"
+                Margin="0,3"
+                Padding="20,9"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                Click="btnTheme_Click">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="150" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="{StaticResource Light}"
+                        FontSize="15">
+                        App Theme
+                    </TextBlock>
+                    <ComboBox
+                        x:Name="cmbxTheme"
+                        Grid.Column="1"
+                        HorizontalAlignment="Stretch"
+                        SelectionChanged="cmbxTheme_SelectionChanged">
+                        <TextBlock Text="System Default" />
+                        <TextBlock Text="Light" />
+                        <TextBlock Text="Dark" />
+                    </ComboBox>
+
+                </Grid>
+            </Button>
+
+        </StackPanel>
+
 
         <Grid
             Height="120"

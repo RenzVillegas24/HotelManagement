@@ -28,6 +28,9 @@
                                 Opacity="0.5"
                                 Color="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
 
+                            <ThemeResource x:Key="SystemControlAltHighAcrylicWindowBrush" ResourceKey="ApplicationPageBackgroundThemeBrush" />
+
+
                         </ResourceDictionary>
                         <ResourceDictionary x:Key="Dark">
                             <AcrylicBrush
@@ -38,6 +41,9 @@
                                 FallbackColor="Black"
                                 TintColor="Black"
                                 TintOpacity="0.5" />
+
+                            <ThemeResource x:Key="SystemControlAltHighAcrylicWindowBrush" ResourceKey="DarkAcrylic" />
+
 
                             <LinearGradientBrush x:Key="BookingGradient" StartPoint="0.5,0" EndPoint="0.5,1">
                                 <GradientStop Color="#00000000" />
@@ -62,6 +68,9 @@
                                 TintColor="WHite"
                                 TintOpacity="0.5" />
 
+                            <ThemeResource x:Key="SystemControlAltHighAcrylicWindowBrush" ResourceKey="LightAcrylic" />
+
+
                             <LinearGradientBrush x:Key="BookingGradient" StartPoint="0.5,0" EndPoint="0.5,1">
                                 <GradientStop Color="#00FFFFFF" />
                                 <GradientStop Offset="1" Color="#E5FFFFFF" />
@@ -76,6 +85,24 @@
 
                         </ResourceDictionary>
                     </ResourceDictionary.ThemeDictionaries>
+
+
+
+                    <AcrylicBrush
+                        x:Key="DarkAcrylic"
+                        BackgroundSource="HostBackdrop"
+                        FallbackColor="Black"
+                        TintColor="Black"
+                        TintOpacity="0.75" />
+
+                    <AcrylicBrush
+                        x:Key="LightAcrylic"
+                        BackgroundSource="HostBackdrop"
+                        FallbackColor="White"
+                        TintColor="White"
+                        TintOpacity="0.75" />
+
+
 
 
                     <Color x:Key="SystemAccentColor">#D9ff9907</Color>

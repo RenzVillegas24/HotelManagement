@@ -22,6 +22,8 @@ using time_point = std::chrono::system_clock::time_point;
 
 namespace winrt::HotelManagement::implementation
 {
+   
+
 
     IAsyncOperation<hstring> ImageToBase64(StorageFile sourceFile, int size) {
 
@@ -213,6 +215,7 @@ namespace winrt::HotelManagement::implementation
 
         return buff;
     }
+
 
   
 }

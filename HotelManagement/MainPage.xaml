@@ -9,7 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Name="MainPivot"
     x:FieldModifier="public"
-    Background="{StaticResource SystemControlAltHighAcrylicWindowBrush}"
+    Background="{ThemeResource SystemControlAltHighAcrylicWindowBrush}"
     Loaded="MainPivot_Loaded"
     mc:Ignorable="d">
 

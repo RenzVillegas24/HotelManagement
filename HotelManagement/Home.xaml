@@ -13,13 +13,13 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Frame x:Name="ContentFrame" FontFamily="{StaticResource Regular}">
+        <Frame x:Name="ContentFrame" FontFamily="{ThemeResource Regular}">
             <ContentControl>
                 <FlipView
                     x:Name="flipView_Main"
                     ScrollViewer.CanContentRenderOutsideBounds="True"
                     ScrollViewer.IsScrollInertiaEnabled="True"
-                    Style="{StaticResource FlipViewStyle1}">
+                    Style="{ThemeResource FlipViewStyle1}">
                     <FlipView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel Orientation="Vertical" />
@@ -32,7 +32,7 @@
                             AllowFocusOnInteraction="False"
                             Background="Transparent"
                             IsTabStop="False"
-                            Style="{StaticResource FlipViewStyle1}">
+                            Style="{ThemeResource FlipViewStyle1}">
                             <Image
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -74,12 +74,12 @@
                                 Source="Assets/Home/Discover8.jpg"
                                 Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Grid Background="{ThemeResource BookingGradient}" />
                         <TextBlock
                             Margin="0,0,0,55"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            FontFamily="{StaticResource Black}"
+                            FontFamily="{ThemeResource Black}"
                             FontSize="40"
                             TextAlignment="Center">
                             Discover
@@ -88,7 +88,7 @@
                             Margin="0,55,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            FontFamily="{StaticResource Black}"
+                            FontFamily="{ThemeResource Black}"
                             FontSize="70"
                             TextAlignment="Center">
                             MBC Lodge
@@ -100,13 +100,13 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"
                             Click="btnScrollDown_Click"
-                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            Style="{ThemeResource RoundedButtonStyleTrans}">
                             <Grid>
                                 <TextBlock
                                     Margin="0,0,0,25"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Bottom"
-                                    FontFamily="{StaticResource Thin}"
+                                    FontFamily="{ThemeResource Thin}"
                                     FontSize="17">
                                     Scroll down to discover more
                                 </TextBlock>
@@ -125,7 +125,7 @@
                             AllowFocusOnInteraction="False"
                             Background="Transparent"
                             IsTabStop="False"
-                            Style="{StaticResource FlipViewStyle1}">
+                            Style="{ThemeResource FlipViewStyle1}">
                             <Image
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -152,16 +152,16 @@
                                 Source="Assets/Home/Unit5.jpg"
                                 Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Grid Background="{ThemeResource BookingGradient}" />
                         <Button
                             x:Name="btnRooms"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Click="btnRooms_Click"
-                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            Style="{ThemeResource RoundedButtonStyleTrans}">
                             <TextBlock
                                 Padding="20,5,20,5"
-                                FontFamily="{StaticResource Bold}"
+                                FontFamily="{ThemeResource Bold}"
                                 FontSize="80"
                                 Text="Rooms." />
                         </Button>
@@ -169,7 +169,7 @@
                             Margin="80,0,80,70"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"
-                            FontFamily="{StaticResource Light}"
+                            FontFamily="{ThemeResource Light}"
                             FontSize="18"
                             Opacity="0.7"
                             TextAlignment="Center"
@@ -216,7 +216,7 @@
                             AllowFocusOnInteraction="False"
                             Background="Transparent"
                             IsTabStop="False"
-                            Style="{StaticResource FlipViewStyle1}">
+                            Style="{ThemeResource FlipViewStyle1}">
                             <Image
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -243,16 +243,16 @@
                                 Source="Assets/Home/Gym5.jpg"
                                 Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Grid Background="{ThemeResource BookingGradient}" />
                         <Button
                             x:Name="btnGyms"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Click="btnGyms_Click"
-                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            Style="{ThemeResource RoundedButtonStyleTrans}">
                             <TextBlock
                                 Padding="20,5,20,20"
-                                FontFamily="{StaticResource Black}"
+                                FontFamily="{ThemeResource Black}"
                                 FontSize="80"
                                 Text="Gyms." />
                         </Button>
@@ -260,7 +260,7 @@
                             Margin="80,0,80,70"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"
-                            FontFamily="{StaticResource Light}"
+                            FontFamily="{ThemeResource Light}"
                             FontSize="18"
                             Opacity="0.7"
                             TextAlignment="Center"
@@ -307,7 +307,7 @@
                             AllowFocusOnInteraction="False"
                             Background="Transparent"
                             IsTabStop="False"
-                            Style="{StaticResource FlipViewStyle1}">
+                            Style="{ThemeResource FlipViewStyle1}">
                             <Image
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -334,16 +334,16 @@
                                 Source="Assets/Home/Restaurant4.jpg"
                                 Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Grid Background="{ThemeResource BookingGradient}" />
                         <Button
                             x:Name="btnRestaurant"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Click="btnRestaurant_Click"
-                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            Style="{ThemeResource RoundedButtonStyleTrans}">
                             <TextBlock
                                 Padding="20,5,20,5"
-                                FontFamily="{StaticResource Black}"
+                                FontFamily="{ThemeResource Black}"
                                 FontSize="80"
                                 Text="Restaurant." />
                         </Button>
@@ -351,7 +351,7 @@
                             Margin="80,0,80,70"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"
-                            FontFamily="{StaticResource Light}"
+                            FontFamily="{ThemeResource Light}"
                             FontSize="18"
                             Opacity="0.7"
                             TextAlignment="Center"
@@ -398,7 +398,7 @@
                             AllowFocusOnInteraction="False"
                             Background="Transparent"
                             IsTabStop="False"
-                            Style="{StaticResource FlipViewStyle1}">
+                            Style="{ThemeResource FlipViewStyle1}">
                             <Image
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -425,16 +425,16 @@
                                 Source="Assets/Home/Pool5.jpg"
                                 Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Grid Background="{ThemeResource BookingGradient}" />
                         <Button
                             x:Name="btnPools"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Click="btnPools_Click"
-                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            Style="{ThemeResource RoundedButtonStyleTrans}">
                             <TextBlock
                                 Padding="20,5,20,5"
-                                FontFamily="{StaticResource Black}"
+                                FontFamily="{ThemeResource Black}"
                                 FontSize="80"
                                 Text="Pools." />
                         </Button>
@@ -442,7 +442,7 @@
                             Margin="80,0,80,70"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"
-                            FontFamily="{StaticResource Light}"
+                            FontFamily="{ThemeResource Light}"
                             FontSize="18"
                             Opacity="0.7"
                             TextAlignment="Center"
@@ -489,7 +489,7 @@
                             AllowFocusOnInteraction="False"
                             Background="Transparent"
                             IsTabStop="False"
-                            Style="{StaticResource FlipViewStyle1}">
+                            Style="{ThemeResource FlipViewStyle1}">
                             <Image
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -516,16 +516,16 @@
                                 Source="Assets/Home/Lobby5.jpg"
                                 Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Grid Background="{ThemeResource BookingGradient}" />
                         <Button
                             x:Name="btnLobby"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Click="btnLobby_Click"
-                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            Style="{ThemeResource RoundedButtonStyleTrans}">
                             <TextBlock
                                 Padding="20,5,20,20"
-                                FontFamily="{StaticResource Black}"
+                                FontFamily="{ThemeResource Black}"
                                 FontSize="80"
                                 Text="Lobby." />
                         </Button>
@@ -533,7 +533,7 @@
                             Margin="80,0,80,70"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"
-                            FontFamily="{StaticResource Light}"
+                            FontFamily="{ThemeResource Light}"
                             FontSize="18"
                             Opacity="0.7"
                             TextAlignment="Center"
@@ -580,7 +580,7 @@
                             AllowFocusOnInteraction="False"
                             Background="Transparent"
                             IsTabStop="False"
-                            Style="{StaticResource FlipViewStyle1}">
+                            Style="{ThemeResource FlipViewStyle1}">
                             <Image
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -607,16 +607,16 @@
                                 Source="Assets/Home/Event5.jpg"
                                 Stretch="UniformToFill" />
                         </FlipView>
-                        <Grid Background="{StaticResource BookingGradient}" />
+                        <Grid Background="{ThemeResource BookingGradient}" />
                         <Button
                             x:Name="btnEvents"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Click="btnEvents_Click"
-                            Style="{StaticResource RoundedButtonStyleTrans}">
+                            Style="{ThemeResource RoundedButtonStyleTrans}">
                             <TextBlock
                                 Padding="20,5,20,5"
-                                FontFamily="{StaticResource Black}"
+                                FontFamily="{ThemeResource Black}"
                                 FontSize="80"
                                 Text="Events." />
                         </Button>
@@ -624,7 +624,7 @@
                             Margin="80,0,80,70"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"
-                            FontFamily="{StaticResource Light}"
+                            FontFamily="{ThemeResource Light}"
                             FontSize="18"
                             Opacity="0.7"
                             TextAlignment="Center"
@@ -674,7 +674,7 @@
                             Background="Transparent"
                             IsTabStop="False"
                             Opacity=".3"
-                            Style="{StaticResource FlipViewStyle1}">
+                            Style="{ThemeResource FlipViewStyle1}">
 
                             <Image
                                 HorizontalAlignment="Center"
@@ -785,22 +785,22 @@
                                 Stretch="UniformToFill" />
 
                         </FlipView>
-                        <Grid Background="{StaticResource BackdropAcrylicBrush}" Opacity="0.8" />
-                        <Grid Background="{StaticResource AppBarBackgroundThemeBrush}" Opacity="0.2" />
+                        <Grid Background="{ThemeResource BackdropAcrylicBrush}" Opacity="0.8" />
+                        <Grid Background="{ThemeResource AppBarBackgroundThemeBrush}" Opacity="0.2" />
                         <Grid Margin="0,120,0,0">
                             <StackPanel
                                 Margin="40,0,40,200"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                                 <TextBlock
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="25"
                                     TextAlignment="Center"
                                     TextWrapping="Wrap">
                                     Experience the authenticity of being a Filipino, only here at
                                 </TextBlock>
                                 <TextBlock
-                                    FontFamily="{StaticResource Black}"
+                                    FontFamily="{ThemeResource Black}"
                                     FontSize="80"
                                     TextAlignment="Center">
                                     MBC Lodge.
@@ -828,12 +828,12 @@
                                     Padding="30,15,30,15"
                                     Background="#59FF9700"
                                     Click="btnReserve_Click"
-                                    FontFamily="{StaticResource Thin}"
+                                    FontFamily="{ThemeResource Thin}"
                                     FontSize="20">
                                     <Button.Resources>
-                                        <StaticResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
-                                        <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
-                                        <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
+                                        <ThemeResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
+                                        <ThemeResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
+                                        <ThemeResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
                                     </Button.Resources>
                                     RESERVE NOW
                                 </Button>
@@ -842,7 +842,7 @@
                                     Margin="8"
                                     Padding="30,15,30,15"
                                     Click="btnHelp_Click"
-                                    FontFamily="{StaticResource Thin}"
+                                    FontFamily="{ThemeResource Thin}"
                                     FontSize="20">
                                     NEED HELP?
                                 </Button>
