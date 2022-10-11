@@ -34,15 +34,11 @@ namespace winrt::HotelManagement::implementation
         BackdropMaterial::SetApplyToRootOrPageBackground(mainPage, toggleMicaTheme().IsOn());
         if (!toggleMicaTheme().IsOn())
         {
-            mainPage.Background(
-                winrt::Windows::UI::Xaml::Media::SolidColorBrush(
-                    winrt::unbox_value<Windows::UI::Color>(
-                        Resources().Lookup(
-                            winrt::box_value(L"SystemAccentColor")
-                        )
-                    )
+            mainPage.Background(winrt::unbox_value<Windows::UI::Xaml::Media::AcrylicBrush>(
+                Resources().Lookup(
+                    winrt::box_value(L"SystemControlAltHighAcrylicWindowBrush")
                 )
-            );
+                ));
 
         }
 
