@@ -514,7 +514,7 @@ VillaricaPonsho
 
                 co_await Dialog(
                     L"Input Error",
-                    L"There are errors on your inputs:" + errors + L"\n\n+Please try again...",
+                    L"There are errors on your inputs:" + errors + L"\n\nPlease try again...",
                     L"Ok");
 
                
@@ -604,8 +604,12 @@ VillaricaPonsho
 
     void SignUpForm::Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
+        //source: https://stackoverflow.com/questions/43010362/c-add-months-to-chronosystem-clocktime-point
+        using days = std::chrono::duration<int, std::ratio_multiply<std::ratio<24>, std::chrono::hours::period>>;
+        using years = std::chrono::duration<int, std::ratio_multiply<std::ratio<146097, 400>, days::period>>;
 
-        
+        txtbxBirthDate().MaxYear(winrt::clock::now() - years(16));
+        txtbxBirthDate().MinYear(winrt::clock::now() - years(120));
 
     }
 

@@ -1444,8 +1444,16 @@ namespace winrt::HotelManagement::implementation
 
         marg.Right = 5; marg.Left = 0;
         auto newBirthday = DatePicker();
+
         newBirthday.HorizontalAlignment(HorizontalAlignment::Stretch);
 
+
+        //source: https://stackoverflow.com/questions/43010362/c-add-months-to-chronosystem-clocktime-point
+        using days = std::chrono::duration<int, std::ratio_multiply<std::ratio<24>, std::chrono::hours::period>>;
+        using years = std::chrono::duration<int, std::ratio_multiply<std::ratio<146097, 400>, days::period>>;
+
+        newBirthday.MaxYear(winrt::clock::now() - years(16));
+        newBirthday.MinYear(winrt::clock::now() - years(120));
 
         auto stack = StackPanel();
         stack.Children().Append(subtitle);

@@ -14,6 +14,7 @@ using namespace Controls;
 using namespace Media;
 using namespace sqlite;
 using namespace std;
+using namespace winrt::Windows::UI::Composition;
 
 namespace winrt::HotelManagement::implementation
 {
@@ -27,8 +28,99 @@ namespace winrt::HotelManagement::implementation
         throw hresult_not_implemented();
     }
 
+
+    void RegisteredAccounts::scrollMain_ViewChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs const& e)
+    {
+        if (!e.IsIntermediate())
+        {
+            /*
+                
+            if (stickyHeader().Height() >= 25)
+                headerShow().Begin();
+            else
+                headerHide().Begin();
+                */
+        }
+    }
+
+    void RegisteredAccounts::stickyHeader_SizeChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::SizeChangedEventArgs const& e)
+    {
+        scrollMain().Margin(ThicknessHelper::FromLengths(0, stickyHeader().Height(), 0, 0));
+
+    }
+
+
     void RegisteredAccounts::Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
+        previousOffset = stoppedOffset = 0;
+        upOffset = 50;
+
+
+        scrollMain().RegisterPropertyChangedCallback(ScrollViewer().VerticalOffsetProperty(), [&](DependencyObject s, DependencyProperty dp) {
+            int h = 0;
+            tempxt().Text(L"");
+           
+
+                if (scrollMain().VerticalOffset() > previousOffset)
+                {
+                    tempxt().Text(L"U ");
+                    if (stickyHeader().Height() > 0 )
+                    {
+                        h = int(min(50, max(upOffset -scrollMain().VerticalOffset() + stoppedOffset, 0)));
+                        stickyHeader().Height(h);
+                        downOffset = 50;
+                    }
+                    else if (stickyHeader().Height() == 0)
+                    {
+                        stickyHeader().Height(0);
+                        stoppedOffset = int(scrollMain().VerticalOffset());
+                        downOffset = 0;
+                    }
+
+
+                }
+                else {
+                    tempxt().Text(L"D ");
+                    if (stickyHeader().Height() < 50)
+                    {
+                        h = int(min(50, max(downOffset-scrollMain().VerticalOffset() + stoppedOffset, 0)));
+                        stickyHeader().Height(h);
+                        upOffset = 0;
+
+                    }
+                    else if (stickyHeader().Height() == 50)
+                    {
+                        stickyHeader().Height(50);
+                        stoppedOffset = int(scrollMain().VerticalOffset());
+                        upOffset = 50;
+                    }
+
+                }
+
+
+
+            tempxt().Text(tempxt().Text() +
+                to_hstring(int(scrollMain().VerticalOffset() - previousOffset)) + L"; " 
+                + to_hstring(int(scrollMain().VerticalOffset())) + L"; " 
+                + to_hstring(int(stoppedOffset)) + L"; "
+                + to_hstring(int(previousOffset)) + L"; "
+                + to_hstring(int(h)) + L"; "
+                + to_hstring(int(stickyHeader().Height())) + L"; "
+                + to_hstring(int(upOffset)) + L"; "
+                + to_hstring(int(downOffset)) + L"; "
+            
+            );
+
+
+          
+
+            previousOffset = scrollMain().VerticalOffset();
+          
+
+        });
+
+  
+
         database db(dbPath());
 
         db << "SELECT * FROM accounts;"
@@ -103,6 +195,14 @@ namespace winrt::HotelManagement::implementation
                     stack.Children().Append(imgIcon);
                     
                     auto txtName = TextBlock();
+                    txtName.FontFamily(
+                        winrt::unbox_value<Windows::UI::Xaml::Media::FontFamily>(
+                            Application::Current().Resources().Lookup(
+                                winrt::box_value(L"Bold")
+                            )
+                        )
+                    );
+                    txtName.FontSize(17);
                     txtName.VerticalAlignment(VerticalAlignment::Bottom);
                     txtName.HorizontalAlignment(HorizontalAlignment::Stretch);
                     txtName.TextTrimming(TextTrimming::CharacterEllipsis);
@@ -117,10 +217,11 @@ namespace winrt::HotelManagement::implementation
                     stack.Children().Append(txtName);
 
                     auto txtAddress = TextBlock();
+                    txtAddress.Opacity(0.75);
                     txtAddress.VerticalAlignment(VerticalAlignment::Top);
                     txtAddress.HorizontalAlignment(HorizontalAlignment::Stretch);
                     txtAddress.TextTrimming(TextTrimming::CharacterEllipsis);
-                    txtAddress.Margin(ThicknessHelper::FromLengths(8, 2, 8, 2));
+                    txtAddress.Margin(ThicknessHelper::FromLengths(8, 2, 15, 2));
                     txtAddress.Text(
                         to_hstring(
                             untBlck_etc + ", " +
@@ -161,4 +262,23 @@ namespace winrt::HotelManagement::implementation
 
 
     
+}
+
+
+
+
+
+
+
+void winrt::HotelManagement::implementation::RegisteredAccounts::headerShow_Completed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable const& e)
+{
+    upOffset = 50;
+
+}
+
+
+void winrt::HotelManagement::implementation::RegisteredAccounts::headerHide_Completed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable const& e)
+{
+    upOffset = 0;
+
 }

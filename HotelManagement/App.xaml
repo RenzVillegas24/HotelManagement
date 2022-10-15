@@ -15,7 +15,7 @@
                         <ResourceDictionary x:Key="Default">
                             <AcrylicBrush
                                 x:Key="AcrylicBrush"
-                                IsAcrylicBrushNotPresent:Opacity="0.7"
+                                IsAcrylicBrushNotPresent:Opacity="0.8"
                                 IsAcrylicBrushPresent:Opacity="1"
                                 BackgroundSource="Backdrop"
                                 FallbackColor="{ThemeResource ApplicationPageBackgroundThemeBrush}"
@@ -35,7 +35,7 @@
                         <ResourceDictionary x:Key="Dark">
                             <AcrylicBrush
                                 x:Key="BackdropAcrylicBrush"
-                                IsAcrylicBrushNotPresent:Opacity="0.9"
+                                IsAcrylicBrushNotPresent:Opacity="0.8"
                                 IsAcrylicBrushPresent:Opacity="1"
                                 BackgroundSource="Backdrop"
                                 FallbackColor="Black"
@@ -61,7 +61,7 @@
                         <ResourceDictionary x:Key="Light">
                             <AcrylicBrush
                                 x:Key="BackdropAcrylicBrush"
-                                IsAcrylicBrushNotPresent:Opacity="0.9"
+                                IsAcrylicBrushNotPresent:Opacity="0.8"
                                 IsAcrylicBrushPresent:Opacity="1"
                                 BackgroundSource="Backdrop"
                                 FallbackColor="White"
@@ -91,16 +91,16 @@
                     <AcrylicBrush
                         x:Key="DarkAcrylic"
                         BackgroundSource="HostBackdrop"
-                        FallbackColor="Black"
-                        TintColor="Black"
-                        TintOpacity="0.75" />
+                        FallbackColor="#303030"
+                        TintColor="#303030"
+                        TintOpacity="0.85" />
 
                     <AcrylicBrush
                         x:Key="LightAcrylic"
                         BackgroundSource="HostBackdrop"
-                        FallbackColor="White"
-                        TintColor="White"
-                        TintOpacity="0.75" />
+                        FallbackColor="#EBEBEB"
+                        TintColor="#EBEBEB"
+                        TintOpacity="0.85" />
 
 
 

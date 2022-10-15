@@ -6,12 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:HotelManagement"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    FontFamily="{StaticResource Regular}"
+    FontFamily="{ThemeResource Regular}"
     Loaded="Page_Loaded"
     mc:Ignorable="d">
 
     <Grid>
-        <ScrollViewer Style="{StaticResource customScrollViewer}">
+        <ScrollViewer Style="{ThemeResource customScrollViewer}">
             <StackPanel Margin="35,150,35,35">
                 <StackPanel.Resources>
                     <ThemeShadow x:Key="shadow" />
@@ -20,7 +20,7 @@
                     Margin="20,10,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    FontFamily="{StaticResource Thin}"
+                    FontFamily="{ThemeResource Thin}"
                     FontSize="25"
                     Text="Basic Informations" />
 
@@ -38,9 +38,9 @@
                 <Border
                     Margin="10,20"
                     Padding="20"
-                    Background="{StaticResource BackdropAcrylicBrush}"
+                    Background="{ThemeResource BackdropAcrylicBrush}"
                     CornerRadius="10"
-                    Shadow="{StaticResource shadow}"
+                    Shadow="{ThemeResource shadow}"
                     Translation="0, 0, 30">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -67,7 +67,7 @@
                             CornerRadius="5"
                             PointerEntered="gridImg_PointerEntered"
                             PointerExited="gridImg_PointerExited"
-                            Shadow="{StaticResource shadow}"
+                            Shadow="{ThemeResource shadow}"
                             Translation="0,0,20"
                             UseLayoutRounding="True">
                             <Button.Resources>
@@ -150,7 +150,7 @@
                                 <Grid>
                                     <Border
                                         x:Name="imgLoadingBack"
-                                        Background="{StaticResource BackdropAcrylicBrush}"
+                                        Background="{ThemeResource BackdropAcrylicBrush}"
                                         CornerRadius="4"
                                         Opacity="0"
                                         UseLayoutRounding="True" />
@@ -159,10 +159,10 @@
                                         Padding="10"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
-                                        Background="{StaticResource BackdropAcrylicBrush}"
+                                        Background="{ThemeResource BackdropAcrylicBrush}"
                                         CornerRadius="5"
                                         Opacity="0"
-                                        Shadow="{StaticResource shadow}"
+                                        Shadow="{ThemeResource shadow}"
                                         Translation="0, 0, 30">
                                         <StackPanel>
                                             <FontIcon
@@ -174,13 +174,13 @@
                                             <TextBlock
                                                 Margin="0,2,0,0"
                                                 HorizontalAlignment="Center"
-                                                FontFamily="{StaticResource Light}"
+                                                FontFamily="{ThemeResource Light}"
                                                 Text="Change image" />
                                         </StackPanel>
                                     </Border>
                                     <c:ProgressRing
                                         x:Name="imageLoading"
-                                        Background="{StaticResource AppBarBackgroundThemeBrush}"
+                                        Background="{ThemeResource AppBarBackgroundThemeBrush}"
                                         Opacity="0" />
                                 </Grid>
 
@@ -206,7 +206,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Full Name" />
                                 <TextBlock
@@ -214,7 +214,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -247,7 +247,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Birthday" />
                                 <TextBlock
@@ -255,7 +255,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -288,7 +288,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Gender" />
                                 <TextBlock
@@ -296,7 +296,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -329,7 +329,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Civil" />
                                 <TextBlock
@@ -337,7 +337,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -370,7 +370,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Nationality" />
                                 <TextBlock
@@ -378,7 +378,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -401,16 +401,16 @@
                     Margin="20,20,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    FontFamily="{StaticResource Thin}"
+                    FontFamily="{ThemeResource Thin}"
                     FontSize="25"
                     Text="Permanent Address Informations" />
 
                 <Border
                     Margin="10,20"
                     Padding="20"
-                    Background="{StaticResource BackdropAcrylicBrush}"
+                    Background="{ThemeResource BackdropAcrylicBrush}"
                     CornerRadius="10"
-                    Shadow="{StaticResource shadow}"
+                    Shadow="{ThemeResource shadow}"
                     Translation="0, 0, 30">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -438,7 +438,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Address" />
                                 <TextBlock
@@ -446,7 +446,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -479,7 +479,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Zip Code" />
                                 <TextBlock
@@ -487,7 +487,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -509,16 +509,16 @@
                     Margin="20,20,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    FontFamily="{StaticResource Thin}"
+                    FontFamily="{ThemeResource Thin}"
                     FontSize="25"
                     Text="Contact Informations" />
 
                 <Border
                     Margin="10,20"
                     Padding="20"
-                    Background="{StaticResource BackdropAcrylicBrush}"
+                    Background="{ThemeResource BackdropAcrylicBrush}"
                     CornerRadius="10"
-                    Shadow="{StaticResource shadow}"
+                    Shadow="{ThemeResource shadow}"
                     Translation="0, 0, 30">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -546,7 +546,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Contact" />
                                 <TextBlock
@@ -554,7 +554,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -587,7 +587,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Email" />
                                 <TextBlock
@@ -595,7 +595,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -616,16 +616,16 @@
                     Margin="20,20,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    FontFamily="{StaticResource Thin}"
+                    FontFamily="{ThemeResource Thin}"
                     FontSize="25"
                     Text="Account Informations" />
 
                 <Border
                     Margin="10,20"
                     Padding="20"
-                    Background="{StaticResource BackdropAcrylicBrush}"
+                    Background="{ThemeResource BackdropAcrylicBrush}"
                     CornerRadius="10"
-                    Shadow="{StaticResource shadow}"
+                    Shadow="{ThemeResource shadow}"
                     Translation="0, 0, 30">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -656,7 +656,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Username" />
                                 <TextBlock
@@ -664,7 +664,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -697,7 +697,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="13"
                                     Text="Password" />
                                 <TextBlock
@@ -705,7 +705,7 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Regular}"
+                                    FontFamily="{ThemeResource Regular}"
                                     FontSize="17"
                                     TextTrimming="CharacterEllipsis" />
 
@@ -739,7 +739,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="15"
                                     Text="Register this account as admin" />
 
@@ -772,7 +772,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="15"
                                     Text="Stay signed in" />
 
@@ -804,7 +804,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="15"
                                     Text="Logout" />
 
@@ -818,16 +818,16 @@
                     Margin="20,20,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    FontFamily="{StaticResource Thin}"
+                    FontFamily="{ThemeResource Thin}"
                     FontSize="25"
                     Text="Payment Methods" />
 
                 <Border
                     Margin="10,20"
                     Padding="20"
-                    Background="{StaticResource BackdropAcrylicBrush}"
+                    Background="{ThemeResource BackdropAcrylicBrush}"
                     CornerRadius="10"
-                    Shadow="{StaticResource shadow}"
+                    Shadow="{ThemeResource shadow}"
                     Translation="0, 0, 30">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -845,7 +845,8 @@
                             Margin="0,3"
                             Padding="20,20"
                             HorizontalAlignment="Stretch"
-                            HorizontalContentAlignment="Stretch" Click="btnAddPayment_Click">
+                            HorizontalContentAlignment="Stretch"
+                            Click="btnAddPayment_Click">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
@@ -855,7 +856,7 @@
                                     Grid.Column="0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontFamily="{StaticResource Light}"
+                                    FontFamily="{ThemeResource Light}"
                                     FontSize="15"
                                     Text="Add payment accounts" />
 

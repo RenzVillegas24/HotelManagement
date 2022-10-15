@@ -8,12 +8,213 @@
     Loaded="Page_Loaded"
     mc:Ignorable="d">
     <Grid>
-        <ListView x:Name="accountList" Margin="20,140,20,20" />
+        <Grid.Resources>
+            <ThemeShadow x:Key="shadow" />
+        </Grid.Resources>
+        <ScrollViewer
+            x:Name="scrollMain"
+            Margin="0,50,0,0"
+            Style="{StaticResource customScrollViewer}"
+            ViewChanged="scrollMain_ViewChanged">
+            <Grid>
+                <ListView
+                    x:Name="accountList"
+                    Padding="20,140,20,20"
+                    ScrollViewer.CanContentRenderOutsideBounds="True" />
+            </Grid>
+        </ScrollViewer>
+        <Border
+            x:Name="stickyHeader"
+            Height="50"
+            Margin="0,120,0,0"
+            VerticalAlignment="Top"
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            SizeChanged="stickyHeader_SizeChanged">
+            <Border.Resources>
+                <Storyboard x:Name="headerShow" Completed="headerShow_Completed">
+                    <DoubleAnimation
+                        EnableDependentAnimation="true"
+                        Storyboard.TargetName="stickyHeader"
+                        Storyboard.TargetProperty="(Border.Height)"
+                        To="50"
+                        Duration="0:0:0.2">
+                        <DoubleAnimation.EasingFunction>
+                            <ExponentialEase EasingMode="EaseOut" />
+                        </DoubleAnimation.EasingFunction>
+                    </DoubleAnimation>
 
+                </Storyboard>
+                <Storyboard x:Name="headerHide" Completed="headerHide_Completed">
+                    <DoubleAnimation
+                        EnableDependentAnimation="true"
+                        Storyboard.TargetName="stickyHeader"
+                        Storyboard.TargetProperty="(Border.Height)"
+                        To="0"
+                        Duration="0:0:0.2">
+                        <DoubleAnimation.EasingFunction>
+                            <ExponentialEase EasingMode="EaseIn" />
+                        </DoubleAnimation.EasingFunction>
+                    </DoubleAnimation>
+                </Storyboard>
+            </Border.Resources>
+            <Grid Padding="40,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <SolidColorBrush Opacity="0.25" Color="Gray" />
+                </Grid.Background>
+                <TextBlock
+                    Grid.Column="0"
+                    Margin="0,0,0,17"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="15"
+                    Text="Sort by: " />
+                <ComboBox
+                    x:Name="cmbxAscDsc"
+                    Grid.Column="1"
+                    Width="130"
+                    Height="30"
+                    Margin="10,0,20,10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom"
+                    PlaceholderText="Filter by">
+                    <TextBlock Text="Admin" />
+                    <TextBlock Text="Non-Admin" />
+                </ComboBox>
+                <TextBlock
+                    Grid.Column="2"
+                    Margin="0,0,0,17"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="15"
+                    Text="Sort by: " />
+                <ComboBox
+                    x:Name="cmbxSort"
+                    Grid.Column="3"
+                    Width="130"
+                    Height="30"
+                    Margin="10,0,10,10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom"
+                    PlaceholderText="Sort by">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon
+                            Grid.Column="0"
+                            Margin="0,3,10,0"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="12"
+                            Glyph="&#xE74A;" />
+                        <TextBlock Grid.Column="1" Text="Creation" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon
+                            Grid.Column="0"
+                            Margin="0,3,10,0"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="12"
+                            Glyph="&#xE74B;" />
+                        <TextBlock Grid.Column="1" Text="Creation" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon
+                            Grid.Column="0"
+                            Margin="0,3,10,0"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="12"
+                            Glyph="&#xE74A;" />
+                        <TextBlock Grid.Column="1" Text="Creation" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon
+                            Grid.Column="0"
+                            Margin="0,3,10,0"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="12"
+                            Glyph="&#xE74B;" />
+                        <TextBlock Grid.Column="1" Text="Surname" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon
+                            Grid.Column="0"
+                            Margin="0,3,10,0"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="12"
+                            Glyph="&#xE74A;" />
+                        <TextBlock Grid.Column="1" Text="Creation" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon
+                            Grid.Column="0"
+                            Margin="0,3,10,0"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="12"
+                            Glyph="&#xE74B;" />
+                        <TextBlock Grid.Column="1" Text="Surname" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon
+                            Grid.Column="0"
+                            Margin="0,3,10,0"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="12"
+                            Glyph="&#xE74A;" />
+                        <TextBlock Grid.Column="1" Text="Age" />
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FontIcon
+                            Grid.Column="0"
+                            Margin="0,3,10,0"
+                            FontFamily="Segoe Fluent Icons"
+                            FontSize="12"
+                            Glyph="&#xE74B;" />
+                        <TextBlock Grid.Column="1" Text="Age" />
+                    </Grid>
+                </ComboBox>
+            </Grid>
+        </Border>
         <Grid
             Height="120"
             VerticalAlignment="Top"
-            Background="{ThemeResource BackdropAcrylicBrush}">
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            Shadow="{ThemeResource shadow}"
+            Translation="0, 0, 15">
             <TextBlock
                 x:Name="Title"
                 Margin="40,45,0,0"
@@ -21,6 +222,8 @@
                 VerticalAlignment="Top"
                 FontSize="30"
                 Text="Registered Accounts" />
+            <TextBlock x:Name="tempxt" />
+
         </Grid>
     </Grid>
 </Page>
