@@ -80,7 +80,8 @@
                     Margin="10,0,20,10"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Bottom"
-                    PlaceholderText="Filter by">
+                    PlaceholderText="Filter by"
+                    SelectionChanged="cmbxAscDsc_SelectionChanged">
                     <TextBlock Text="Admin" />
                     <TextBlock Text="Non-Admin" />
                 </ComboBox>
@@ -99,7 +100,8 @@
                     Margin="10,0,10,10"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Bottom"
-                    PlaceholderText="Sort by">
+                    PlaceholderText="Sort by"
+                    SelectionChanged="cmbxSort_SelectionChanged">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />

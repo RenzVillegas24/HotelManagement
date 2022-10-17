@@ -48,7 +48,12 @@ namespace winrt::HotelManagement::implementation
         scrollMain().Margin(ThicknessHelper::FromLengths(0, stickyHeader().Height(), 0, 0));
 
     }
+    /*
 
+    void RegisteredAccounts::appendDataToList(int isAdmin, int id, string lastName, string firstName, string middleName, string icon, string province, string city, string barangay, string untBlck_etc, ) {
+
+    }
+    */
 
     void RegisteredAccounts::Page_Loaded(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
@@ -261,24 +266,45 @@ namespace winrt::HotelManagement::implementation
     }
 
 
+
+
+
+    void RegisteredAccounts::headerShow_Completed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable const& e)
+    {
+        upOffset = 50;
+
+    }
+
+
+    void RegisteredAccounts::headerHide_Completed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable const& e)
+    {
+        upOffset = 0;
+
+    }
+
+
+    void RegisteredAccounts::cmbxAscDsc_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e)
+    {
+        /*
+SELECT
+	name,
+	milliseconds, 
+	albumid
+FROM
+	tracks
+ORDER BY
+	albumid ASC;
+        */
+    }
+
+
+    void RegisteredAccounts::cmbxSort_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e)
+    {
+
+    }
+
     
 }
 
 
 
-
-
-
-
-void winrt::HotelManagement::implementation::RegisteredAccounts::headerShow_Completed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable const& e)
-{
-    upOffset = 50;
-
-}
-
-
-void winrt::HotelManagement::implementation::RegisteredAccounts::headerHide_Completed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable const& e)
-{
-    upOffset = 0;
-
-}

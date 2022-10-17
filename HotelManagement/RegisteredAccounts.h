@@ -27,6 +27,9 @@ namespace winrt::HotelManagement::implementation
         double downOffset;
         double upOffset;
 
+    public:
+        void cmbxAscDsc_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e);
+        void cmbxSort_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e);
     };
 }
 
