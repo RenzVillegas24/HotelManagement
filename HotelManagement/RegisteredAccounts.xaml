@@ -57,16 +57,14 @@
                     </DoubleAnimation>
                 </Storyboard>
             </Border.Resources>
-            <Grid Padding="40,0">
+            <Grid Padding="40,0" Background="{ThemeResource ColorStickyHeader}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Grid.Background>
-                    <SolidColorBrush Opacity="0.25" Color="Gray" />
-                </Grid.Background>
+
                 <TextBlock
                     Grid.Column="0"
                     Margin="0,0,0,17"
