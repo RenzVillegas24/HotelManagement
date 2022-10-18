@@ -316,6 +316,7 @@ VillaricaPonsho
 
     Windows::Foundation::IAsyncAction SignUpForm::btnConfirm_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
+        
 
         if (
             txtbxLastName().Text().empty() ||

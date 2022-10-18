@@ -98,6 +98,22 @@ namespace winrt::HotelManagement::implementation
                 "   isRemembered  INTEGER  NOT NULL"
                 ");";
 
+            db << "CREATE TABLE IF NOT EXISTS linked_eWallets ("
+                "   username      TEXT     NOT NULL,"
+                "   paymentName   TEXT     NOT NULL,"
+                "   acctName      TEXT     NOT NULL,"
+                "   pin           TEXT     NOT NULL"
+                ");";
+
+            db << "CREATE TABLE IF NOT EXISTS linked_Cards ("
+                "   username      TEXT     NOT NULL,"
+                "   paymentName   TEXT     NOT NULL,"
+                "   cardNumber    TEXT     NOT NULL,"
+                "   expiration    TEXT     NOT NULL,"
+                "   cvv           TEXT     NOT NULL,"
+                "   nameOnCard    TEXT     NOT NULL"
+                ");";
+
 
         } catch(std::exception& e) {
             return false;
@@ -105,4 +121,14 @@ namespace winrt::HotelManagement::implementation
         return true;
     }
 
+    bool m_isHeaderSticky = false;
+
+    bool isHeaderSticky() {
+        return m_isHeaderSticky;
+    }
+
+    bool isHeaderSticky(bool value) {
+        m_isHeaderSticky = value;
+        return true;
+    }
 }

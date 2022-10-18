@@ -152,6 +152,144 @@ namespace winrt::HotelManagement::implementation
 
         auto img = co_await Base64ToImage(imgStr);
         imgID().ImageSource(img);
+
+
+
+
+        db << "SELECT paymentName FROM linked_eWallets WHERE username = ?;"
+            << userLogged
+            >> [&](string paymentName) { 
+            string paymentName_low = paymentName.c_str();
+
+            auto btn_grd = Grid();
+            auto cldef1 = ColumnDefinition(); cldef1.Width(GridLengthHelper::FromPixels(150));
+            auto cldef2 = ColumnDefinition(); cldef2.Width(GridLengthHelper::FromValueAndType(1, GridUnitType::Star));
+            auto cldef3 = ColumnDefinition(); cldef3.Width(GridLengthHelper::FromPixels(100));
+            btn_grd.HorizontalAlignment(HorizontalAlignment::Stretch);
+            btn_grd.VerticalAlignment(VerticalAlignment::Stretch);
+            btn_grd.ColumnDefinitions().Append(cldef1);
+            btn_grd.ColumnDefinitions().Append(cldef2);
+            btn_grd.ColumnDefinitions().Append(cldef3);
+
+
+            transform(paymentName_low.begin(), paymentName_low.end(), paymentName_low.begin(), ::tolower);
+            auto bitmapImage = BitmapImage(Uri(L"ms-appx:///Assets/Payment/"+ to_hstring(paymentName_low) + L".png"));
+
+
+            auto img_icon = Image();
+            img_icon.Source(bitmapImage);
+            img_icon.Height(25);
+            img_icon.Margin(ThicknessHelper::FromLengths(0,0,10,0));
+
+
+
+            auto btn_txt = TextBlock();
+            btn_txt.Margin(ThicknessHelper::FromLengths(20, 0, 0, 0));
+            btn_txt.HorizontalAlignment(HorizontalAlignment::Stretch);
+            btn_txt.TextAlignment(TextAlignment::Left);
+            btn_txt.VerticalAlignment(VerticalAlignment::Center);
+            btn_txt.FontSize(13);
+            btn_txt.Text(to_hstring(paymentName));
+
+
+
+            auto btn_sep = winrt::Windows::UI::Xaml::Shapes::Rectangle::Rectangle();
+            btn_sep.Margin(ThicknessHelper::FromLengths(0, 5, 0, 5));
+            btn_sep.Width(1);
+            btn_sep.Opacity(0.25);
+            btn_sep.HorizontalAlignment(HorizontalAlignment::Right);
+            btn_sep.VerticalAlignment(VerticalAlignment::Stretch);
+            btn_sep.Fill(winrt::unbox_value<Windows::UI::Xaml::Media::Brush>(
+                Application::Current().Resources().Lookup(winrt::box_value(L"AppBarSeparatorForegroundThemeBrush"))));
+
+
+
+            auto btn_del_ico = FontIcon();
+            btn_del_ico.FontFamily(winrt::Windows::UI::Xaml::Media::FontFamily(L"Segoe MDL2 Assets"));
+            btn_del_ico.FontSize(12);
+            btn_del_ico.Glyph(L"\xE107");
+
+
+            auto btn_del = Button(); 
+            btn_del.Tag(winrt::box_value(to_hstring(paymentName)));
+            btn_del.Click([] (winrt::Windows::Foundation::IInspectable const& sender_del, winrt::Windows::UI::Xaml::RoutedEventArgs const& e_del) -> winrt::fire_and_forget {
+                auto paymentName_ev = unbox_value<hstring>(sender_del.as<Button>().Tag());
+                auto paymentList_ev = sender_del.as<Button>().Parent().as<Grid>().Parent().as<Button>().Parent().as<StackPanel>();
+                
+                auto res = co_await Dialog(
+                    L"Removing the payment method account",
+                    L"You are about remove your " + paymentName_ev + L" account from the list of your payment methods.\nWould you like to continue removing this account?",
+                    L"No",
+                    L"Yes");
+
+
+                if (res == ContentDialogResult::Primary)
+                {
+
+                    for (int i = 0; i < paymentList_ev.Children().Size(); i++)
+                    {
+                        if (unbox_value<hstring>(paymentList_ev.Children().GetAt(i).as<Button>().Tag()) == paymentName_ev) {
+                            paymentList_ev.Children().RemoveAt(i);
+                        }
+                    }
+
+                    database db(dbPath());
+
+                    string userLogged;
+                    int isRemembered = 0;
+
+                    db << "SELECT username FROM loggedin;"
+                        >> userLogged;
+
+                    db << "DELETE FROM linked_eWallets WHERE username = ? AND paymentName = ?;"
+                        << userLogged
+                        << to_string(paymentName_ev);
+
+                }
+            });
+            
+            btn_del.Content(btn_del_ico);
+            btn_del.Width(35);
+            btn_del.Height(35);
+            btn_del.HorizontalAlignment(HorizontalAlignment::Right);
+
+
+            btn_grd.Children().Append(img_icon);
+            btn_grd.Children().Append(btn_sep);
+            btn_grd.Children().Append(btn_txt);
+            btn_grd.Children().Append(btn_del);
+
+
+            Grid::SetColumn(img_icon, 0);
+            Grid::SetColumn(btn_sep, 0);
+            Grid::SetColumn(btn_txt, 1);
+            Grid::SetColumn(btn_del, 2);
+
+
+            auto btn = Button();
+            //to_hstring(paymentName)
+          
+
+            btn.Tag(winrt::box_value(to_hstring(paymentName)));
+            btn.HorizontalContentAlignment(HorizontalAlignment::Stretch);
+            btn.Height(60);
+            btn.HorizontalAlignment(HorizontalAlignment::Stretch);
+            btn.VerticalAlignment(VerticalAlignment::Stretch);
+            btn.Margin(ThicknessHelper::FromLengths(0, 3, 0, 3));
+            btn.Padding(ThicknessHelper::FromLengths(5, 5, 20, 5));
+            btn.Content(btn_grd);
+
+
+            paymentList().Children().Append(btn);
+          
+        };
+
+        db << "SELECT paymentName FROM linked_Cards WHERE username = ?;"
+            << userLogged
+            >> [&](string paymentName) {
+
+
+        };
     }
 
     Windows::Foundation::IAsyncAction Account::btnLogout_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
@@ -494,6 +632,14 @@ namespace winrt::HotelManagement::implementation
                         << user;
 
                     db << "UPDATE loggedin SET username = ? WHERE username = ?;"
+                        << to_string(newUsername.Text())
+                        << user;
+
+                    db << "UPDATE linked_eWallets SET username = ? WHERE username = ?;"
+                        << to_string(newUsername.Text())
+                        << user;
+
+                    db << "UPDATE linked_Cards SET username = ? WHERE username = ?;"
                         << to_string(newUsername.Text())
                         << user;
              

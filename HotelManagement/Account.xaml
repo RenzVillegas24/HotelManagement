@@ -168,8 +168,8 @@
                                             <FontIcon
                                                 Grid.Column="2"
                                                 HorizontalAlignment="Center"
-                                                FontFamily="Segoe Fluent Icons"
-                                                FontSize="25"
+                                                FontFamily="Segoe MDL2 Assets"
+                                                FontSize="20"
                                                 Glyph="&#xE722;" />
                                             <TextBlock
                                                 Margin="0,2,0,0"
@@ -221,8 +221,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -262,8 +262,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -303,8 +303,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -344,8 +344,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -385,8 +385,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -453,8 +453,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -494,8 +494,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -561,8 +561,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -602,8 +602,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -671,8 +671,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -712,8 +712,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -746,8 +746,8 @@
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
 
                             </Grid>
@@ -833,10 +833,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-
-
 
                         <Button
                             x:Name="btnAddPayment"
@@ -860,18 +857,16 @@
                                     FontSize="15"
                                     Text="Add payment accounts" />
 
-
                                 <FontIcon
                                     Grid.Column="2"
                                     HorizontalAlignment="Right"
-                                    FontFamily="Segoe Fluent Icons"
-                                    FontSize="13"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    FontSize="10"
                                     Glyph="&#xE76C;" />
-
 
                             </Grid>
                         </Button>
-
+                        <StackPanel x:Name="paymentList" Grid.Row="1" />
                     </Grid>
                 </Border>
 

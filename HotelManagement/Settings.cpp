@@ -83,6 +83,8 @@ namespace winrt::HotelManagement::implementation
             cmbxTheme().SelectedIndex(1);
         else if (root.RequestedTheme() == ElementTheme::Dark)
             cmbxTheme().SelectedIndex(2);
+        
+        toggleStickyHeader().IsOn(!isHeaderSticky());
 
     
     }
@@ -125,7 +127,19 @@ namespace winrt::HotelManagement::implementation
         }
 
     }
+    void Settings::toggleStickyHeader_Toggled(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+        isHeaderSticky(!toggleStickyHeader().IsOn());
+    }
+
+
+    void Settings::btnStickyHeader_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+    {
+        toggleStickyHeader().IsOn(!toggleStickyHeader().IsOn());
+    }
+
 }
+
 
 
 

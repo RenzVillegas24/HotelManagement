@@ -18,7 +18,6 @@
 
             <Button
                 x:Name="btnMicaTheme"
-                Grid.Row="3"
                 Width="Auto"
                 Margin="0,3"
                 Padding="20,9"
@@ -35,7 +34,8 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         FontFamily="{StaticResource Light}"
-                        FontSize="15">
+                        FontSize="15"
+                        TextTrimming="CharacterEllipsis">
                         Use mica theme (Windows 11 only)
                     </TextBlock>
 
@@ -52,7 +52,6 @@
 
             <Button
                 x:Name="btnTheme"
-                Grid.Row="3"
                 Width="Auto"
                 Margin="0,3"
                 Padding="20,9"
@@ -69,7 +68,8 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         FontFamily="{StaticResource Light}"
-                        FontSize="15">
+                        FontSize="15"
+                        TextTrimming="CharacterEllipsis">
                         App Theme
                     </TextBlock>
                     <ComboBox
@@ -81,6 +81,39 @@
                         <TextBlock Text="Light" />
                         <TextBlock Text="Dark" />
                     </ComboBox>
+
+                </Grid>
+            </Button>
+
+            <Button
+                x:Name="btnStickyHeader"
+                Width="Auto"
+                Margin="0,3"
+                Padding="20,9"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                Click="btnStickyHeader_Click">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Column="0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="{StaticResource Light}"
+                        FontSize="15"
+                        TextTrimming="CharacterEllipsis">
+                        Hide header while scrolling down on registered accounts page (may cause crash)
+                    </TextBlock>
+
+                    <ToggleSwitch
+                        x:Name="toggleStickyHeader"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        FlowDirection="RightToLeft"
+                        Toggled="toggleStickyHeader_Toggled" />
 
                 </Grid>
             </Button>

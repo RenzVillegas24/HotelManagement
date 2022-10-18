@@ -231,6 +231,27 @@
     <Image Include="Assets\Home\Event6.jpg">
       <Filter>Assets\Home</Filter>
     </Image>
+    <Image Include="Assets\Payment\bdo.png">
+      <Filter>Assets\Payment</Filter>
+    </Image>
+    <Image Include="Assets\Payment\bpi.png">
+      <Filter>Assets\Payment</Filter>
+    </Image>
+    <Image Include="Assets\Payment\gcash.png">
+      <Filter>Assets\Payment</Filter>
+    </Image>
+    <Image Include="Assets\Payment\maya.png">
+      <Filter>Assets\Payment</Filter>
+    </Image>
+    <Image Include="Assets\Payment\metrobank.png">
+      <Filter>Assets\Payment</Filter>
+    </Image>
+    <Image Include="Assets\Payment\paypal.png">
+      <Filter>Assets\Payment</Filter>
+    </Image>
+    <Image Include="Assets\Payment\rcbc.png">
+      <Filter>Assets\Payment</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -265,6 +286,9 @@
     </Filter>
     <Filter Include="utility">
       <UniqueIdentifier>{e10e5e4e-29d6-46c8-bccc-24d9492c1615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Payment">
+      <UniqueIdentifier>{de22da89-289f-47e9-9142-6664121b4555}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

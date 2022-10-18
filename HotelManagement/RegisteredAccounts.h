@@ -20,6 +20,11 @@ namespace winrt::HotelManagement::implementation
         void stickyHeader_SizeChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::SizeChangedEventArgs const& e);
         void headerShow_Completed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable const& e);
         void headerHide_Completed(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable const& e);
+        Windows::Foundation::IAsyncAction RegisteredAccounts::appendDataToList(int isAdmin, int id, std::string lastName, std::string firstName, std::string middleName, std::string suffix, std::string birthday, int age, std::string icon, std::string province, std::string city, std::string barangay, std::string untBlck_etc);
+        void cmbxFilter_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e);
+        void cmbxSort_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e);
+        void Page_SizeChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::SizeChangedEventArgs const& e);
+       
 
     private:
         double previousOffset;
@@ -27,9 +32,6 @@ namespace winrt::HotelManagement::implementation
         double downOffset;
         double upOffset;
 
-    public:
-        void cmbxAscDsc_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e);
-        void cmbxSort_SelectionChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs const& e);
     };
 }
 

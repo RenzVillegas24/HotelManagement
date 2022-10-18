@@ -28,6 +28,7 @@
 #include <winrt/Windows.UI.Xaml.Media.Imaging.h>
 #include <winrt/Windows.Graphics.h>
 #include <winrt/Windows.Graphics.Imaging.h>
+#include <winrt/Windows.UI.Xaml.Documents.h>
 
 #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"
 #include "winrt/Microsoft.UI.Xaml.Controls.h"
@@ -52,6 +53,8 @@ namespace winrt::HotelManagement::implementation
 
     bool isLoggedIn(void);
     bool initDatabase(void);
+    bool isHeaderSticky(bool value);
+    bool isHeaderSticky();
 
     std::string dataPath;
 }

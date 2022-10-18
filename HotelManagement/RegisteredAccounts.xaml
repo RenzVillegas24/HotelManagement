@@ -6,6 +6,7 @@
     xmlns:local="using:HotelManagement"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Loaded="Page_Loaded"
+    SizeChanged="Page_SizeChanged"
     mc:Ignorable="d">
     <Grid>
         <Grid.Resources>
@@ -19,8 +20,10 @@
             <Grid>
                 <ListView
                     x:Name="accountList"
-                    Padding="20,140,20,20"
-                    ScrollViewer.CanContentRenderOutsideBounds="True" />
+                    Padding="20,140,20,70"
+                    ScrollViewer.CanContentRenderOutsideBounds="True"
+                    ScrollViewer.IsScrollInertiaEnabled="False"
+                    ScrollViewer.IsVerticalRailEnabled="False" />
             </Grid>
         </ScrollViewer>
         <Border
@@ -71,9 +74,9 @@
                     VerticalAlignment="Bottom"
                     FontFamily="{ThemeResource Light}"
                     FontSize="15"
-                    Text="Sort by: " />
+                    Text="FIlter by: " />
                 <ComboBox
-                    x:Name="cmbxAscDsc"
+                    x:Name="cmbxFilter"
                     Grid.Column="1"
                     Width="130"
                     Height="30"
@@ -81,7 +84,8 @@
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Bottom"
                     PlaceholderText="Filter by"
-                    SelectionChanged="cmbxAscDsc_SelectionChanged">
+                    SelectionChanged="cmbxFilter_SelectionChanged">
+                    <TextBlock Text="None" />
                     <TextBlock Text="Admin" />
                     <TextBlock Text="Non-Admin" />
                 </ComboBox>
@@ -102,7 +106,7 @@
                     VerticalAlignment="Bottom"
                     PlaceholderText="Sort by"
                     SelectionChanged="cmbxSort_SelectionChanged">
-                    <Grid>
+                    <Grid Tag="asc_Creation">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
@@ -110,12 +114,12 @@
                         <FontIcon
                             Grid.Column="0"
                             Margin="0,3,10,0"
-                            FontFamily="Segoe Fluent Icons"
+                            FontFamily="Segoe MDL2 Assets"
                             FontSize="12"
                             Glyph="&#xE74A;" />
                         <TextBlock Grid.Column="1" Text="Creation" />
                     </Grid>
-                    <Grid>
+                    <Grid Tag="dsc_Creation">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
@@ -123,12 +127,12 @@
                         <FontIcon
                             Grid.Column="0"
                             Margin="0,3,10,0"
-                            FontFamily="Segoe Fluent Icons"
+                            FontFamily="Segoe MDL2 Assets"
                             FontSize="12"
                             Glyph="&#xE74B;" />
                         <TextBlock Grid.Column="1" Text="Creation" />
                     </Grid>
-                    <Grid>
+                    <Grid Tag="asc_Surname">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
@@ -136,12 +140,12 @@
                         <FontIcon
                             Grid.Column="0"
                             Margin="0,3,10,0"
-                            FontFamily="Segoe Fluent Icons"
+                            FontFamily="Segoe MDL2 Assets"
                             FontSize="12"
                             Glyph="&#xE74A;" />
-                        <TextBlock Grid.Column="1" Text="Creation" />
+                        <TextBlock Grid.Column="1" Text="Surname" />
                     </Grid>
-                    <Grid>
+                    <Grid Tag="dsc_Surname">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
@@ -149,12 +153,12 @@
                         <FontIcon
                             Grid.Column="0"
                             Margin="0,3,10,0"
-                            FontFamily="Segoe Fluent Icons"
+                            FontFamily="Segoe MDL2 Assets"
                             FontSize="12"
                             Glyph="&#xE74B;" />
                         <TextBlock Grid.Column="1" Text="Surname" />
                     </Grid>
-                    <Grid>
+                    <Grid Tag="asc_Age">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
@@ -162,38 +166,12 @@
                         <FontIcon
                             Grid.Column="0"
                             Margin="0,3,10,0"
-                            FontFamily="Segoe Fluent Icons"
-                            FontSize="12"
-                            Glyph="&#xE74A;" />
-                        <TextBlock Grid.Column="1" Text="Creation" />
-                    </Grid>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <FontIcon
-                            Grid.Column="0"
-                            Margin="0,3,10,0"
-                            FontFamily="Segoe Fluent Icons"
-                            FontSize="12"
-                            Glyph="&#xE74B;" />
-                        <TextBlock Grid.Column="1" Text="Surname" />
-                    </Grid>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <FontIcon
-                            Grid.Column="0"
-                            Margin="0,3,10,0"
-                            FontFamily="Segoe Fluent Icons"
+                            FontFamily="Segoe MDL2 Assets"
                             FontSize="12"
                             Glyph="&#xE74A;" />
                         <TextBlock Grid.Column="1" Text="Age" />
                     </Grid>
-                    <Grid>
+                    <Grid Tag="dsc_Age">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
@@ -201,7 +179,7 @@
                         <FontIcon
                             Grid.Column="0"
                             Margin="0,3,10,0"
-                            FontFamily="Segoe Fluent Icons"
+                            FontFamily="Segoe MDL2 Assets"
                             FontSize="12"
                             Glyph="&#xE74B;" />
                         <TextBlock Grid.Column="1" Text="Age" />

@@ -314,6 +314,13 @@
     <Image Include="Assets\Home\Unit4.jpg" />
     <Image Include="Assets\Home\Unit5.jpg" />
     <Image Include="Assets\LockScreenLogo.scale-200.png" />
+    <Image Include="Assets\Payment\bdo.png" />
+    <Image Include="Assets\Payment\bpi.png" />
+    <Image Include="Assets\Payment\gcash.png" />
+    <Image Include="Assets\Payment\maya.png" />
+    <Image Include="Assets\Payment\metrobank.png" />
+    <Image Include="Assets\Payment\paypal.png" />
+    <Image Include="Assets\Payment\rcbc.png" />
     <Image Include="Assets\SplashScreen.scale-200.png" />
     <Image Include="Assets\Square150x150Logo.scale-200.png" />
     <Image Include="Assets\Square310x310Logo.scale-100.png">
