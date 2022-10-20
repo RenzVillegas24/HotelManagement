@@ -652,7 +652,7 @@ namespace winrt::HotelManagement::implementation
                             " '" + paymentName + "', "
                             " '" + to_string(cardNum.Text()) + "', "
                             " '" + to_string(expiration.Text()) + "', "
-                            " '" + to_string(cvv.Text()) + "'"
+                            " '" + to_string(cvv.Text()) + "', "
                             " '" + to_string(nameOnCard.Text()) + "'"
                             ");";
 
@@ -833,7 +833,7 @@ namespace winrt::HotelManagement::implementation
                             " '" + paymentName + "', "
                             " '" + to_string(cardNum.Text()) + "', "
                             " '" + to_string(expiration.Text()) + "', "
-                            " '" + to_string(cvv.Text()) + "'"
+                            " '" + to_string(cvv.Text()) + "', "
                             " '" + to_string(nameOnCard.Text()) + "'"
                             ");";
 
@@ -1014,7 +1014,7 @@ namespace winrt::HotelManagement::implementation
                             " '" + paymentName + "', "
                             " '" + to_string(cardNum.Text()) + "', "
                             " '" + to_string(expiration.Text()) + "', "
-                            " '" + to_string(cvv.Text()) + "'"
+                            " '" + to_string(cvv.Text()) + "', "
                             " '" + to_string(nameOnCard.Text()) + "'"
                             ");";
 
@@ -1195,7 +1195,7 @@ namespace winrt::HotelManagement::implementation
                             " '" + paymentName + "', "
                             " '" + to_string(cardNum.Text()) + "', "
                             " '" + to_string(expiration.Text()) + "', "
-                            " '" + to_string(cvv.Text()) + "'"
+                            " '" + to_string(cvv.Text()) + "', "
                             " '" + to_string(nameOnCard.Text()) + "'"
                             ");";
 

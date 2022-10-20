@@ -180,9 +180,9 @@
                         FontFamily="{ThemeResource Thin}"
                         FontSize="20">
                         <Button.Resources>
-                            <ThemeResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
-                            <ThemeResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
-                            <ThemeResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
+                            <StaticResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
+                            <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
+                            <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
                         </Button.Resources>
                         RESERVE NOW
                     </Button>

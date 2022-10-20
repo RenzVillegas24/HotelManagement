@@ -252,6 +252,129 @@
     <Image Include="Assets\Payment\rcbc.png">
       <Filter>Assets\Payment</Filter>
     </Image>
+    <Image Include="Assets\Unit_Rooms\classic1.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\classic2.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\classic3.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\classic4.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\executive1.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\executive2.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\executive3.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\executive4.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\executive5.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\superior5.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\superior1.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\superior2.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\superior3.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\superior4.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\junior4.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\junior1.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\junior2.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\junior3.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\honeymoon6.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\honeymoon1.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\honeymoon2.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\honeymoon3.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\honeymoon4.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\honeymoon5.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\exec_area7.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\exec_area6.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\exec_area5.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\exec_area4.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\exec_area3.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\exec_area2.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\exec_area1.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event7.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event6.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event5.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event4.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event3.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event2.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event1.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\exec_area8.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event9.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
+    <Image Include="Assets\Unit_Rooms\event8.jpg">
+      <Filter>Assets\Unit_Rooms</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -289,6 +412,9 @@
     </Filter>
     <Filter Include="Assets\Payment">
       <UniqueIdentifier>{de22da89-289f-47e9-9142-6664121b4555}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Unit_Rooms">
+      <UniqueIdentifier>{dd854a8c-02fd-4676-b37f-7fbcf9d6596a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

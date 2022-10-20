@@ -114,6 +114,8 @@ namespace winrt::HotelManagement::implementation
 
         auto content = winrt::Windows::UI::Xaml::Controls::TextBlock(); 
         content.Text(contentText);
+        content.Width(400);
+        content.TextWrapping(winrt::Windows::UI::Xaml::TextWrapping::WrapWholeWords);
 
         winrt::Windows::UI::Xaml::Controls::ContentDialog dialog; 
         dialog.Title(title); 
@@ -129,6 +131,8 @@ namespace winrt::HotelManagement::implementation
 
         auto content = winrt::Windows::UI::Xaml::Controls::TextBlock(); 
         content.Text(contentText);
+        content.Width(400);
+        content.TextWrapping(winrt::Windows::UI::Xaml::TextWrapping::WrapWholeWords);
 
         winrt::Windows::UI::Xaml::Controls::ContentDialog dialog; 
         dialog.Title(title); 
@@ -145,6 +149,8 @@ namespace winrt::HotelManagement::implementation
 
         auto content = winrt::Windows::UI::Xaml::Controls::TextBlock();
         content.Text(contentText);
+        content.Width(400);
+        content.TextWrapping(winrt::Windows::UI::Xaml::TextWrapping::WrapWholeWords);
 
         winrt::Windows::UI::Xaml::Controls::ContentDialog dialog;
         dialog.Title(title);

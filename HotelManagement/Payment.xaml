@@ -47,7 +47,7 @@
                             Width="Auto"
                             Height="60"
                             Margin="0,3"
-                            Padding="5,15, 20, 15"
+                            Padding="5,15,20,15"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             Click="btnGcash_Click">
@@ -57,7 +57,7 @@
                             </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="175" />
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="23" />
                                 </Grid.ColumnDefinitions>
@@ -81,7 +81,7 @@
                                     Margin="20,0,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontSize="13"
+                                    FontSize="14"
                                     Text="GCash" />
 
                                 <FontIcon
@@ -100,7 +100,7 @@
                             Width="Auto"
                             Height="60"
                             Margin="0,3"
-                            Padding="5,15, 20, 15"
+                            Padding="5,15,20,15"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             Click="btnPaymaya_Click">
@@ -110,7 +110,7 @@
                             </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="175" />
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="20" />
                                 </Grid.ColumnDefinitions>
@@ -118,7 +118,7 @@
                                 <Image
                                     Grid.Column="0"
                                     Height="20"
-                                    Margin="0,5,10,0"
+                                    Margin="0,0,10,0"
                                     Source="Assets/Payment/maya.png" />
 
                                 <Rectangle
@@ -136,7 +136,7 @@
                                     Margin="20,0,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontSize="13"
+                                    FontSize="14"
                                     Text="Maya" />
 
 
@@ -156,7 +156,7 @@
                             Width="Auto"
                             Height="60"
                             Margin="0,3"
-                            Padding="5,15, 20, 15"
+                            Padding="5,15,20,15"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             Click="btnPaypal_Click">
@@ -166,7 +166,7 @@
                             </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="175" />
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="20" />
                                 </Grid.ColumnDefinitions>
@@ -191,7 +191,7 @@
                                     Margin="20,0,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontSize="13"
+                                    FontSize="14"
                                     Text="Paypal" />
 
 
@@ -241,7 +241,7 @@
                             Width="Auto"
                             Height="60"
                             Margin="0,3"
-                            Padding="5,15, 20, 15"
+                            Padding="5,15,20,15"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             Click="btnBDO_Click">
@@ -251,7 +251,7 @@
                             </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="175" />
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="20" />
                                 </Grid.ColumnDefinitions>
@@ -276,7 +276,7 @@
                                     Margin="20,0,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontSize="13"
+                                    FontSize="14"
                                     Text="BDO" />
 
 
@@ -297,7 +297,7 @@
                             Width="Auto"
                             Height="60"
                             Margin="0,3"
-                            Padding="5,15, 20, 15"
+                            Padding="5,15,20,15"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             Click="btnBPI_Click">
@@ -307,7 +307,7 @@
                             </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="175" />
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="20" />
                                 </Grid.ColumnDefinitions>
@@ -331,7 +331,7 @@
                                     Margin="20,0,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontSize="13"
+                                    FontSize="14"
                                     Text="BPI" />
 
 
@@ -351,7 +351,7 @@
                             Width="Auto"
                             Height="60"
                             Margin="0,3"
-                            Padding="5,15, 20, 15"
+                            Padding="5,15,20,15"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             Click="btnMetrobank_Click">
@@ -361,7 +361,7 @@
                             </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="175" />
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="20" />
                                 </Grid.ColumnDefinitions>
@@ -386,7 +386,7 @@
                                     Margin="20,0,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontSize="13"
+                                    FontSize="14"
                                     Text="Metrobank" />
 
 
@@ -406,7 +406,7 @@
                             Width="Auto"
                             Height="60"
                             Margin="0,3"
-                            Padding="5,15, 20, 15"
+                            Padding="5,15,20,15"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             Click="btnRCBC_Click">
@@ -416,7 +416,7 @@
                             </Button.Resources>
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="175" />
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="20" />
                                 </Grid.ColumnDefinitions>
@@ -440,7 +440,7 @@
                                     Margin="20,0,0,0"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    FontSize="13"
+                                    FontSize="14"
                                     Text="RCBC" />
 
 

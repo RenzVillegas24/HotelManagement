@@ -5,14 +5,2258 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:HotelManagement"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    FontFamily="{ThemeResource Regular}"
-    mc:Ignorable="d">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrushV2}"
+    FontFamily="{ThemeResource Regular}" 
+    mc:Ignorable="d" KeyDown="Page_KeyDown">
     <Grid>
-        <StackPanel
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Orientation="Horizontal" />
+        <Grid.Resources>
+            <ThemeShadow x:Key="shadow" />
+        </Grid.Resources>
+        <FlipView
+            x:Name="mainFlipView"
+            AllowFocusOnInteraction="False"
+            Background="Transparent"
+            IsTabStop="False"
+            Loaded="mainFlipView_Loaded"
+            Style="{ThemeResource FlipViewStyle1}">
+            <FlipView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </FlipView.ItemsPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
 
+                <ParallaxView
+                    x:Name="parallax1"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            Margin="0,200,0,100"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="/Assets/Unit_Rooms/classic1.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{ThemeResource NormalGradient}" />
+                <StackPanel 
+                    x:Name="P1_contentShort"
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{ThemeResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Classic Deluxe Room
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{ThemeResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Fancy an elevated hotel experience? Our superior 42 square meters deluxe room features elegant traditional Filipino interiors that creates a sensation of timeless comfort. Enjoy a great night’s sleep and snuggle in our king-sized bed and in-house amenities.
+                    </TextBlock>
+                    <Button
+                        x:Name="btnShowP1_details"
+                        Margin="8"
+                        Padding="20,10"
+                        HorizontalAlignment="Center"
+                        Click="btnShowP1_details_Click"
+                        FontFamily="{ThemeResource Thin}"
+                        FontSize="15">
+                        Show more details
+                    </Button>
+                </StackPanel>
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax2"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            Margin="0,100"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="/Assets/Unit_Rooms/superior5.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{ThemeResource NormalGradient}" />
+                <StackPanel
+                    x:Name="P2_contentShort"
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{ThemeResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Superior Deluxe Room
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{ThemeResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Enjoy a well-earned night’s sleep in a Superior Deluxe Room. Spacious and impeccably stylish with a dash of timeless grand dame glamour, cozy up into fine cotton linens, comfy duvet and soft pillows on a king sized bed.
+                    </TextBlock>
+                    <Button
+                        x:Name="btnShowP2_details"
+                        Margin="8,20,8,8"
+                        Padding="20,10"
+                        HorizontalAlignment="Center"
+                        Click="btnShowP2_details_Click"
+                        FontFamily="{ThemeResource Thin}"
+                        FontSize="15">
+                        Show more details
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax3"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Unit_Rooms/junior1.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{ThemeResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    x:Name="P3_contentShort"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{ThemeResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Junior Suite
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{ThemeResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        These strategically located corner suites offer a spacious living area. At 43 sq. m, it has ample space to move around and floor-to-ceiling glass windows to view the city.
+                    </TextBlock>
+                    <Button
+                        x:Name="btnShowP3_details"
+                        Margin="8,20,8,8"
+                        Padding="20,10"
+                        HorizontalAlignment="Center"
+                        FontFamily="{ThemeResource Thin}"
+                        FontSize="15" Click="btnShowP3_details_Click">
+                        Show more details
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax4"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="/Assets/Unit_Rooms/honeymoon2.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{ThemeResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    x:Name="P4_contentShort"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{ThemeResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Honeymoon Suite
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{ThemeResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Our Honeymoon Suite is the perfect setting to kindle the flames of love. The only two-story suite of the hotel, it features a spiral staircase leading into an intimate parlor on the second floor. These are only some of the unique ways to make your most romantic dreams a reality.
+                    </TextBlock>
+                    <Button
+                        x:Name="btnShowP4_details"
+                        Margin="8,20,8,8"
+                        Padding="20,10"
+                        HorizontalAlignment="Center"
+                        FontFamily="{ThemeResource Thin}"
+                        FontSize="15" Click="btnShowP4_details_Click">
+                        Show more details
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax5"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Unit_Rooms/executive1.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{ThemeResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    x:Name="P5_contentShort"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{ThemeResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Executive Suite
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{ThemeResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        The Executive Suite offers additional space, contemporary comforts, and an exceptional view.
+                    </TextBlock>
+                    <Button
+                        x:Name="btnShowP5_details"
+                        Margin="8,20,8,8"
+                        Padding="20,10"
+                        HorizontalAlignment="Center"
+                        FontFamily="{ThemeResource Thin}"
+                        FontSize="15" Click="btnShowP5_details_Click">
+                        Show more details
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax6"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Unit_Rooms/event1.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{ThemeResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    x:Name="P6_contentShort"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{ThemeResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        The Event Area
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{ThemeResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Meet our dedicated and detail-oriented event specialists as you plan out your dream wedding, js prom, birthday and any other events here in MBC Lodge.
+                    </TextBlock>
+                    <Button
+                        x:Name="btnShowP6_details"
+                        Margin="8,20,8,8"
+                        Padding="20,10"
+                        HorizontalAlignment="Center"
+                        FontFamily="{ThemeResource Thin}"
+                        FontSize="15" Click="btnShowP6_details_Click">
+                        Show more details
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax7"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Unit_Rooms/exec_area5.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{ThemeResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    x:Name="P7_contentShort"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{ThemeResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        The Executive Area
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{ThemeResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Extraordinary moments shared with the ones who matter, our ballrooms create the perfect setting for your most important milestones.
+                    </TextBlock>
+                    <Button
+                        x:Name="btnShowP7_details"
+                        Margin="8,20,8,8"
+                        Padding="20,10"
+                        HorizontalAlignment="Center"
+                        FontFamily="{ThemeResource Thin}"
+                        FontSize="15" Click="btnShowP7_details_Click">
+                        Show more details
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <ParallaxView
+                    x:Name="parallax9"
+                    Grid.Row="0"
+                    VerticalShift="400">
+                    <Grid>
+                        <Image
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Source="Assets/Home/Event2.jpg"
+                            Stretch="UniformToFill" />
+                    </Grid>
+                </ParallaxView>
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-5"
+                    Background="{ThemeResource NormalGradient}" />
+                <StackPanel
+                    Grid.RowSpan="2"
+                    Margin="0,50"
+                    VerticalAlignment="Bottom">
+                    <TextBlock
+                        Margin="20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        FontFamily="{ThemeResource Black}"
+                        FontSize="40"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Book now!
+                    </TextBlock>
+                    <TextBlock
+                        Margin="80,0,80,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        FontFamily="{ThemeResource Light}"
+                        FontSize="18"
+                        Opacity="0.7"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap">
+                        Our formula is simple. Impeccable venues. Exemplary packages. Outstanding catering. Dedicated and detail-oriented event specialists. Whatever you need for your wedding, expect nothing but the best from our passionate team.
+                    </TextBlock>
+                    <Button
+                        x:Name="btnReserve"
+                        Margin="0,30,0,0"
+                        Padding="30,15,30,15"
+                        HorizontalAlignment="Center"
+                        Background="#59FF9700"
+                        FontFamily="{ThemeResource Thin}"
+                        FontSize="20" Click="btnReserve_Click">
+                        <Button.Resources>
+                            <StaticResource x:Key="ButtonBackground" ResourceKey="SystemAccentColorDark1" />
+                            <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="SystemAccentColorLight1" />
+                            <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="SystemAccentColorDark3" />
+                        </Button.Resources>
+                        RESERVE NOW
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+        </FlipView>
+
+        <ScrollViewer
+            x:Name="P1_content"
+            Grid.RowSpan="2"
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            Opacity="0"
+            Style="{ThemeResource customScrollViewer}"
+            Visibility="Collapsed">
+            <StackPanel
+                Margin="40,160,40,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Black}"
+                    FontSize="40"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap">
+                    Classic Deluxe Room
+                </TextBlock>
+                <FlipView CornerRadius="10"
+                    Style="{ThemeResource FlipViewStyle_img}"
+                    MaxWidth="850"
+                    Translation="0, 0, 50"
+                    MaxHeight="500" 
+                    Shadow="{StaticResource shadow}"
+                    Margin="8,20">
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/classic1.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/classic2.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/classic3.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/classic4.jpg"
+                        Stretch="UniformToFill" />
+                </FlipView>
+                <TextBlock
+                    MaxWidth="800"
+                    Margin="0,30"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="18"
+                    TextWrapping="Wrap">
+                    Fancy an elevated hotel experience? Our 42 square meters deluxe room features elegant traditional Filipino interiors that creates a sensation of timeless comfort. Enjoy a great night’s sleep and snuggle in our king-sized bed and in-house amenities.
+                    <LineBreak /><LineBreak />Our beautiful Classic Deluxe bedrooms are the smallest bedrooms available in the hotel. These compact bedrooms are perfectly formed, designed with style and comfort in mind and feature all of the modern amenities you would expect from a four star MBC Hotel. The cozy ambiance offers privacy and relaxation away from the hustle and bustle.
+                </TextBlock>
+                <Border
+                    MaxWidth="850"
+                    Margin="20"
+                    Padding="40,25"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{ThemeResource ColorStickyHeader}"
+                    CornerRadius="20">
+
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="TextWrapping" Value="WrapWholeWords" />
+                                <Setter Property="FontFamily" Value="{ThemeResource Light}" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            FontFamily="{ThemeResource Regular}"
+                            FontSize="35"
+                            TextWrapping="Wrap">
+                            Amenities:
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            30 - 42 square meters 
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Lavish premium bathroom amenities and toiletries for your convenience, separate bathtub and walk-in rain shower
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Free Wi-Fi access
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Individually electronic-controlled air-conditioning
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Remote-control LCD TV with cable channels
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            MP3 player-compatible with AM/FM clock radio
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Coffee making facility
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Signature contactless electronic door lock by VingCard or using the MBC App fo Android and iOS
+                        </TextBlock>
+
+                    </Grid>
+                </Border>
+                <Button
+                    x:Name="btnHideP1_details"
+                    Margin="8,20,8,8"
+                    Padding="20,10"
+                    HorizontalAlignment="Center"
+                    Click="btnHideP1_details_Click"
+                    FontFamily="{ThemeResource Thin}"
+                    FontSize="15">
+                    Collapse details
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer
+            x:Name="P2_content"
+            Grid.RowSpan="2"
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            Opacity="0"
+            Style="{ThemeResource customScrollViewer}"
+            Visibility="Collapsed">
+            <StackPanel
+                Margin="40,160,40,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Black}"
+                    FontSize="40"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap">
+                    Superior Deluxe Room
+                </TextBlock>
+                <FlipView CornerRadius="10"
+                    Style="{ThemeResource FlipViewStyle_img}"
+                    MaxWidth="850"
+                    Translation="0, 0, 50"
+                    MaxHeight="500" 
+                    Shadow="{StaticResource shadow}"
+                    Margin="8,20">
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/superior5.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/superior1.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/superior3.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/superior4.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/superior2.jpg"
+                        Stretch="UniformToFill" />
+                </FlipView>
+                <TextBlock
+                    MaxWidth="800"
+                    Margin="0,30"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="18"
+                    TextWrapping="Wrap">
+                    Enjoy a well-earned night’s sleep in a Grand Deluxe Room. Spacious and impeccably stylish with a dash of timeless grand dame glamour, cozy up into fine cotton linens, comfy duvet and soft pillows on a king sized bed.
+                    <LineBreak /><LineBreak />Our rooms are elegantly decorated and provide guests with a flat-screen TV, air conditioning and a seating area.
+                    <LineBreak /><LineBreak />The suites have an ipod docking station, a senso memory foam mattress. Some rooms offer views of Manila Bay, while other offer views of the city.
+                </TextBlock>
+
+                <Border
+                    MaxWidth="850"
+                    Margin="8,20"
+                    Padding="40,25"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{ThemeResource ColorStickyHeader}"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30"
+                    CornerRadius="10">
+
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="TextWrapping" Value="WrapWholeWords" />
+                                <Setter Property="FontFamily" Value="{ThemeResource Light}" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            FontFamily="{ThemeResource Regular}"
+                            FontSize="35"
+                            TextWrapping="Wrap">
+                            Amenities:
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            120 - 125 square meters 
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Free 200MBps Wi-Fi access
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Bathroom amenities and toiletries for your convenience, separate bathtub and walk-in rain shower
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            In-room dining, with Microwave and Toaster Oven
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Individually electronic-controlled air-conditioning
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Remote-control 42-inches Android TV with cable channels and free Netflix
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            MP3 player-compatible with AM/FM clock radio
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Coffee making facility
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            In-room safe
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Signature contactless electronic door lock by VingCard or using the MBC App fo Android and iOS
+                        </TextBlock>
+
+                    </Grid>
+                </Border>
+                <Button
+                    x:Name="btnHideP2_details"
+                    Margin="8,20,8,8"
+                    Padding="20,10"
+                    HorizontalAlignment="Center"
+                    Click="btnHideP2_details_Click"
+                    FontFamily="{ThemeResource Thin}"
+                    FontSize="15">
+                    Collapse details
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer
+            x:Name="P3_content"
+            Grid.RowSpan="2"
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            Opacity="0"
+            Style="{ThemeResource customScrollViewer}"
+            Visibility="Collapsed">
+            <StackPanel
+                Margin="40,160,40,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Black}"
+                    FontSize="40"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap">
+                    Junior Suite
+                </TextBlock>
+                <FlipView CornerRadius="10"
+                    Style="{ThemeResource FlipViewStyle_img}"
+                    MaxWidth="850"
+                    Translation="0, 0, 50"
+                    MaxHeight="500" 
+                    Shadow="{StaticResource shadow}"
+                    Margin="8,20">
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/junior1.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/junior2.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/junior3.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/junior4.jpg"
+                        Stretch="UniformToFill" />
+                </FlipView>
+                <TextBlock
+                    MaxWidth="800"
+                    Margin="0,30"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="18"
+                    TextWrapping="Wrap">
+                    These strategically located corner suites offer a spacious living area. At 43 sq. m, it has ample space to move around and floor-to-ceiling glass windows to view the city.
+                    <LineBreak /><LineBreak />The Junior Suite is an elegant studio-style guest accommodation furnished with a queen-sized bed, a writing desk, two-seater sofa and coffee table, and a spacious toilet and bath. A telephone with extensions for the writing desk, bedside table and bathroom is available, as are cable television, a mini-bar, microwave oven, oven toaster and a coffee/tea making facility.
+                </TextBlock>
+
+                <Border
+                    MaxWidth="850"
+                    Margin="8,20"
+                    Padding="40,25"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{ThemeResource ColorStickyHeader}"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30"
+                    CornerRadius="10">
+
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="TextWrapping" Value="WrapWholeWords" />
+                                <Setter Property="FontFamily" Value="{ThemeResource Light}" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            FontFamily="{ThemeResource Regular}"
+                            FontSize="35"
+                            TextWrapping="Wrap">
+                            Amenities:
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Averaging 40-45 square meters
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Free Wi-Fi access
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Bathroom amenities and toiletries for your convenience, separate bathtub and walk-in rain shower
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Individually electronic-controlled air-conditioning
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Remote-control 42-inches TV with cable channels
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            MP3 player-compatible with AM/FM clock radio
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Coffee making facility
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            In-room dining
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Signature contactless electronic door lock by VingCard or using the MBC App fo Android and iOS
+                        </TextBlock>
+
+                    </Grid>
+                </Border>
+                <Button
+                    x:Name="btnHideP3_details"
+                    Margin="8,20,8,8"
+                    Padding="20,10"
+                    HorizontalAlignment="Center"
+                    FontFamily="{ThemeResource Thin}"
+                    FontSize="15" Click="btnHideP3_details_Click">
+                    Collapse details
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer
+            x:Name="P4_content"
+            Grid.RowSpan="2"
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            Opacity="0"
+            Style="{ThemeResource customScrollViewer}"
+            Visibility="Collapsed">
+            <StackPanel
+                Margin="40,160,40,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Black}"
+                    FontSize="40"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap">
+                    Honeymoon Suite
+                </TextBlock>
+                <FlipView CornerRadius="10"
+                    Style="{ThemeResource FlipViewStyle_img}"
+                    MaxWidth="850"
+                    Translation="0, 0, 50"
+                    MaxHeight="500" 
+                    Shadow="{StaticResource shadow}"
+                    Margin="8,20">
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/honeymoon1.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/honeymoon2.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/honeymoon3.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/honeymoon4.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/honeymoon5.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/honeymoon6.jpg"
+                        Stretch="UniformToFill" />
+                </FlipView>
+                <TextBlock
+                    MaxWidth="800"
+                    Margin="0,30"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="18"
+                    TextWrapping="Wrap">
+                    Our Honeymoon Suite is the perfect setting to kindle the flames of love. The only two-story suite of the hotel, it features a spiral staircase leading into an intimate parlor on the second floor. These are only some of the unique ways to make your most romantic dreams a reality.
+                    <LineBreak /><LineBreak />Our rooms are elegantly decorated and provide guests with a flat-screen TV, air conditioning and a seating area. 
+                    <LineBreak /><LineBreak />The suites have an ipod docking station, a senso memory foam mattress. Some rooms offer views of Manila Bay, while other offer views of the city.
+                    <LineBreak /><LineBreak />Our 140 sq. meters Honeymoon Suite is facing the Quirino Grandstand and Luneta Park.
+                </TextBlock>
+
+                <Border
+                    MaxWidth="850"
+                    Margin="8,20"
+                    Padding="40,25"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{ThemeResource ColorStickyHeader}"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30"
+                    CornerRadius="10">
+
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="TextWrapping" Value="WrapWholeWords" />
+                                <Setter Property="FontFamily" Value="{ThemeResource Light}" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            FontFamily="{ThemeResource Regular}"
+                            FontSize="35"
+                            TextWrapping="Wrap">
+                            Amenities:
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="12"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Averaging 140-145 square meters
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Free 200MBps Wi-Fi access
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Bathroom amenities and toiletries for your convenience, separate bathtub and walk-in rain shower
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Individually electronic-controlled air-conditioning
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Remote-control 42-inches TV with cable channels
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            MP3 player-compatible with AM/FM clock radio
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Coffee making facility
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Mini bar refrigerator
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Electronic Lighting System
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Safety Vault
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="12"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Signature contactless electronic door lock by VingCard or using the MBC App fo Android and iOS
+                        </TextBlock>
+
+                    </Grid>
+                </Border>
+                <Button
+                    x:Name="btnHideP4_details"
+                    Margin="8,20,8,8"
+                    Padding="20,10"
+                    HorizontalAlignment="Center"
+                    FontFamily="{ThemeResource Thin}"
+                    FontSize="15" Click="btnHideP4_details_Click">
+                    Collapse details
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer
+            x:Name="P5_content"
+            Grid.RowSpan="2"
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            Opacity="0"
+            Style="{ThemeResource customScrollViewer}"
+            Visibility="Collapsed">
+            <StackPanel
+                Margin="40,160,40,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Black}"
+                    FontSize="40"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap">
+                    Executive Area
+                </TextBlock>
+                <FlipView CornerRadius="10"
+                    Style="{ThemeResource FlipViewStyle_img}"
+                    MaxWidth="850"
+                    Translation="0, 0, 50"
+                    MaxHeight="500" 
+                    Shadow="{StaticResource shadow}"
+                    Margin="8,20">
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/executive1.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/executive2.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/executive3.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/executive4.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/executive5.jpg"
+                        Stretch="UniformToFill" />
+                </FlipView>
+                <TextBlock
+                    MaxWidth="800"
+                    Margin="0,30"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="18"
+                    TextWrapping="Wrap">
+                    The Executive Suite offers additional space, contemporary comforts, and an exceptional view.
+                    <LineBreak /><LineBreak />Our Executive rooms are the ultimate in luxury, comfort and style. These rooms have more space and come in traditional or modern decor.
+                    <LineBreak /><LineBreak />Whether it’s a special occasion, a treat, or perhaps you simply work better in luxurious surroundings, look no further than one of our 92 Executive bedrooms. They are also ideal for those who like the comfort of fine things such as air conditioning, a separate bath and shower, not to mention fine bathrobes and slippers as standard.
+                    <LineBreak /><LineBreak />The Executive Suite offers additional space, contemporary comforts, and an exceptional view.
+                </TextBlock>
+
+                <Border
+                    MaxWidth="850"
+                    Margin="8,20"
+                    Padding="40,25"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{ThemeResource ColorStickyHeader}"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30"
+                    CornerRadius="10">
+
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="TextWrapping" Value="WrapWholeWords" />
+                                <Setter Property="FontFamily" Value="{ThemeResource Light}" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            FontFamily="{ThemeResource Regular}"
+                            FontSize="35"
+                            TextWrapping="Wrap">
+                            Amenities:
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Averaging 193 - 195 sqm
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Free 200MBps Wi-Fi access
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Bathroom amenities and toiletries for your convenience, separate bathtub and walk-in rain shower
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Individually electronic-controlled air-conditioning
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Remote-control 56-inches Android TV with cable channels with free Netflix access
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            MP3 player-compatible with AM/FM clock radio
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Equipped with a kitchenette that has an induction cooker and a refrigerator.
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Coffee making facility
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="10"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Safety Vault
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="11"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Signature contactless electronic door lock by VingCard or using the MBC App fo Android and iOS
+                        </TextBlock>
+
+                    </Grid>
+                </Border>
+                <Button
+                    x:Name="btnHideP5_details"
+                    Margin="8,20,8,8"
+                    Padding="20,10"
+                    HorizontalAlignment="Center"
+                    FontFamily="{ThemeResource Thin}"
+                    FontSize="15" Click="btnHideP5_details_Click" >
+                    Collapse details
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer
+            x:Name="P6_content"
+            Grid.RowSpan="2"
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            Opacity="0"
+            Style="{ThemeResource customScrollViewer}"
+            Visibility="Collapsed">
+            <StackPanel
+                Margin="40,160,40,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Black}"
+                    FontSize="40"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap">
+                    The Event Area
+                </TextBlock>
+                <FlipView CornerRadius="10"
+                    Style="{ThemeResource FlipViewStyle_img}"
+                    MaxWidth="850"
+                    Translation="0, 0, 50"
+                    MaxHeight="500" 
+                    Shadow="{StaticResource shadow}"
+                    Margin="8,20">
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event1.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event2.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event3.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event4.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event5.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event6.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event7.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event8.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/event9.jpg"
+                        Stretch="UniformToFill" />
+                </FlipView>
+                <TextBlock
+                    MaxWidth="800"
+                    Margin="0,30"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="18"
+                    TextWrapping="Wrap">
+                    Meet our dedicated and detail-oriented event specialists as you plan out your dream wedding, js prom, birthday and any other events here in MBC Lodge.   
+                    <LineBreak /><LineBreak />MBC is one of the most popular venues for conferences, events and live musical performances in Manila with local, national and international acts on the bill.
+                    <LineBreak /><LineBreak />Avail of professional consultation with the Executive Chef, menu tasting, location shoot, flower centerpieces, nearby churches, personalized bride and groom packages, and even anniversary treats. 
+                    <LineBreak /><LineBreak />Prepare to fall in love all over again with our heritage listed ballroom. We have elegant venues for your wedding, from grand to intimate. We have the perfect setting, in a variety of styles, to suit your special event. All of our historic venues come with the unmatched service our historic hotel is known for.
+                    <LineBreak /><LineBreak />Enjoy a wedding banquet from the award winning culinary team, evening appetizers and a choice of complimentary extras. Our popular all-inclusive packages are a thoughtful solution, without compromising on quality. We offer a host of extras to make your wedding extra special, as well as delicious menu options to choose from.
+                    <LineBreak /><LineBreak />Here in MBC, no stone will be left unturned as you open a new chapter of life.
+                </TextBlock>
+
+                <Border
+                    MaxWidth="850"
+                    Margin="8,20"
+                    Padding="40,25"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{ThemeResource ColorStickyHeader}"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30"
+                    CornerRadius="10">
+
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="TextWrapping" Value="WrapWholeWords" />
+                                <Setter Property="FontFamily" Value="{ThemeResource Light}" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            FontFamily="{ThemeResource Regular}"
+                            FontSize="35"
+                            TextWrapping="Wrap">
+                            Amenities:
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Averaging 1500 - 1600  sqm
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Free 500MBps Wi-Fi access
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Flowers, sound systems, decoarations are already provided
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Individually electronic-controlled air-conditioning
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Sound system included
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Can accommodate 250 - 300 persons
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            (Optional) Includes our professional hosts
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            (Optional) Includes word class foods from the most famouse chefs in the Philippines
+                        </TextBlock>
+
+                    </Grid>
+                </Border>
+                <Button
+                    x:Name="btnHideP6_details"
+                    Margin="8,20,8,8"
+                    Padding="20,10"
+                    HorizontalAlignment="Center"
+                    FontFamily="{ThemeResource Thin}"
+                    FontSize="15" Click="btnHideP6_details_Click">
+                    Collapse details
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer
+            x:Name="P7_content"
+            Grid.RowSpan="2"
+            Background="{ThemeResource BackdropAcrylicBrush}"
+            Opacity="0"
+            Style="{ThemeResource customScrollViewer}"
+            Visibility="Collapsed">
+            <StackPanel
+                Margin="40,160,40,40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    FontFamily="{ThemeResource Black}"
+                    FontSize="40"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap">
+                    Executive Suite
+                </TextBlock>
+                <FlipView CornerRadius="10"
+                    Style="{ThemeResource FlipViewStyle_img}"
+                    MaxWidth="850"
+                    Translation="0, 0, 50"
+                    MaxHeight="500" 
+                    Shadow="{StaticResource shadow}"
+                    Margin="8,20">
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/exec_area1.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/exec_area2.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/exec_area3.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/exec_area4.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/exec_area5.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/exec_area6.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/exec_area7.jpg"
+                        Stretch="UniformToFill" />
+                    <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Source="/Assets/Unit_Rooms/exec_area8.jpg"
+                        Stretch="UniformToFill" />
+                </FlipView>
+                <TextBlock
+                    MaxWidth="800"
+                    Margin="0,30"
+                    FontFamily="{ThemeResource Light}"
+                    FontSize="18"
+                    TextWrapping="Wrap">
+                    Extraordinary moments shared with the ones who matter, our ballrooms create the perfect setting for your most important milestones.
+                    <LineBreak /><LineBreak />Whether it’s a presentation, launch event or gala ball, The MBC Lodge has a range of flexible spaces to suit. Everything you will need for a comfortable and successful conference or meeting is available from air conditioned meeting rooms, Wi-Fi, and in-house AV equipment. The team can also provide a full range of catering services to suit. Your dedicated conference coordinator along with an experienced and helpful team will ensure your day runs smoothly.
+                    <LineBreak /><LineBreak />Set in the heart of the city’s cosmopolitan commercial and business district, The MBC Lodge features ideal venues for your corporate events. Our distinctive ballroom, function and meeting rooms are equipped with a comprehensive visual system making it the preferred venue for business functions, product launches, and social events. Our team of dedicated service professionals are always ready to see you to your event’s needs.
+                    <LineBreak /><LineBreak />The MBC Lodge invites you to meet and more. Whether you’re looking for a ballroom or a boardroom, our hotel offers a range of meeting solutions that can be tailored for your bespoke event.
+                </TextBlock>
+
+                <Border
+                    MaxWidth="850"
+                    Margin="8,20"
+                    Padding="40,25"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{ThemeResource ColorStickyHeader}"
+                    Shadow="{StaticResource shadow}"
+                    Translation="0, 0, 30"
+                    CornerRadius="10">
+
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="TextWrapping" Value="WrapWholeWords" />
+                                <Setter Property="FontFamily" Value="{ThemeResource Light}" />
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.ColumnSpan="2"
+                            FontFamily="{ThemeResource Regular}"
+                            FontSize="35"
+                            TextWrapping="Wrap">
+                            Amenities:
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            Margin="0,10,0,0"
+                            VerticalAlignment="Top">
+                            ●
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Averaging 2000 - 2200  sqm
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Free 500MBps Wi-Fi access
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Flowers, sound systems, decoarations are already provided
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Individually electronic-controlled air-conditioning
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            We provided 400+ seats
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            Can accommodate 400 - 500 persons
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            (Optional) We includes wide screen and live broadcating peripherals
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            (Optional) Includes our professional hosts
+                        </TextBlock>
+                        <TextBlock
+                            Grid.Row="9"
+                            Grid.Column="1"
+                            Margin="0,10,0,0">
+                            (Optional) Includes word class foods from the most famouse chefs in the Philippines
+                        </TextBlock>
+
+                    </Grid>
+                </Border>
+                <Button
+                    x:Name="btnHideP7_details"
+                    Margin="8,20,8,8"
+                    Padding="20,10"
+                    HorizontalAlignment="Center"
+                    FontFamily="{ThemeResource Thin}"
+                    FontSize="15" Click="btnHideP7_details_Click" >
+                    Collapse details
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        
+        
         <Grid
             Height="120"
             VerticalAlignment="Top"
@@ -26,10 +2270,9 @@
                     x:Name="HomeTitle"
                     Margin="0,0,15,0"
                     Padding="13,6,13,10"
-                    Click="HomeTitle_Click"
                     FontFamily="{ThemeResource Regular}"
                     FontSize="30"
-                    Style="{ThemeResource RoundedButtonStyleTrans}">
+                    Style="{ThemeResource RoundedButtonStyleTrans}" Click="HomeTitle_Click">
                     Home
                 </Button>
                 <Path
