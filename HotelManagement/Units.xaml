@@ -457,7 +457,7 @@
                         <Image
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Source="Assets/Home/Event2.jpg"
+                            Source="Assets/Home/Unit1.jpg"
                             Stretch="UniformToFill" />
                     </Grid>
                 </ParallaxView>
@@ -2059,11 +2059,6 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Source="/Assets/Unit_Rooms/exec_area7.jpg"
-                        Stretch="UniformToFill" />
-                    <Image
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Source="/Assets/Unit_Rooms/exec_area8.jpg"
                         Stretch="UniformToFill" />
                 </FlipView>
                 <TextBlock

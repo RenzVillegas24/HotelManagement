@@ -18,7 +18,7 @@
             Style="{StaticResource customScrollViewer}"
             ViewChanged="scrollMain_ViewChanged">
             <Grid>
-                <ListView
+                <ListView SelectionMode="None"
                     x:Name="accountList"
                     Padding="20,140,20,70"
                     ScrollViewer.CanContentRenderOutsideBounds="True"

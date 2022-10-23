@@ -83,7 +83,6 @@
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>30CBDE72C902E0F0DC98C987C2AD12623AFF548A</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
@@ -92,6 +91,8 @@
     <AppInstallerUri>C:\Users\RenzCute\source\repos\HotelManagement\Publish</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageDir>C:\Users\RenzCute\source\repos\HotelManagement\HotelManagement\Publish\</AppxPackageDir>
+    <PackageCertificateKeyFile>HotelManagement_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
@@ -360,7 +361,6 @@
     <Image Include="Assets\Unit_Rooms\exec_area5.jpg" />
     <Image Include="Assets\Unit_Rooms\exec_area6.jpg" />
     <Image Include="Assets\Unit_Rooms\exec_area7.jpg" />
-    <Image Include="Assets\Unit_Rooms\exec_area8.jpg" />
     <Image Include="Assets\Unit_Rooms\honeymoon1.jpg" />
     <Image Include="Assets\Unit_Rooms\honeymoon2.jpg" />
     <Image Include="Assets\Unit_Rooms\honeymoon3.jpg" />

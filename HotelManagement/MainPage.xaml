@@ -11,7 +11,7 @@
     x:FieldModifier="public"
     Background="{ThemeResource SystemControlAltHighAcrylicWindowBrush}"
     Loaded="MainPivot_Loaded"
-    mc:Ignorable="d">
+    mc:Ignorable="d" SizeChanged="MainPivot_SizeChanged">
 
     <Grid x:Name="AppTitleBar" Margin="0,-1,0,0">
         <c:NavigationView
@@ -60,10 +60,11 @@
                 </c:NavigationViewItem>
                 <c:NavigationViewItem
                     Content="Bookings"
-                    Icon="Tag"
+                    Icon="Tag" Visibility="Collapsed"
                     Tag="bookings" />
-                <c:NavigationViewItem
+                <c:NavigationViewItem 
                     Content="Customer Support"
+                    Visibility="Collapsed"
                     Icon="Comment"
                     Tag="support" />
                 <c:NavigationViewItem

@@ -125,6 +125,10 @@ void App::OnSuspending([[maybe_unused]] IInspectable const& sender, [[maybe_unus
             if (!isRemembered)
                 db << "DELETE FROM loggedin;";
 
+
+
+            db << "VACUUM;";
+
         }
         catch (std::exception& e) {
             return;

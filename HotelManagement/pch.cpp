@@ -114,6 +114,15 @@ namespace winrt::HotelManagement::implementation
                 "   nameOnCard    TEXT     NOT NULL"
                 ");";
 
+            db << "CREATE TABLE IF NOT EXISTS booking_room ("
+                "   id            INTEGER  PRIMARY KEY AUTOINCREMENT,"
+                "   username      TEXT     NOT NULL,"
+                "   room          TEXT     NOT NULL,"
+                "   room_num      INT      NOT NULL,"
+                "   days          INT      NOT NULL,"
+                "   check_in      TEXT     NOT NULL,"
+                "   payed         INT      NOT NULL"
+                ");";
 
         } catch(std::exception& e) {
             return false;

@@ -366,9 +366,6 @@
     <Image Include="Assets\Unit_Rooms\event1.jpg">
       <Filter>Assets\Unit_Rooms</Filter>
     </Image>
-    <Image Include="Assets\Unit_Rooms\exec_area8.jpg">
-      <Filter>Assets\Unit_Rooms</Filter>
-    </Image>
     <Image Include="Assets\Unit_Rooms\event9.jpg">
       <Filter>Assets\Unit_Rooms</Filter>
     </Image>

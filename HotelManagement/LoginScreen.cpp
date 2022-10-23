@@ -116,6 +116,9 @@ namespace winrt::HotelManagement::implementation
 					Frame().Parent().as<Microsoft::UI::Xaml::Controls::NavigationView>().MenuItems().GetAt(4).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().MenuItems().GetAt(1)
 						.as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Visible);
 
+					Frame().Parent().as<Microsoft::UI::Xaml::Controls::NavigationView>().MenuItems().GetAt(1).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Visible);
+
+
 					int isAdmin;
 
 					db << "SELECT isAdmin FROM accounts WHERE username = ?;"

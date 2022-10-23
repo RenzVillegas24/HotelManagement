@@ -89,7 +89,7 @@ namespace winrt::HotelManagement::implementation
     
     }
 
-
+ 
     void Settings::btnTheme_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
     {
         cmbxTheme().IsDropDownOpen(!cmbxTheme().IsDropDownOpen());

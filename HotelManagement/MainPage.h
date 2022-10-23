@@ -47,6 +47,8 @@ namespace winrt::HotelManagement::implementation
     private:
         // Vector of std::pair holding the Navigation Tag and the relative Navigation Page.
         std::vector<std::pair<std::wstring, Windows::UI::Xaml::Interop::TypeName>> m_pages;
+    public:
+        void MainPivot_SizeChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::SizeChangedEventArgs const& e);
     };
 }
 

@@ -60,6 +60,9 @@ namespace winrt::HotelManagement::implementation
 
     void MainPage::MainPivot_Loaded(IInspectable const& sender, RoutedEventArgs const& e)
     {
+
+        
+
         dbPath(to_string(localPath().Path()) + "\\data.db");
 
         //Send assets to local files
@@ -103,7 +106,7 @@ namespace winrt::HotelManagement::implementation
         
 
         //minimum size
-        ApplicationView::GetForCurrentView().SetPreferredMinSize(Size(500, 500));
+        ApplicationView::GetForCurrentView().SetPreferredMinSize(Size(650, 500));
 
         //extend titlebar
         Window::Current().SetTitleBar(AppTitle());
@@ -114,6 +117,7 @@ namespace winrt::HotelManagement::implementation
         titleBar.ButtonInactiveBackgroundColor(Colors::Transparent());
 
         // Add handler for ContentFrame navigation.
+        
         ContentFrame().Navigated({ this, &MainPage::On_Navigated });
         Windows::UI::Core::SystemNavigationManager::GetForCurrentView().BackRequested({ this, &MainPage::System_BackRequested });
 
@@ -143,6 +147,8 @@ namespace winrt::HotelManagement::implementation
 
         navView().MenuItems().GetAt(4).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().MenuItems().GetAt(1)
             .as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(isLoggedIn() ? Visibility::Visible : Visibility::Collapsed);
+
+        navView().MenuItems().GetAt(1).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(isLoggedIn() ? Visibility::Visible : Visibility::Collapsed);
 
         initDatabase();
 
@@ -195,6 +201,8 @@ namespace winrt::HotelManagement::implementation
                 ContentFrame().BackStack().Clear();
 
                 navView().MenuItems().GetAt(3).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Collapsed);
+
+                navView().MenuItems().GetAt(1).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Collapsed);
 
                 navView().MenuItems().GetAt(4).as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().MenuItems().GetAt(1)
                     .as<Microsoft::UI::Xaml::Controls::NavigationViewItem>().Visibility(Visibility::Collapsed);
@@ -361,10 +369,19 @@ namespace winrt::HotelManagement::implementation
 
 
     void MainPage::navView_PaneClosing(winrt::Microsoft::UI::Xaml::Controls::NavigationView const& sender, winrt::Windows::Foundation::IInspectable const& args)
-    {
+    { 
 
     }
+
+    void winrt::HotelManagement::implementation::MainPage::MainPivot_SizeChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::SizeChangedEventArgs const& e)
+    {
+        if ((Window::Current().Content().ActualSize().x < 700) && (Window::Current().Content().ActualSize().y < 650))
+        {
+            //ApplicationView::GetForCurrentView().TryResizeView(Size(700, 600));
+        }
+    }
 }
+
 
 
 
